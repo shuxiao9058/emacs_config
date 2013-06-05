@@ -144,7 +144,8 @@
 
 ;;===============================
 ;;for el-get
-(add-to-list 'load-path "~/.emacs.d/plugins/el-get/el-get")
+(add-to-list 'load-path "~/.emacs.d/plugins/el-get/el-get/")
+(setq el-get-dir "~/.emacs.d/plugins/el-get/el-get/")
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer

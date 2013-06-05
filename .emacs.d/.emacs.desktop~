@@ -1,0 +1,62 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue May  7 19:47:05 2013
+;; Desktop file format version 206
+;; Emacs version 24.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("search" "edit" "ibuff" "desktop"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/home/revir/.emacs" "/home/revir/.emacs.d/my-base.el" "/home/revir/.emacs.d/dea-lisp/compile-settings.el" "~/.emacs.d/ede-projects.el" "~/workspace/new/safesitetask/bin/pp1.py" "~/.emacs.d/ede-projects.el" "/home/revir/workspace/new/safesitetask/bin/pp1.py" "/usr/lib/python3.3/linecache.py" "/usr/lib/python3.3/abc.py" "/usr/lib/python3.3/tarfile.py" "/usr/lib/python3.3/fnmatch.py" "/usr/lib/python3.3/copyreg.py" "/usr/lib/python3.3/collections/abc.py" "/usr/lib/python3.3/stat.py" "/usr/lib/python3.3/warnings.py" "/usr/lib/python3.3/traceback.py" "/usr/lib/python3.3/io.py" "~/workspace/new/safesitetask/bin/SendReply.py" "/usr/lib/python3.3/shutil.py" "/usr/lib/python3.3/codecs.py" "/usr/lib/python3.3/os.py" "/usr/lib/python3.3/subprocess.py" "/home/revir/workspace/new/safesitetask/bin/SafeSiteSuper.py" "/home/revir/test.py" "/home/revir/.Xresources" "/home/revir/.zshrc" "/home/revir/.emacs.d/my-base.el" "~/.emacs" "/home/revir/workspace/new/safesitetask/ipc/ipc_channel_posix.cc" "/home/revir/workspace/new/safesitetask/include/core/job/JobHttp.h"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/revir/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(autopair-mode linum-mode yas-minor-mode auto-complete-mode)
+  2242
+  '(11770 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/home/revir/.emacs.d/my-base.el"
+  "my-base.el"
+  'emacs-lisp-mode
+  '(autopair-mode linum-mode yas-minor-mode)
+  1311
+  '(2404 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/home/revir/.emacs.d/dea-lisp/compile-settings.el"
+  "compile-settings.el"
+  'emacs-lisp-mode
+  '(autopair-mode linum-mode yas-minor-mode auto-complete-mode)
+  1605
+  '(1423 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/revir/.emacs.d/ede-projects.el"
+  "ede-projects.el"
+  'emacs-lisp-mode
+  '(autopair-mode linum-mode yas-minor-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+

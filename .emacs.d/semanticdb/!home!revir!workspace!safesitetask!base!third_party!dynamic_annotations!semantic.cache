@@ -1,0 +1,769 @@
+;; Object dynamic_annotations/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "dynamic_annotations/"
+  :tables
+  (list
+    (semanticdb-table "dynamic_annotations.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__DYNAMIC_ANNOTATIONS_H__" variable (:constant-flag t) nil [2376 2401])
+            ("DYNAMIC_ANNOTATIONS_PREFIX" variable (:constant-flag t) nil [2447 2473])
+            ("DYNAMIC_ANNOTATIONS_PROVIDE_RUNNING_ON_VALGRIND" variable (:constant-flag t) nil [2547 2594])
+            ("DYNAMIC_ANNOTATIONS_ATTRIBUTE_WEAK" variable (:constant-flag t) nil [2980 3014])
+            ("DYNAMIC_ANNOTATIONS_GLUE0" variable (:constant-flag t) nil [3152 3177])
+            ("DYNAMIC_ANNOTATIONS_GLUE" variable (:constant-flag t) nil [3197 3221])
+            ("DYNAMIC_ANNOTATIONS_NAME" variable (:constant-flag t) nil [3268 3292])
+            ("DYNAMIC_ANNOTATIONS_ENABLED" variable (:constant-flag t) nil [3408 3435])
+            ("ANNOTATE_RWLOCK_CREATE" variable (:constant-flag t) nil [16460 16482])
+            ("ANNOTATE_RWLOCK_DESTROY" variable (:constant-flag t) nil [16511 16534])
+            ("ANNOTATE_RWLOCK_ACQUIRED" variable (:constant-flag t) nil [16563 16587])
+            ("ANNOTATE_RWLOCK_RELEASED" variable (:constant-flag t) nil [16622 16646])
+            ("ANNOTATE_BARRIER_INIT" variable (:constant-flag t) nil [16681 16702])
+            ("ANNOTATE_BARRIER_WAIT_BEFORE" variable (:constant-flag t) nil [16761 16789])
+            ("ANNOTATE_BARRIER_WAIT_AFTER" variable (:constant-flag t) nil [16821 16848])
+            ("ANNOTATE_BARRIER_DESTROY" variable (:constant-flag t) nil [16880 16904])
+            ("ANNOTATE_CONDVAR_LOCK_WAIT" variable (:constant-flag t) nil [16936 16962])
+            ("ANNOTATE_CONDVAR_WAIT" variable (:constant-flag t) nil [16995 17016])
+            ("ANNOTATE_CONDVAR_SIGNAL" variable (:constant-flag t) nil [17043 17066])
+            ("ANNOTATE_CONDVAR_SIGNAL_ALL" variable (:constant-flag t) nil [17093 17120])
+            ("ANNOTATE_HAPPENS_BEFORE" variable (:constant-flag t) nil [17147 17170])
+            ("ANNOTATE_HAPPENS_AFTER" variable (:constant-flag t) nil [17198 17220])
+            ("ANNOTATE_PUBLISH_MEMORY_RANGE" variable (:constant-flag t) nil [17248 17277])
+            ("ANNOTATE_UNPUBLISH_MEMORY_RANGE" variable (:constant-flag t) nil [17315 17346])
+            ("ANNOTATE_SWAP_MEMORY_RANGE" variable (:constant-flag t) nil [17385 17411])
+            ("ANNOTATE_PCQ_CREATE" variable (:constant-flag t) nil [17450 17469])
+            ("ANNOTATE_PCQ_DESTROY" variable (:constant-flag t) nil [17497 17517])
+            ("ANNOTATE_PCQ_PUT" variable (:constant-flag t) nil [17545 17561])
+            ("ANNOTATE_PCQ_GET" variable (:constant-flag t) nil [17589 17605])
+            ("ANNOTATE_NEW_MEMORY" variable (:constant-flag t) nil [17633 17652])
+            ("ANNOTATE_EXPECT_RACE" variable (:constant-flag t) nil [17690 17710])
+            ("ANNOTATE_FLUSH_EXPECTED_RACES" variable (:constant-flag t) nil [17755 17784])
+            ("ANNOTATE_BENIGN_RACE" variable (:constant-flag t) nil [17829 17849])
+            ("ANNOTATE_BENIGN_RACE_SIZED" variable (:constant-flag t) nil [17894 17920])
+            ("ANNOTATE_PURE_HAPPENS_BEFORE_MUTEX" variable (:constant-flag t) nil [17971 18005])
+            ("ANNOTATE_MUTEX_IS_USED_AS_CONDVAR" variable (:constant-flag t) nil [18032 18065])
+            ("ANNOTATE_TRACE_MEMORY" variable (:constant-flag t) nil [18092 18113])
+            ("ANNOTATE_THREAD_NAME" variable (:constant-flag t) nil [18141 18161])
+            ("ANNOTATE_IGNORE_READS_BEGIN" variable (:constant-flag t) nil [18190 18217])
+            ("ANNOTATE_IGNORE_READS_END" variable (:constant-flag t) nil [18242 18267])
+            ("ANNOTATE_IGNORE_WRITES_BEGIN" variable (:constant-flag t) nil [18292 18320])
+            ("ANNOTATE_IGNORE_WRITES_END" variable (:constant-flag t) nil [18345 18371])
+            ("ANNOTATE_IGNORE_READS_AND_WRITES_BEGIN" variable (:constant-flag t) nil [18396 18434])
+            ("ANNOTATE_IGNORE_READS_AND_WRITES_END" variable (:constant-flag t) nil [18459 18495])
+            ("ANNOTATE_IGNORE_SYNC_BEGIN" variable (:constant-flag t) nil [18520 18546])
+            ("ANNOTATE_IGNORE_SYNC_END" variable (:constant-flag t) nil [18571 18595])
+            ("ANNOTATE_ENABLE_RACE_DETECTION" variable (:constant-flag t) nil [18620 18650])
+            ("ANNOTATE_NO_OP" variable (:constant-flag t) nil [18681 18695])
+            ("ANNOTATE_FLUSH_STATE" variable (:constant-flag t) nil [18723 18743])
+            ("RunningOnValgrind" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [25278 25283]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [25256 25319])
+            ("AnnotateFlushState" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [24445 24462])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [24463 24472]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24390 24508])
+            ("AnnotateNoOp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [24296 24313])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [24314 24323])
+                    ("arg" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [24328 24353]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24247 24389])
+            ("AnnotateEnableRaceDetection" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [24171 24188])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [24189 24198])
+                    ("enable" variable (:type "int") (reparse-symbol arg-sub-list) [24199 24210]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24107 24246])
+            ("AnnotateIgnoreSyncEnd" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [24043 24060])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [24061 24070]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23985 24106])
+            ("AnnotateIgnoreSyncBegin" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23921 23938])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [23939 23948]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23861 23984])
+            ("AnnotateIgnoreWritesEnd" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23797 23814])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [23815 23824]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23737 23860])
+            ("AnnotateIgnoreWritesBegin" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23673 23690])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [23691 23700]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23611 23736])
+            ("AnnotateIgnoreReadsEnd" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23547 23564])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [23565 23574]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23488 23610])
+            ("AnnotateIgnoreReadsBegin" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23424 23441])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [23442 23451]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23363 23487])
+            ("AnnotateThreadName" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23277 23294])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [23295 23304])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23309 23326]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23222 23362])
+            ("AnnotateTraceMemory" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23128 23145])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [23146 23155])
+                    ("arg" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23160 23185]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23072 23221])
+            ("AnnotateMutexIsNotPHB" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22979 22996])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [22997 23006])
+                    ("mu" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23011 23035]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22921 23071])
+            ("AnnotateMutexIsUsedAsCondVar" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22828 22845])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [22846 22855])
+                    ("mu" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [22860 22884]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22763 22920])
+            ("AnnotateBenignRaceSized" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22633 22650])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [22651 22660])
+                    ("mem" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [22661 22686])
+                    ("size" variable (:type "long") (reparse-symbol arg-sub-list) [22687 22697])
+                    ("description" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22702 22726]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22573 22762])
+            ("AnnotateBenignRace" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22454 22471])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [22472 22481])
+                    ("mem" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [22482 22507])
+                    ("description" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22512 22536]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22399 22572])
+            ("AnnotateFlushExpectedRaces" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22335 22352])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [22353 22362]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22272 22398])
+            ("AnnotateExpectRace" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22153 22170])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [22171 22180])
+                    ("mem" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [22181 22206])
+                    ("description" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22211 22235]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22098 22271])
+            ("AnnotateNewMemory" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21993 22010])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [22011 22020])
+                    ("mem" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [22025 22050])
+                    ("size" variable (:type "long") (reparse-symbol arg-sub-list) [22051 22061]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21939 22097])
+            ("AnnotatePCQGet" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21845 21862])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [21863 21872])
+                    ("pcq" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21877 21902]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21794 21938])
+            ("AnnotatePCQPut" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21700 21717])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [21718 21727])
+                    ("pcq" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21732 21757]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21649 21793])
+            ("AnnotatePCQDestroy" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21555 21572])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [21573 21582])
+                    ("pcq" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21587 21612]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21500 21648])
+            ("AnnotatePCQCreate" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21406 21423])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [21424 21433])
+                    ("pcq" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21438 21463]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21352 21499])
+            ("AnnotateUnpublishMemoryRange" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21243 21260])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [21261 21270])
+                    ("address" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21275 21304])
+                    ("size" variable (:type "long") (reparse-symbol arg-sub-list) [21305 21315]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21178 21351])
+            ("AnnotatePublishMemoryRange" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21069 21086])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [21087 21096])
+                    ("address" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21101 21130])
+                    ("size" variable (:type "long") (reparse-symbol arg-sub-list) [21131 21141]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21006 21177])
+            ("AnnotateHappensAfter" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20912 20929])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [20930 20939])
+                    ("obj" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20944 20969]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20855 21005])
+            ("AnnotateHappensBefore" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20761 20778])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [20779 20788])
+                    ("obj" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20793 20818]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20703 20854])
+            ("AnnotateCondVarSignalAll" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20610 20627])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [20628 20637])
+                    ("cv" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20642 20666]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20549 20702])
+            ("AnnotateCondVarSignal" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20456 20473])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [20474 20483])
+                    ("cv" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20488 20512]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20398 20548])
+            ("AnnotateCondVarWait" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20278 20295])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [20296 20305])
+                    ("cv" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20306 20330])
+                    ("lock" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20335 20361]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20222 20397])
+            ("AnnotateBarrierDestroy" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20124 20141])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [20142 20151])
+                    ("barrier" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20156 20185]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20065 20221])
+            ("AnnotateBarrierWaitAfter" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19967 19984])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [19985 19994])
+                    ("barrier" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19999 20028]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19906 20064])
+            ("AnnotateBarrierWaitBefore" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19808 19825])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [19826 19835])
+                    ("barrier" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19840 19869]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19746 19905])
+            ("AnnotateBarrierInit" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19605 19622])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [19623 19632])
+                    ("barrier" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19633 19662])
+                    ("count" variable (:type "long") (reparse-symbol arg-sub-list) [19663 19674])
+                    ("reinitialization_allowed" variable (:type "long") (reparse-symbol arg-sub-list) [19679 19709]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19549 19745])
+            ("AnnotateRWLockReleased" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19443 19460])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [19461 19470])
+                    ("lock" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19475 19501])
+                    ("is_w" variable (:type "long") (reparse-symbol arg-sub-list) [19502 19512]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19384 19548])
+            ("AnnotateRWLockAcquired" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19278 19295])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [19296 19305])
+                    ("lock" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19310 19336])
+                    ("is_w" variable (:type "long") (reparse-symbol arg-sub-list) [19337 19347]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19219 19383])
+            ("AnnotateRWLockDestroy" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19124 19141])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [19142 19151])
+                    ("lock" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19156 19182]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19066 19218])
+            ("AnnotateRWLockCreate" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18971 18988])
+                    ("line" variable (:type "int") (reparse-symbol arg-sub-list) [18989 18998])
+                    ("lock" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19003 19029]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [18914 19065])
+            ("ANNOTATE_UNPROTECTED_READ" variable (:constant-flag t) nil [26836 26861])
+            ("ANNOTATE_BENIGN_RACE_STATIC" variable (:constant-flag t) nil [26879 26906]))          
+      :file "dynamic_annotations.h"
+      :pointmax 27028
+      :fsize 27030
+      :lastmodtime '(20900 35811 782278 629000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DYNAMIC_ANNOTATIONS_GLUE" (spp-arg-list ("A" "B") 3221 . 3227) . ((symbol "DYNAMIC_ANNOTATIONS_GLUE0" 3228 . 3253) (semantic-list "(A, B)" 3253 . 3259)))
+          ("DYNAMIC_ANNOTATIONS_ENABLED" . ((number "0" 3436 . 3437)))
+          ("ANNOTATE_BARRIER_INIT" (spp-arg-list ("barrier" "count" "reinitialization_allowed") 16702 . 16744))
+          ("ANNOTATE_IGNORE_READS_BEGIN" (spp-arg-list nil 18217 . 18219))
+          ("DYNAMIC_ANNOTATIONS_NAME" (spp-arg-list ("name") 3292 . 3298) . ((symbol "DYNAMIC_ANNOTATIONS_GLUE" 3303 . 3327) (semantic-list "(DYNAMIC_ANNOTATIONS_PREFIX, name)" 3327 . 3361)))
+          ("ANNOTATE_RWLOCK_DESTROY" (spp-arg-list ("lock") 16534 . 16540))
+          ("ANNOTATE_BARRIER_WAIT_AFTER" (spp-arg-list ("barrier") 16848 . 16857))
+          ("ANNOTATE_CONDVAR_SIGNAL_ALL" (spp-arg-list ("cv") 17120 . 17124))
+          ("ANNOTATE_BENIGN_RACE" (spp-arg-list ("address" "description") 17849 . 17871))
+          ("ANNOTATE_IGNORE_WRITES_END" (spp-arg-list nil 18371 . 18373))
+          ("ANNOTATE_ENABLE_RACE_DETECTION" (spp-arg-list ("enable") 18650 . 18658))
+          ("DYNAMIC_ANNOTATIONS_ATTRIBUTE_WEAK")
+          ("ANNOTATE_IGNORE_SYNC_END" (spp-arg-list nil 18595 . 18597))
+          ("ANNOTATE_BENIGN_RACE_STATIC" (spp-arg-list ("static_var" "description") 26906 . 26931))
+          ("DYNAMIC_ANNOTATIONS_PROVIDE_RUNNING_ON_VALGRIND" . ((number "1" 2595 . 2596)))
+          ("ANNOTATE_CONDVAR_LOCK_WAIT" (spp-arg-list ("cv" "lock") 16962 . 16972))
+          ("ANNOTATE_IGNORE_WRITES_BEGIN" (spp-arg-list nil 18320 . 18322))
+          ("ANNOTATE_HAPPENS_BEFORE" (spp-arg-list ("obj") 17170 . 17175))
+          ("ANNOTATE_HAPPENS_AFTER" (spp-arg-list ("obj") 17220 . 17225))
+          ("ANNOTATE_PCQ_DESTROY" (spp-arg-list ("pcq") 17517 . 17522))
+          ("ANNOTATE_IGNORE_READS_AND_WRITES_END" (spp-arg-list nil 18495 . 18497))
+          ("ANNOTATE_NEW_MEMORY" (spp-arg-list ("address" "size") 17652 . 17667))
+          ("ANNOTATE_NO_OP" (spp-arg-list ("arg") 18695 . 18700))
+          ("DYNAMIC_ANNOTATIONS_PREFIX")
+          ("ANNOTATE_SWAP_MEMORY_RANGE" (spp-arg-list ("address" "size") 17411 . 17426))
+          ("ANNOTATE_PCQ_CREATE" (spp-arg-list ("pcq") 17469 . 17474))
+          ("ANNOTATE_BENIGN_RACE_SIZED" (spp-arg-list ("address" "size" "description") 17920 . 17948))
+          ("ANNOTATE_IGNORE_READS_AND_WRITES_BEGIN" (spp-arg-list nil 18434 . 18436))
+          ("ANNOTATE_RWLOCK_ACQUIRED" (spp-arg-list ("lock" "is_w") 16587 . 16599))
+          ("ANNOTATE_RWLOCK_RELEASED" (spp-arg-list ("lock" "is_w") 16646 . 16658))
+          ("ANNOTATE_EXPECT_RACE" (spp-arg-list ("address" "description") 17710 . 17732))
+          ("ANNOTATE_MUTEX_IS_USED_AS_CONDVAR" (spp-arg-list ("mu") 18065 . 18069))
+          ("ANNOTATE_IGNORE_SYNC_BEGIN" (spp-arg-list nil 18546 . 18548))
+          ("ANNOTATE_UNPUBLISH_MEMORY_RANGE" (spp-arg-list ("address" "size") 17346 . 17361))
+          ("ANNOTATE_CONDVAR_WAIT" (spp-arg-list ("cv") 17016 . 17020))
+          ("DYNAMIC_ANNOTATIONS_GLUE0" (spp-arg-list ("A" "B") 3177 . 3183) . ((spp-symbol-merge ((symbol "A" 3184 . 3185) (symbol "B" 3187 . 3188)) 3184 . 3188)))
+          ("ANNOTATE_BARRIER_WAIT_BEFORE" (spp-arg-list ("barrier") 16789 . 16798))
+          ("ANNOTATE_PCQ_PUT" (spp-arg-list ("pcq") 17561 . 17566))
+          ("ANNOTATE_TRACE_MEMORY" (spp-arg-list ("arg") 18113 . 18118))
+          ("ANNOTATE_UNPROTECTED_READ" (spp-arg-list ("x") 26861 . 26864) . ((semantic-list "(x)" 26865 . 26868)))
+          ("ANNOTATE_BARRIER_DESTROY" (spp-arg-list ("barrier") 16904 . 16913))
+          ("ANNOTATE_CONDVAR_SIGNAL" (spp-arg-list ("cv") 17066 . 17070))
+          ("ANNOTATE_PUBLISH_MEMORY_RANGE" (spp-arg-list ("address" "size") 17277 . 17292))
+          ("ANNOTATE_PCQ_GET" (spp-arg-list ("pcq") 17605 . 17610))
+          ("ANNOTATE_PURE_HAPPENS_BEFORE_MUTEX" (spp-arg-list ("mu") 18005 . 18009))
+          ("ANNOTATE_FLUSH_STATE" (spp-arg-list nil 18743 . 18745))
+          ("__DYNAMIC_ANNOTATIONS_H__")
+          ("ANNOTATE_RWLOCK_CREATE" (spp-arg-list ("lock") 16482 . 16488))
+          ("ANNOTATE_FLUSH_EXPECTED_RACES" (spp-arg-list ("address" "description") 17784 . 17806))
+          ("ANNOTATE_THREAD_NAME" (spp-arg-list ("name") 18161 . 18167))
+          ("ANNOTATE_IGNORE_READS_END" (spp-arg-list nil 18267 . 18269))
+          )
+))
+  :file "!home!revir!workspace!safesitetask!base!third_party!dynamic_annotations!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

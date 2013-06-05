@@ -1,0 +1,490 @@
+;; Object filter/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "filter/"
+  :tables (list 
+   (semanticdb-table "FilterForum.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("stdafx.h" include (:system-flag t) nil [1 20])
+            ("filter/FilterForum.h" include (:system-flag t) nil [21 52])
+            ("boost/foreach.hpp" include (:system-flag t) nil [53 81])
+            ("filter/FilterFactory.h" include (:system-flag t) nil [83 116])
+            ("core/TaskOption.h" include (:system-flag t) nil [117 145])
+            ("core/HttpQueue.h" include (:system-flag t) nil [146 173])
+            ("http/UrlParser.h" include (:system-flag t) nil [174 201])
+            ("filter/discuz/FilterDiscuz.h" include (:system-flag t) nil [203 242])
+            ("filter/discuz/FilterDiscuzX1.h" include (:system-flag t) nil [243 284])
+            ("filter/phpbb/FilterPhpBB.h" include (:system-flag t) nil [285 322])
+            ("filter/phpwind/FilterPhpwind.h" include (:system-flag t) nil [323 364])
+            ("FORUM_PREFIX" variable (:constant-flag t) nil [374 386])
+            ("TOPICLIST_PREFIX" variable (:constant-flag t) nil [409 425])
+            ("SUBFORUM_PREFIX" variable (:constant-flag t) nil [452 467])
+            ("TOPIC_PREFIX" variable (:constant-flag t) nil [493 505])
+            ("CFilterForum" function
+               (:constructor-flag t
+                :parent "CFilterForum"
+                :type ("CFilterForum" type (:type "class") nil nil))
+                nil [521 553])
+            ("CFilterForum" function
+               (:destructor-flag t
+                :parent "CFilterForum"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [583 588]))                  
+                :type "void")
+                nil [555 592])
+            ("InitQueue" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("queue" variable
+                       (:pointer 1
+                        :type ("CHttpQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [623 641]))                  
+                :type "bool")
+                nil [594 773])
+            ("InitQueueUser" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("queue" variable
+                       (:pointer 1
+                        :type ("CHttpQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [808 826]))                  
+                :type "bool")
+                nil [775 1878])
+            ("GetSavePath" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1929 1942]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [1891 2064])
+            ("GetSavePathBoard" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2126 2139]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [2083 4610])
+            ("GetSavePathUser" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4671 4684]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [4629 6068])
+            ("GetRetries" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6099 6112]))                  
+                :type "int")
+                nil [6070 6378])
+            ("Require" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6421 6436])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6437 6455]))                  
+                :type "bool")
+                nil [6394 7228])
+            ("RequireBoard" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7279 7294])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7295 7313]))                  
+                :type "bool")
+                nil [7247 7850])
+            ("RequireUser" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7900 7915])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7916 7934]))                  
+                :type "bool")
+                nil [7869 8322])
+            ("Inherit" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8363 8378])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8379 8397]))                  
+                :type "void")
+                nil [8336 9212])
+            ("InheritBoard" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9264 9279])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9280 9298]))                  
+                :type "void")
+                nil [9232 10738])
+            ("InheritUser" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10789 10804])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10805 10823]))                  
+                :type "void")
+                nil [10758 11239])
+            ("Register" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11277 11290])
+                    ("dfi" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("DONEFILE_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11291 11316]))                  
+                :type "void")
+                nil [11249 11503])
+            ("RegisterAttach" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11548 11561])
+                    ("dfi" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("DONEFILE_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11562 11587]))                  
+                :type "void")
+                nil [11514 12251])
+            ("IsAttachmentAny" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12297 12310]))                  
+                :type "bool")
+                nil [12262 12776])
+            ("IsForumPageN" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12839 12862]))                  
+                :type "bool")
+                nil [12807 12939])
+            ("IsSubForumPageN" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13006 13029]))                  
+                :type "bool")
+                nil [12971 13108])
+            ("IsTopicPageN" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13167 13190]))                  
+                :type "bool")
+                nil [13135 13267])
+            ("IsTopicListN" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13301 13324]))                  
+                :type "bool")
+                nil [13269 13405])
+            ("FindAuthorDir" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("topic_dir" variable
+                       (:constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13456 13484]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [13416 13681])
+            ("FindForumDir" function
+               (:parent "CFilterForum"
+                :arguments 
+                  ( ("topic_dir" variable
+                       (:constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13737 13765]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [13698 14126]))          
+    :file "FilterForum.cpp"
+    :pointmax 14128
+    :fsize 16690
+    :lastmodtime '(20883 21760 534211 816000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("TOPIC_PREFIX" . ((symbol "_" 508 . 509) (semantic-list "(\"[topic]\")" 509 . 520)))
+          ("FORUM_PREFIX" . ((symbol "_" 389 . 390) (semantic-list "(\"[board]\")" 390 . 401)))
+          ("SUBFORUM_PREFIX" . ((symbol "_" 470 . 471) (semantic-list "(\"[subboard]\")" 471 . 485)))
+          ("TOPICLIST_PREFIX" . ((symbol "_" 427 . 428) (semantic-list "(\"[topic list]\")" 428 . 444)))
+          )
+
+    )
+   (semanticdb-table "FilterBase.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("stdafx.h" include (:system-flag t) nil [1 20])
+            ("filter/FilterBase.h" include (:system-flag t) nil [21 51])
+            ("boost/foreach.hpp" include (:system-flag t) nil [52 80])
+            ("core/TaskOption.h" include (:system-flag t) nil [82 110])
+            ("core/HttpQueue.h" include (:system-flag t) nil [111 138])
+            ("ipc/ipc_message.h" include (:system-flag t) nil [139 167])
+            ("log/TaskLog.h" include (:system-flag t) nil [168 192])
+            ("url/url.h" include (:system-flag t) nil [193 213])
+            ("FN_PORT_SEP" variable (:constant-flag t) nil [223 234])
+            ("FN_QUERY_SEP" variable (:constant-flag t) nil [248 260])
+            ("CFilterBase" function
+               (:constructor-flag t
+                :parent "CFilterBase"
+                :type ("CFilterBase" type (:type "class") nil nil))
+                nil [266 324])
+            ("CFilterBase" function
+               (:destructor-flag t
+                :parent "CFilterBase"
+                :type "void")
+                nil [326 384])
+            ("SetOptions" function
+               (:parent "CFilterBase"
+                :type "bool")
+                nil [462 510])
+            ("InitJobDir" function
+               (:parent "CFilterBase"
+                :type "bool")
+                nil [522 1147])
+            ("InitQueue" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("queue" variable
+                       (:pointer 1
+                        :type ("CHttpQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1189 1207]))                  
+                :type "bool")
+                nil [1161 1429])
+            ("GetSavePath" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1555 1568]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [1518 1775])
+            ("GetRetries" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1805 1818]))                  
+                :type "int")
+                nil [1777 1862])
+            ("Require" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1904 1919])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1920 1938]))                  
+                :type "bool")
+                nil [1878 2865])
+            ("InitParser" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("parser" variable
+                       (:pointer 1
+                        :type ("CUrlParser" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2896 2915]))                  
+                :type "void")
+                nil [2867 2921])
+            ("Inherit" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2949 2964])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2965 2983]))                  
+                :type "void")
+                nil [2923 2988])
+            ("Register" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3017 3030])
+                    ("dfi" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("DONEFILE_INFO" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3031 3056]))                  
+                :type "void")
+                nil [2990 3061])
+            ("NeedPost" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3090 3105])
+                    ("element" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3106 3124]))                  
+                :type "bool")
+                nil [3063 3143])
+            ("PostData" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("reply" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3179 3204]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [3145 3220])
+            ("AppendPathel" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("dest" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3339 3357])
+                    ("part" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3367 3391])
+                    ("charset" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3401 3428])
+                    ("url_escaped" variable (:type "bool") (reparse-symbol arg-sub-list) [3437 3454]))                  
+                :type "void")
+                nil [3308 4154])
+            ("GetUrlPath" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("savedir" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4205 4232])
+                    ("ui" variable
+                       (:pointer 1
+                        :type ("CUrlInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4233 4246])
+                    ("structured" variable (:type "bool") (reparse-symbol arg-sub-list) [4247 4263]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [4169 5458])
+            ("GetPageIdx" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5488 5511])
+                    ("spage" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5512 5537]))                  
+                :type "int")
+                nil [5460 5801])
+            ("FileName" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("file" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5837 5861]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [5803 5995])
+            ("FileExt" function
+               (:parent "CFilterBase"
+                :arguments 
+                  ( ("file" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6030 6054]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [5997 6185]))          
+    :file "FilterBase.cpp"
+    :pointmax 6187
+    :fsize 6917
+    :lastmodtime '(20885 65015 536925 381000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("FN_PORT_SEP" . ((string "'+'" 236 . 239)))
+          ("FN_QUERY_SEP" . ((string "'@'" 261 . 264)))
+          )
+
+    )
+   )
+  :file "!home!revir!workspace!new!safesitetask!filter!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

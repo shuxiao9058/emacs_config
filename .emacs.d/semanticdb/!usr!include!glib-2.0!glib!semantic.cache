@@ -1,0 +1,308 @@
+;; Object glib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "glib/"
+  :tables (list 
+   (semanticdb-table "gtypes.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("__G_TYPES_H__" variable (:constant-flag t) nil [1277 1290])
+            ("glibconfig.h" include (:system-flag t) nil [1292 1315])
+            ("glib/gmacros.h" include (:system-flag t) nil [1316 1341])
+            ("glib/gversionmacros.h" include (:system-flag t) nil [1342 1374])
+            ("time.h" include (:system-flag t) nil [1375 1392])
+            ("gchar" type
+               (:typedef ("char")
+                :superclasses "char"
+                :type "typedef")
+                nil [1673 1694])
+            ("gshort" type
+               (:typedef ("short")
+                :superclasses "short"
+                :type "typedef")
+                nil [1695 1717])
+            ("glong" type
+               (:typedef ("long")
+                :superclasses "long"
+                :type "typedef")
+                nil [1718 1739])
+            ("gint" type
+               (:typedef ("int")
+                :superclasses "int"
+                :type "typedef")
+                nil [1740 1760])
+            ("gboolean" type
+               (:typedef ("gint" type (:type "class") nil nil)
+                :superclasses "gint"
+                :type "typedef")
+                nil [1761 1785])
+            ("guchar" type
+               (:typedef ("unsigned char")
+                :superclasses "unsigned char"
+                :type "typedef")
+                nil [1787 1818])
+            ("gushort" type
+               (:typedef ("unsigned short")
+                :superclasses "unsigned short"
+                :type "typedef")
+                nil [1819 1851])
+            ("gulong" type
+               (:typedef ("unsigned long")
+                :superclasses "unsigned long"
+                :type "typedef")
+                nil [1852 1883])
+            ("guint" type
+               (:typedef ("unsigned int")
+                :superclasses "unsigned int"
+                :type "typedef")
+                nil [1884 1914])
+            ("gfloat" type
+               (:typedef ("float")
+                :superclasses "float"
+                :type "typedef")
+                nil [1916 1939])
+            ("gdouble" type
+               (:typedef ("double")
+                :superclasses "double"
+                :type "typedef")
+                nil [1940 1964])
+            ("G_MININT8" variable (:constant-flag t) nil [2044 2053])
+            ("G_MAXINT8" variable (:constant-flag t) nil [2078 2087])
+            ("G_MAXUINT8" variable (:constant-flag t) nil [2112 2122])
+            ("G_MININT16" variable (:constant-flag t) nil [2148 2158])
+            ("G_MAXINT16" variable (:constant-flag t) nil [2186 2196])
+            ("G_MAXUINT16" variable (:constant-flag t) nil [2224 2235])
+            ("G_MININT32" variable (:constant-flag t) nil [2264 2274])
+            ("G_MAXINT32" variable (:constant-flag t) nil [2306 2316])
+            ("G_MAXUINT32" variable (:constant-flag t) nil [2348 2359])
+            ("G_MININT64" variable (:constant-flag t) nil [2392 2402])
+            ("G_MAXINT64" variable (:constant-flag t) nil [2460 2470])
+            ("G_MAXUINT64" variable (:constant-flag t) nil [2517 2528])
+            ("gpointer" type
+               (:typedef ("void")
+                :pointer 1
+                :superclasses "void"
+                :type "typedef")
+                nil [2569 2592])
+            ("gconstpointer" type
+               (:typedef ("void")
+                :pointer 1
+                :superclasses "void"
+                :type "typedef")
+                nil [2593 2627])
+            ("GCompareFunc" variable
+               (:functionpointer-flag t
+                :type ("gint" type (:type "class") nil nil))
+                nil [2637 2763])
+            ("GCompareDataFunc" variable
+               (:functionpointer-flag t
+                :type ("gint" type (:type "class") nil nil))
+                nil [2772 2931])
+            ("GEqualFunc" variable
+               (:functionpointer-flag t
+                :type ("gboolean" type (:type "class") nil nil))
+                nil [2940 3066])
+            ("GDestroyNotify" variable
+               (:functionpointer-flag t
+                :type "void")
+                nil [3075 3137])
+            ("GFunc" variable
+               (:functionpointer-flag t
+                :type "void")
+                nil [3146 3283])
+            ("GHashFunc" variable
+               (:functionpointer-flag t
+                :type ("guint" type (:type "class") nil nil))
+                nil [3292 3353])
+            ("GHFunc" variable
+               (:functionpointer-flag t
+                :type "void")
+                nil [3362 3569])
+            ("GFreeFunc" variable
+               (:functionpointer-flag t
+                :type "void")
+                nil [3780 3842])
+            ("GTranslateFunc" variable
+               (:functionpointer-flag t
+                :type ("gchar" type (:type "class") nil nil))
+                nil [4270 4359])
+            ("G_E" variable (:constant-flag t) nil [4838 4841])
+            ("G_LN2" variable (:constant-flag t) nil [4906 4911])
+            ("G_LN10" variable (:constant-flag t) nil [4975 4981])
+            ("G_PI" variable (:constant-flag t) nil [5043 5047])
+            ("G_PI_2" variable (:constant-flag t) nil [5111 5117])
+            ("G_PI_4" variable (:constant-flag t) nil [5179 5185])
+            ("G_SQRT2" variable (:constant-flag t) nil [5248 5255])
+            ("G_LITTLE_ENDIAN" variable (:constant-flag t) nil [5448 5463])
+            ("G_BIG_ENDIAN" variable (:constant-flag t) nil [5477 5489])
+            ("G_PDP_ENDIAN" variable (:constant-flag t) nil [5506 5518])
+            ("GUINT16_SWAP_LE_BE_CONSTANT" variable (:constant-flag t) nil [5613 5640])
+            ("GUINT32_SWAP_LE_BE_CONSTANT" variable (:constant-flag t) nil [5750 5777])
+            ("GUINT64_SWAP_LE_BE_CONSTANT" variable (:constant-flag t) nil [6037 6064])
+            ("GUINT16_SWAP_LE_BE" variable (:constant-flag t) nil [12273 12291])
+            ("GUINT32_SWAP_LE_BE" variable (:constant-flag t) nil [12343 12361])
+            ("GUINT64_SWAP_LE_BE" variable (:constant-flag t) nil [12413 12431])
+            ("GUINT16_SWAP_LE_PDP" variable (:constant-flag t) nil [12503 12522])
+            ("GUINT16_SWAP_BE_PDP" variable (:constant-flag t) nil [12554 12573])
+            ("GUINT32_SWAP_LE_PDP" variable (:constant-flag t) nil [12614 12633])
+            ("GUINT32_SWAP_BE_PDP" variable (:constant-flag t) nil [12776 12795])
+            ("GINT16_FROM_LE" variable (:constant-flag t) nil [13064 13078])
+            ("GUINT16_FROM_LE" variable (:constant-flag t) nil [13113 13128])
+            ("GINT16_FROM_BE" variable (:constant-flag t) nil [13164 13178])
+            ("GUINT16_FROM_BE" variable (:constant-flag t) nil [13213 13228])
+            ("GINT32_FROM_LE" variable (:constant-flag t) nil [13264 13278])
+            ("GUINT32_FROM_LE" variable (:constant-flag t) nil [13313 13328])
+            ("GINT32_FROM_BE" variable (:constant-flag t) nil [13364 13378])
+            ("GUINT32_FROM_BE" variable (:constant-flag t) nil [13413 13428])
+            ("GINT64_FROM_LE" variable (:constant-flag t) nil [13465 13479])
+            ("GUINT64_FROM_LE" variable (:constant-flag t) nil [13514 13529])
+            ("GINT64_FROM_BE" variable (:constant-flag t) nil [13565 13579])
+            ("GUINT64_FROM_BE" variable (:constant-flag t) nil [13614 13629])
+            ("GLONG_FROM_LE" variable (:constant-flag t) nil [13666 13679])
+            ("GULONG_FROM_LE" variable (:constant-flag t) nil [13713 13727])
+            ("GLONG_FROM_BE" variable (:constant-flag t) nil [13762 13775])
+            ("GULONG_FROM_BE" variable (:constant-flag t) nil [13809 13823])
+            ("GINT_FROM_LE" variable (:constant-flag t) nil [13859 13871])
+            ("GUINT_FROM_LE" variable (:constant-flag t) nil [13904 13917])
+            ("GINT_FROM_BE" variable (:constant-flag t) nil [13951 13963])
+            ("GUINT_FROM_BE" variable (:constant-flag t) nil [13996 14009])
+            ("GSIZE_FROM_LE" variable (:constant-flag t) nil [14044 14057])
+            ("GSSIZE_FROM_LE" variable (:constant-flag t) nil [14091 14105])
+            ("GSIZE_FROM_BE" variable (:constant-flag t) nil [14140 14153])
+            ("GSSIZE_FROM_BE" variable (:constant-flag t) nil [14187 14201])
+            ("g_ntohl" variable (:constant-flag t) nil [14291 14298])
+            ("g_ntohs" variable (:constant-flag t) nil [14336 14343])
+            ("g_htonl" variable (:constant-flag t) nil [14381 14388])
+            ("g_htons" variable (:constant-flag t) nil [14424 14431])
+            ("GDoubleIEEE754" type
+               (:typedef ("_GDoubleIEEE754" type (:type "union") nil nil)
+                :superclasses "_GDoubleIEEE754"
+                :type "typedef")
+                nil [15234 15280])
+            ("GFloatIEEE754" type
+               (:typedef ("_GFloatIEEE754" type (:type "union") nil nil)
+                :superclasses "_GFloatIEEE754"
+                :type "typedef")
+                nil [15281 15325])
+            ("G_IEEE754_FLOAT_BIAS" variable (:constant-flag t) nil [15334 15354])
+            ("G_IEEE754_DOUBLE_BIAS" variable (:constant-flag t) nil [15369 15390])
+            ("G_LOG_2_BASE_10" variable (:constant-flag t) nil [15481 15496])
+            ("GTimeVal" type
+               (:typedef ("_GTimeVal" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :superclasses "_GTimeVal"
+                :type "typedef")
+                nil [16351 16400])
+            ("_GTimeVal" type
+               (:members 
+                  ( ("tv_sec" variable (:type ("glong" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16423 16436])
+                    ("tv_usec" variable (:type ("glong" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16439 16453]))                  
+                :type "struct")
+                nil [16402 16456])
+            ("GLIB_VAR" variable (:constant-flag t) nil [17130 17138]))          
+    :file "gtypes.h"
+    :pointmax 17229
+    :fsize 17228
+    :lastmodtime '(20659 53382 0 0)
+    :unmatched-syntax '((symbol 16458 . 16469) (symbol 16298 . 16302) (symbol 16291 . 16297) (symbol 16283 . 16290) (symbol 16277 . 16282) (punctuation 16276 . 16277) (TYPEDEF 4262 . 4269) (TYPEDEF 3772 . 3779) (TYPEDEF 3354 . 3361) (TYPEDEF 3284 . 3291) (TYPEDEF 3138 . 3145) (TYPEDEF 3067 . 3074) (TYPEDEF 2932 . 2939) (TYPEDEF 2764 . 2771) (TYPEDEF 2629 . 2636) (symbol 1394 . 1407) (string 1197 . 1238) (symbol 1191 . 1196) (punctuation 1190 . 1191))
+    :lexical-table 
+        '(("GLONG_FROM_BE" (spp-arg-list ("val") 13775 . 13780) . ((semantic-list "(GLONG_TO_BE (val))" 13781 . 13800)))
+          ("GINT_FROM_LE" (spp-arg-list ("val") 13871 . 13876) . ((semantic-list "(GINT_TO_LE (val))" 13877 . 13895)))
+          ("GSIZE_FROM_BE" (spp-arg-list ("val") 14153 . 14158) . ((semantic-list "(GSIZE_TO_BE (val))" 14159 . 14178)))
+          ("G_MININT16" . ((semantic-list "((gint16)  0x8000)" 2159 . 2177)))
+          ("G_MAXUINT16" . ((semantic-list "((guint16) 0xffff)" 2236 . 2254)))
+          ("G_MININT64" . ((semantic-list "((gint64) G_GINT64_CONSTANT(0x8000000000000000))" 2403 . 2451)))
+          ("G_MAXUINT64" . ((symbol "G_GINT64_CONSTANT" 2529 . 2546) (semantic-list "(0xffffffffffffffffU)" 2546 . 2567)))
+          ("GUINT16_SWAP_LE_BE" (spp-arg-list ("val") 12291 . 12296) . ((semantic-list "(GUINT16_SWAP_LE_BE_CONSTANT (val))" 12297 . 12332)))
+          ("GUINT64_SWAP_LE_BE" (spp-arg-list ("val") 12431 . 12436) . ((semantic-list "(GUINT64_SWAP_LE_BE_CONSTANT (val))" 12437 . 12472)))
+          ("GINT16_FROM_BE" (spp-arg-list ("val") 13178 . 13183) . ((semantic-list "(GINT16_TO_BE (val))" 13184 . 13204)))
+          ("GINT64_FROM_BE" (spp-arg-list ("val") 13579 . 13584) . ((semantic-list "(GINT64_TO_BE (val))" 13585 . 13605)))
+          ("G_LN2" . ((number "0.69314718055994530941723212145817656807550013436026" 4914 . 4966)))
+          ("GUINT32_FROM_LE" (spp-arg-list ("val") 13328 . 13333) . ((semantic-list "(GUINT32_TO_LE (val))" 13334 . 13355)))
+          ("GUINT_FROM_LE" (spp-arg-list ("val") 13917 . 13922) . ((semantic-list "(GUINT_TO_LE (val))" 13923 . 13942)))
+          ("g_ntohl" (spp-arg-list ("val") 14298 . 14303) . ((semantic-list "(GUINT32_FROM_BE (val))" 14304 . 14327)))
+          ("g_htonl" (spp-arg-list ("val") 14388 . 14393) . ((semantic-list "(GUINT32_TO_BE (val))" 14394 . 14415)))
+          ("G_LOG_2_BASE_10" . ((semantic-list "(0.30102999566398119521)" 15498 . 15522)))
+          ("GLIB_VAR" . ((EXTERN "extern" 17139 . 17145)))
+          ("G_MININT32" . ((semantic-list "((gint32)  0x80000000)" 2275 . 2297)))
+          ("G_MAXUINT32" . ((semantic-list "((guint32) 0xffffffff)" 2360 . 2382)))
+          ("G_PI" . ((number "3.1415926535897932384626433832795028841971693993751" 5051 . 5102)))
+          ("GUINT32_SWAP_LE_BE_CONSTANT" (spp-arg-list ("val") 5777 . 5782) . ((semantic-list "((guint32) ( \\
+    (((guint32) (val) & (guint32) 0x000000ffU) << 24) | \\
+    (((guint32) (val) & (guint32) 0x0000ff00U) <<  8) | \\
+    (((guint32) (val) & (guint32) 0x00ff0000U) >>  8) | \\
+    (((guint32) (val) & (guint32) 0xff000000U) >> 24)))" 5783 . 6027)))
+          ("GLONG_FROM_LE" (spp-arg-list ("val") 13679 . 13684) . ((semantic-list "(GLONG_TO_LE (val))" 13685 . 13704)))
+          ("GSIZE_FROM_LE" (spp-arg-list ("val") 14057 . 14062) . ((semantic-list "(GSIZE_TO_LE (val))" 14063 . 14082)))
+          ("GSSIZE_FROM_BE" (spp-arg-list ("val") 14201 . 14206) . ((semantic-list "(GSSIZE_TO_BE (val))" 14207 . 14227)))
+          ("G_MAXINT16" . ((semantic-list "((gint16)  0x7fff)" 2197 . 2215)))
+          ("G_MAXINT64" . ((symbol "G_GINT64_CONSTANT" 2471 . 2488) (semantic-list "(0x7fffffffffffffff)" 2488 . 2508)))
+          ("G_E" . ((number "2.7182818284590452353602874713526624977572470937000" 4846 . 4897)))
+          ("GINT16_FROM_LE" (spp-arg-list ("val") 13078 . 13083) . ((semantic-list "(GINT16_TO_LE (val))" 13084 . 13104)))
+          ("GINT64_FROM_LE" (spp-arg-list ("val") 13479 . 13484) . ((semantic-list "(GINT64_TO_LE (val))" 13485 . 13505)))
+          ("GUINT32_SWAP_LE_BE" (spp-arg-list ("val") 12361 . 12366) . ((semantic-list "(GUINT32_SWAP_LE_BE_CONSTANT (val))" 12367 . 12402)))
+          ("GUINT16_FROM_BE" (spp-arg-list ("val") 13228 . 13233) . ((semantic-list "(GUINT16_TO_BE (val))" 13234 . 13255)))
+          ("GINT32_FROM_BE" (spp-arg-list ("val") 13378 . 13383) . ((semantic-list "(GINT32_TO_BE (val))" 13384 . 13404)))
+          ("GUINT64_FROM_BE" (spp-arg-list ("val") 13629 . 13634) . ((semantic-list "(GUINT64_TO_BE (val))" 13635 . 13656)))
+          ("GULONG_FROM_BE" (spp-arg-list ("val") 13823 . 13828) . ((semantic-list "(GULONG_TO_BE (val))" 13829 . 13849)))
+          ("G_MAXINT32" . ((semantic-list "((gint32)  0x7fffffff)" 2317 . 2339)))
+          ("G_PI_2" . ((number "1.5707963267948966192313216916397514420985846996876" 5119 . 5170)))
+          ("G_MAXINT8" . ((semantic-list "((gint8)  0x7f)" 2088 . 2103)))
+          ("G_SQRT2" . ((number "1.4142135623730950488016887242096980785696718753769" 5256 . 5307)))
+          ("G_PDP_ENDIAN" . ((number "3412" 5522 . 5526)))
+          ("GSSIZE_FROM_LE" (spp-arg-list ("val") 14105 . 14110) . ((semantic-list "(GSSIZE_TO_LE (val))" 14111 . 14131)))
+          ("G_IEEE754_DOUBLE_BIAS" . ((semantic-list "(1023)" 15391 . 15397)))
+          ("G_PI_4" . ((number "0.78539816339744830961566084581987572104929234984378" 5187 . 5239)))
+          ("G_LITTLE_ENDIAN" . ((number "1234" 5464 . 5468)))
+          ("GUINT16_SWAP_LE_PDP" (spp-arg-list ("val") 12522 . 12527) . ((semantic-list "((guint16) (val))" 12528 . 12545)))
+          ("GINT_FROM_BE" (spp-arg-list ("val") 13963 . 13968) . ((semantic-list "(GINT_TO_BE (val))" 13969 . 13987)))
+          ("g_ntohs" (spp-arg-list ("val") 14343 . 14348) . ((semantic-list "(GUINT16_FROM_BE (val))" 14349 . 14372)))
+          ("g_htons" (spp-arg-list ("val") 14431 . 14436) . ((semantic-list "(GUINT16_TO_BE (val))" 14437 . 14458)))
+          ("GUINT16_SWAP_BE_PDP" (spp-arg-list ("val") 12573 . 12578) . ((semantic-list "(GUINT16_SWAP_LE_BE (val))" 12579 . 12605)))
+          ("GUINT16_FROM_LE" (spp-arg-list ("val") 13128 . 13133) . ((semantic-list "(GUINT16_TO_LE (val))" 13134 . 13155)))
+          ("GINT32_FROM_LE" (spp-arg-list ("val") 13278 . 13283) . ((semantic-list "(GINT32_TO_LE (val))" 13284 . 13304)))
+          ("GUINT64_FROM_LE" (spp-arg-list ("val") 13529 . 13534) . ((semantic-list "(GUINT64_TO_LE (val))" 13535 . 13556)))
+          ("GULONG_FROM_LE" (spp-arg-list ("val") 13727 . 13732) . ((semantic-list "(GULONG_TO_LE (val))" 13733 . 13753)))
+          ("G_MININT8" . ((semantic-list "((gint8)  0x80)" 2054 . 2069)))
+          ("G_MAXUINT8" . ((semantic-list "((guint8) 0xff)" 2123 . 2138)))
+          ("GUINT16_SWAP_LE_BE_CONSTANT" (spp-arg-list ("val") 5640 . 5645) . ((semantic-list "((guint16) ( \\
+    (guint16) ((guint16) (val) >> 8) |	\\
+    (guint16) ((guint16) (val) << 8)))" 5646 . 5740)))
+          ("GUINT64_SWAP_LE_BE_CONSTANT" (spp-arg-list ("val") 6064 . 6069) . ((semantic-list "((guint64) ( \\
+      (((guint64) (val) &						\\
+	(guint64) G_GINT64_CONSTANT (0x00000000000000ffU)) << 56) |	\\
+      (((guint64) (val) &						\\
+	(guint64) G_GINT64_CONSTANT (0x000000000000ff00U)) << 40) |	\\
+      (((guint64) (val) &						\\
+	(guint64) G_GINT64_CONSTANT (0x0000000000ff0000U)) << 24) |	\\
+      (((guint64) (val) &						\\
+	(guint64) G_GINT64_CONSTANT (0x00000000ff000000U)) <<  8) |	\\
+      (((guint64) (val) &						\\
+	(guint64) G_GINT64_CONSTANT (0x000000ff00000000U)) >>  8) |	\\
+      (((guint64) (val) &						\\
+	(guint64) G_GINT64_CONSTANT (0x0000ff0000000000U)) >> 24) |	\\
+      (((guint64) (val) &						\\
+	(guint64) G_GINT64_CONSTANT (0x00ff000000000000U)) >> 40) |	\\
+      (((guint64) (val) &						\\
+	(guint64) G_GINT64_CONSTANT (0xff00000000000000U)) >> 56)))" 6070 . 6850)))
+          ("GUINT32_SWAP_LE_PDP" (spp-arg-list ("val") 12633 . 12638) . ((semantic-list "((guint32) ( \\
+    (((guint32) (val) & (guint32) 0x0000ffffU) << 16) | \\
+    (((guint32) (val) & (guint32) 0xffff0000U) >> 16)))" 12639 . 12767)))
+          ("GUINT32_FROM_BE" (spp-arg-list ("val") 13428 . 13433) . ((semantic-list "(GUINT32_TO_BE (val))" 13434 . 13455)))
+          ("GUINT_FROM_BE" (spp-arg-list ("val") 14009 . 14014) . ((semantic-list "(GUINT_TO_BE (val))" 14015 . 14034)))
+          ("G_IEEE754_FLOAT_BIAS" . ((semantic-list "(127)" 15355 . 15360)))
+          ("__G_TYPES_H__")
+          ("G_LN10" . ((number "2.3025850929940456840179914546843642076011014886288" 4983 . 5034)))
+          ("G_BIG_ENDIAN" . ((number "4321" 5493 . 5497)))
+          ("GUINT32_SWAP_BE_PDP" (spp-arg-list ("val") 12795 . 12800) . ((semantic-list "((guint32) ( \\
+    (((guint32) (val) & (guint32) 0x00ff00ffU) << 8) | \\
+    (((guint32) (val) & (guint32) 0xff00ff00U) >> 8)))" 12801 . 12927)))
+          )
+
+    )
+   )
+  :file "!usr!include!glib-2.0!glib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

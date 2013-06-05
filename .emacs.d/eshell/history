@@ -1,0 +1,15 @@
+ls
+la
+ls -a
+quit
+exit
+gcc HelloWorld/Hello.c
+ls
+cd HelloWorld/
+ls
+gcc HelloWorld.c -o HelloWorld
+ls
+gcc HelloWorld.c -o HelloWorld
+ls
+./HelloWorld 
+ls

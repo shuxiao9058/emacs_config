@@ -1,0 +1,213 @@
+;; Object dea-lisp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "dea-lisp/"
+  :tables
+  (list
+    (semanticdb-table "auto-complete+.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("auto-complete" include nil nil [1518 1542])
+            ("auto-complete+" customgroup (:user-visible-flag t) nil [1544 1638])
+            ("ac+-filename-ignore-regexp" variable (:default-value "^#.*#$\\|.*~$\\|^\\./?$\\|^\\.\\./?$\\|^.svn\\|^CVS$") nil [1640 1829])
+            ("ac+-valid-symbol-fun" variable (:default-value (quote ac+-valid-symbolp)) nil [1831 1982])
+            ("ac+-modes" variable (:default-value (quote (emacs-lisp-mode lisp-interaction-mode c-mode c++-mode java-mode perl-mode cperl-mode python-mode ruby-mode javascript-mode js2-mode php-mode css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode html-mode fundamental-mode org-mode svn-log-edit-mode text-mode autoconf-mode makefile-automake-mode makefile-gmake-mode conf-javaprop-mode conf-unix-mode change-log-mode tcl-mode awk-mode latex-mode))) nil [1984 2718])
+            ("ac+-source-elisp-faces" variable (:default-value (quote ((candidates . ac+-elisp-faces-candidate)))) nil [2720 2859])
+            ("ac+-omni-completion-elisp-faces-sources" variable (:default-value (quote (("\\<set-\\(back\\|fore\\)ground-color +\"" ac+-source-elisp-faces) ("\\<set-face-\\(back\\|fore\\)ground +\"" ac+-source-elisp-faces)))) nil [2861 3133])
+            ("ac+-source-elisp-features" variable (:default-value (quote ((candidates . ac+-elisp-features-candidate)))) nil [3135 3293])
+            ("ac+-filename-candidate" function nil nil [3295 3690])
+            ("ac+-files-candidate" function nil nil [3692 4016])
+            ("ac+-valid-symbolp" function (:arguments ("symbol")) nil [4018 4194])
+            ("ac+-elisp-faces-candidate" function nil nil [4198 4328])
+            ("ac+-elisp-features-candidate" function nil nil [4330 4472])
+            ("ac+-apply-source-elisp-faces" function nil nil [4474 4861])
+            ("setq" code nil nil [4863 4929])
+            ("setq" code nil nil [4930 5005])
+            ("auto-complete+" package nil nil [5007 5032]))          
+      :file "auto-complete+.el"
+      :pointmax 5066
+      :fsize 5065
+      :lastmodtime '(20857 59885 543501 956000)
+      :unmatched-syntax nil)
+    (semanticdb-table "util.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("eval-after-load" include nil nil [83 109])
+            ("mswin" variable (:default-value (equal window-system (quote w32))) nil [111 186])
+            ("cygwin" variable (:default-value (equal system-type (quote cygwin))) nil [187 261])
+            ("use-cua" variable nil nil [263 306])
+            ("last-region-beg" variable nil nil [308 368])
+            ("last-region-end" variable nil nil [369 423])
+            ("last-region-is-rect" variable nil nil [424 491])
+            ("last-region-use-cua" variable nil nil [492 559])
+            ("system-head-file-dir" variable
+               (:constant-flag t
+                :default-value (list "/usr/include" "/usr/local/include" "/usr/include/sys"))
+                nil [561 664])
+            ("user-head-file-dir" variable
+               (:constant-flag t
+                :default-value (list "." "../hdr" "../include"))
+                nil [665 739])
+            ("is-before-emacs-21" variable
+               (:constant-flag t
+                :default-value (>= 21 emacs-major-version))
+                nil [741 818])
+            ("is-after-emacs-23" variable
+               (:constant-flag t
+                :default-value (<= 23 emacs-major-version))
+                nil [819 896])
+            ("c-modes" variable
+               (:user-visible-flag t
+                :default-value (quote (c-mode c++-mode awk-mode java-mode)))
+                nil [898 964])
+            ("dev-modes" variable
+               (:user-visible-flag t
+                :default-value (append c-modes (quote (python-mode perl-mode makefile-gmake-mode))))
+                nil [965 1067])
+            ("execute-command-on-file" function
+               (:user-visible-flag t
+                :arguments ("file" "command"))
+                nil [1084 1564])
+            ("execute-command-on-current-file" function
+               (:user-visible-flag t
+                :arguments ("command"))
+                nil [1581 1980])
+            ("execute-command-on-current-dir" function
+               (:user-visible-flag t
+                :arguments ("command"))
+                nil [1997 2357])
+            ("def-execute-command-on-file-command" function (:arguments ("command")) nil [2374 2736])
+            ("def-execute-command-on-current-file-command" function (:arguments ("command")) nil [2753 3098])
+            ("def-execute-command-on-current-dir-command" function (:arguments ("command")) nil [3115 3467])
+            ("define-kbd" function (:arguments ("keymap" "key" "def")) nil [3484 3564])
+            ("local-set-kbd" function (:arguments ("key" "command")) nil [3580 3659])
+            ("global-set-kbd" function (:arguments ("key" "command")) nil [3675 3755])
+            ("defalias" code nil nil [3772 3826])
+            ("defalias" code nil nil [3842 3895])
+            ("apply-args-list-to-fun" function (:arguments ("fun-list" "args-list")) nil [3912 4313])
+            ("apply-args-to-fun" function (:arguments ("fun" "args")) nil [4330 4471])
+            ("kill-buffer-when-shell-command-exit" function nil nil [4488 4920])
+            ("list-colors-display-htm" function
+               (:user-visible-flag t
+                :arguments ("list"))
+                nil [4937 6272])
+            ("html-color" function (:arguments ("string")) nil [6289 6544])
+            ("def-command-max-window" function (:arguments ("command")) nil [6561 6933])
+            ("delete-current-window" function
+               (:user-visible-flag t
+                :arguments ("frame"))
+                nil [6950 7283])
+            ("def-turn-on" function (:arguments ("command" "is-on")) nil [7300 7656])
+            ("unset-key" function (:arguments ("keymap" "key")) nil [7673 7839])
+            ("util" package nil nil [7841 7856]))          
+      :file "util.el"
+      :pointmax 7857
+      :fsize 7998
+      :lastmodtime '(20857 58605 293463 82000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ahei-misc.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("when" code nil nil [914 1054])
+            ("am-add-hooks" function (:arguments ("hooks" "function" "append" "local")) nil [1071 1412])
+            ("am-intern" function (:arguments ("strings")) nil [1429 1632])
+            ("am-variable-is-t" function (:arguments ("symbol")) nil [1649 1767])
+            ("am-def-active-fun" function (:arguments ("symbol" "fun-name")) nil [1784 2040])
+            ("am-forward-word-or-to-word" function (:user-visible-flag t) nil [2057 2453])
+            ("am-with-temp-mode" function (:arguments ("mode" "body")) nil [2470 2684])
+            ("am-equal-ignore-case" function (:arguments ("str1" "str2")) nil [2701 2828])
+            ("ahei-misc" package nil nil [2830 2850]))          
+      :file "ahei-misc.el"
+      :pointmax 2879
+      :fsize 2878
+      :lastmodtime '(20857 60989 853535 483000)
+      :unmatched-syntax nil)
+    (semanticdb-table "compile-settings.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("util" include nil nil [83 98])
+            ("my-smart-compile" include nil nil [108 135])
+            ("defalias" code nil nil [137 161])
+            ("makefile-mode-map-list" variable nil nil [163 232])
+            ("if" code nil nil [233 397])
+            ("eal-define-keys" code nil nil [399 754])
+            ("eal-define-keys" code nil nil [756 867])
+            ("compile-misc" include nil nil [869 892])
+            ("eal-define-keys-commonly" code nil nil [894 981])
+            ("compile-settings" function nil nil [983 1315])
+            ("eal-define-keys" code nil nil [1317 1609])
+            ("eval-after-load" code nil nil [1611 1660])
+            ("compile-settings" package nil nil [1662 1689]))          
+      :file "compile-settings.el"
+      :pointmax 1690
+      :fsize 1709
+      :lastmodtime '(20874 821 558698 644000)
+      :unmatched-syntax nil)
+    (semanticdb-table "eval-after-load.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1464 1477])
+            ("eal" customgroup (:user-visible-flag t) nil [1480 1560])
+            ("eal-loadfile-mode-maps" variable
+               (:user-visible-flag t
+                :default-value (\` (("cc-mode" nil c-mode-base-map) ("cc-mode" c-mode c-mode-map) ("cc-mode" c++-mode c++-mode-map) ("cc-mode" java-mode java-mode-map) ("cc-mode" awk-mode awk-mode-map) "lisp-mode" ("lisp-mode" emacs-lisp-mode emacs-lisp-mode-map) "help-mode" ("man" Man-mode Man-mode-map) "log-view" ("compile" compilation-mode compilation-mode-map) ("gud") ("lisp-mode" lisp-interaction-mode lisp-interaction-mode-map) "browse-kill-ring" ("simple" completion-list-mode completion-list-mode-map) ("inf-ruby" inferior-ruby-mode inferior-ruby-mode-map) "ruby-mode" ("cus-edit" custom-mode custom-mode-map) ("info" Info-mode Info-mode-map) ("psvn" svn-log-edit-mode svn-log-edit-mode-map) ("psvn" svn-status-mode svn-status-mode-map) ("psvn" svn-info-mode svn-info-mode-map) ("package" package-menu-mode package-menu-mode-map) "dired" "apropos" "emaci" ("psvn" svn-log-view-mode svn-log-view-mode-map) ("vc-svn" vc-svn-log-view-mode vc-svn-log-view-mode-map) ("log-view" log-view-mode log-view-mode-map) "diff-mode" ("sgml-mode" html-mode html-mode-map) "sgml-mode" "w3m" ("data-debug" data-debug-mode) ("debug" debugger-mode debugger-mode-map) "text-mode" "color-theme" "woman" "doxymacs" "grep" "view" ("hi-lock" hi-lock-mode hi-lock-map) "autoconf" "tcl" "sgml-mode" "image-mode" "shell" "sql" "rhtml-mode" "senator" "org" "org-agenda" "python" "groovy-mode" "nxml-mode" "perl-mode" "artist" "calendar" "outline" "google-maps-static" "flymake" ("speedbar" speedbar-mode speedbar-key-map) ("speedbar" speedbar-mode speedbar-file-key-map) ("yasnippet" nil yas/keymap) ("yasnippet" yas/minor-mode yas/minor-mode-map) ("chart" chart-mode chart-map) ("recentf" recentf-dialog-mode recentf-dialog-mode-map) ("conf-mode" conf-javaprop-mode conf-javaprop-mode-map) ("conf-mode" conf-space-mode conf-space-mode-map) ("cua-base" nil cua--rectangle-keymap) ("make-mode" makefile-gmake-mode makefile-gmake-mode-map) ("make-mode" makefile-mode makefile-mode-map) ("make-mode" makefile-automake-mode makefile-automake-mode-map) ("sh-script" sh-mode sh-mode-map) ("auto-complete" auto-complete-mode ac-completing-map) ("auto-complete" nil ac-mode-map) ("semantic-decoration-on-include" nil semantic-decoration-on-include-map) ("semantic-symref-list" semantic-symref-results-mode semantic-symref-results-mode-map))))
+                nil [1577 5100])
+            ("eal-eval-by-modes" function (:arguments ("modes" "fun")) nil [5117 5638])
+            ("eal-eval-by-maps" function (:arguments ("maps" "fun")) nil [5655 5892])
+            ("eal-eval-by-symbols" function (:arguments ("symbols" "pos" "fun")) nil [5909 6154])
+            ("eal-eval-by-symbol" function (:arguments ("symbol" "pos" "fun")) nil [6171 6425])
+            ("eal-find-loadfile-by-mode" function (:arguments ("mode")) nil [6442 6554])
+            ("eal-find-loadfile-by-map" function (:arguments ("map")) nil [6571 6678])
+            ("eal-find-loadfile-by-symbol" function (:arguments ("symbol" "pos")) nil [6695 7524])
+            ("eal-get-name-by-loadfile" function (:arguments ("file" "pos")) nil [7541 7695])
+            ("eal-define-keys" function (:arguments ("keymaps" "key-defs")) nil [7712 8165])
+            ("eal-define-keys-commonly" function (:arguments ("keymap" "key-defs")) nil [8182 8598])
+            ("eal-define-key" function (:arguments ("keymap" "key" "def")) nil [8615 8933])
+            ("eval-after-load" package nil nil [8935 8961]))          
+      :file "eval-after-load.el"
+      :pointmax 8996
+      :fsize 8995
+      :lastmodtime '(20857 60932 850200 420000)
+      :unmatched-syntax '((close-paren 1477 . 1478) (symbol 1444 . 1461) (open-paren 1443 . 1444)))
+    (semanticdb-table "my-smart-compile.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("smart-compile" customgroup (:user-visible-flag t) nil [1462 1568])
+            ("smart-compile-alist" variable (:default-value (quote ((emacs-lisp-mode emacs-lisp-byte-compile) (html-mode browse-url-of-buffer) (nxhtml-mode browse-url-of-buffer) (html-helper-mode browse-url-of-buffer) (octave-mode run-octave) ("\\.c\\'" . "gcc -g %f -lm -o %n") ("\\.[Cc]+[Pp]*\\'" . "g++ -g %f -lm -o %n") ("\\.m\\'" . "gcc -O2 %f -lobjc -lpthread -o %n") ("\\.java\\'" . "javac %f") ("\\.php\\'" . "php -l %f") ("\\.f90\\'" . "f90 %f -o %n") ("\\.[Ff]\\'" . "f77 %f -o %n") ("\\.cron\\(tab\\)?\\'" . "crontab %f") ("\\.tex\\'" tex-file) ("\\.texi\\'" . "makeinfo %f") ("\\.mp\\'" . "mptopdf %f") ("\\.pl\\'" . "perl -cw %f") ("\\.rb\\'" . "ruby -cw %f")))) nil [1570 3031])
+            ("put" code nil nil [3032 3082])
+            ("smart-compile-replace-alist" variable (:default-value (quote (("%F" buffer-file-name) ("%f" file-name-nondirectory (buffer-file-name)) ("%n" file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ("%e" or (file-name-extension (buffer-file-name)) "")))) nil [3084 3365])
+            ("put" code nil nil [3366 3424])
+            ("smart-compile-check-makefile" variable (:default-value t) nil [3426 3465])
+            ("make-variable-buffer-local" code nil nil [3466 3524])
+            ("smart-compile-make-program" variable (:default-value "make ") nil [3526 3665])
+            ("smart-compile" function (:user-visible-flag t) nil [3683 6539])
+            ("smart-compile-string" function (:arguments ("arg")) nil [6541 6970])
+            ("my-smart-compile" package nil nil [6972 6999]))          
+      :file "my-smart-compile.el"
+      :pointmax 7032
+      :fsize 7031
+      :lastmodtime '(20872 37531 330003 47000)
+      :unmatched-syntax nil)
+    (semanticdb-table "compile-misc.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("compile-buffer" function (:user-visible-flag t) nil [1219 2000])
+            ("run-program" function
+               (:user-visible-flag t
+                :arguments ("command"))
+                nil [2017 3164])
+            ("make" function (:user-visible-flag t) nil [3181 3466])
+            ("ant" function (:user-visible-flag t) nil [3483 3564])
+            ("make-check" function (:user-visible-flag t) nil [3581 3855])
+            ("make-clean" function (:user-visible-flag t) nil [3872 4147])
+            ("ant-clean" function (:user-visible-flag t) nil [4164 4255])
+            ("ant-test" function (:user-visible-flag t) nil [4272 4360])
+            ("make-install" function (:user-visible-flag t) nil [4377 4477])
+            ("compile-misc" package nil nil [4479 4502]))          
+      :file "compile-misc.el"
+      :pointmax 4548
+      :fsize 4729
+      :lastmodtime '(20874 879 168697 120000)
+      :unmatched-syntax nil))
+  :file "!home!revir!.emacs.d!dea-lisp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

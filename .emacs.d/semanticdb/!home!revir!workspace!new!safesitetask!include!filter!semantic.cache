@@ -1,0 +1,225 @@
+;; Object filter/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "filter/"
+  :tables (list 
+   (semanticdb-table "FilterRegister.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("FILTER_REGISTER_H" variable (:constant-flag t) nil [228 245])
+            ("SITE_TYPE" type
+               (:members 
+                  ( ("SITE_TYPE_NORMAL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [305 322])
+                    ("SITE_TYPE_FORUM" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [333 349])
+                    ("SITE_TYPE_BLOG" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [359 374])
+                    ("SITE_TYPE_MICROBLOG" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [384 404])
+                    ("SITE_TYPE_CUSTOM" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [412 429]))                  
+                :type "enum")
+                nil [288 440])
+            ("FORUM_MODE" type
+               (:members 
+                  ( ("FM_BOARD" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [469 478])
+                    ("FM_USER" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [492 500]))                  
+                :type "enum")
+                nil [451 516])
+            ("BLOG_MODE" type
+               (:members 
+                  ( ("BM_CATEGORY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [544 556])
+                    ("BM_TIMESLICE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [569 582])
+                    ("BM_TAG" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [594 601]))                  
+                :type "enum")
+                nil [527 617])
+            ("HTTP_MODE" type
+               (:members 
+                  ( ("HMODE_ALL" variable
+                       (:constant-flag t
+                        :default-value (648 649)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [636 649])
+                    ("HMODE_URL_LIST" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [662 677])
+                    ("HMODE_BATCH" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [692 704])
+                    ("HMODE_SPIDER" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [716 729])
+                    ("HMODE_DISCUZ_1_3" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [756 773])
+                    ("HMODE_DISCUZ_4" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [775 790])
+                    ("HMODE_DISCUZ_5" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [792 807])
+                    ("HMODE_DISCUZ_6" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [809 824])
+                    ("HMODE_DISCUZ_7" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [826 841])
+                    ("HMODE_DISCUZ_X1" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [843 859])
+                    ("HMODE_DISCUZ_X1d5" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [861 879])
+                    ("HMODE_DISCUZ_X2" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [881 897])
+                    ("HMODE_DISCUZ_X2d5" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [899 917])
+                    ("HMODE_PHPWIND1" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [934 949])
+                    ("HMODE_PHPWIND2" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [951 966])
+                    ("HMODE_PHPWIND3" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [968 983])
+                    ("HMODE_PHPWIND4" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [985 1000])
+                    ("HMODE_PHPWIND5" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1002 1017])
+                    ("HMODE_PHPWIND6" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1019 1034])
+                    ("HMODE_PHPWIND7" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1036 1051])
+                    ("HMODE_PHPWIND8" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1053 1068])
+                    ("HMODE_PHPBB2" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1083 1096])
+                    ("HMODE_PHPBB3" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1098 1111])
+                    ("HMODE_WORDPRESS1" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1191 1208])
+                    ("HMODE_WORDPRESS2" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1210 1227])
+                    ("HMODE_WORDPRESS3" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1229 1246]))                  
+                :type "enum")
+                nil [619 1249])
+            ("CFilterBase" type
+               (:prototype t
+                :type "class")
+                nil [1251 1269])
+            ("COptions" type
+               (:prototype t
+                :type "class")
+                nil [1270 1285])
+            ("CFilterRegister" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1311 1318])
+                    ("CFilterRegister" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1336 1341]))                          
+                        :type ("CFilterRegister" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1320 1342])
+                    ("CFilterRegister" function
+                       (:prototype-flag t
+                        :destructor-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1369 1374]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1344 1375])
+                    ("public" label nil (reparse-symbol classsubparts) [1377 1384])
+                    ("GetFilter" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :typemodifiers ("static")
+                        :arguments 
+                          ( ("type" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1416 1440]))                          
+                        :type ("CFilterBase" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1386 1441]))                  
+                :type "class")
+                nil [1287 1611]))          
+    :file "FilterRegister.h"
+    :pointmax 1619
+    :fsize 1939
+    :lastmodtime '(20873 64699 725409 142000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("FILTER_REGISTER_H")
+          )
+
+    )
+   )
+  :file "!home!revir!workspace!new!safesitetask!include!filter!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

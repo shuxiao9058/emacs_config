@@ -1,0 +1,66 @@
+;; Object python/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "python/"
+  :tables (list 
+   (semanticdb-table "PyTools.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("stdafx.h" include (:system-flag t) nil [1 20])
+            ("python/PyTools.h" include (:system-flag t) nil [21 48])
+            ("g_log_running" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [50 75])
+            ("s_opt" variable
+               (:typemodifiers ("extern")
+                :type ("COptions" type (:type "class") nil nil))
+                nil [76 98])
+            ("SEND_REPLY_FILE" variable (:constant-flag t) nil [108 123])
+            ("SEND_REPLY_MODULE" variable (:constant-flag t) nil [147 164])
+            ("CPythonTools" function
+               (:constructor-flag t
+                :parent "CPythonTools"
+                :type ("CPythonTools" type (:type "class") nil nil))
+                nil [178 210])
+            ("CPythonTools" function
+               (:destructor-flag t
+                :parent "CPythonTools"
+                :type "void")
+                nil [212 246])
+            ("instance" function
+               (:pointer 1
+                :parent "CPythonTools"
+                :type ("CPythonTools" type (:type "class") nil nil))
+                nil [248 434])
+            ("Init" function
+               (:parent "CPythonTools"
+                :type "bool")
+                nil [436 1821])
+            ("SendReplyToX" function
+               (:parent "CPythonTools"
+                :arguments 
+                  ( ("code" variable (:type ("enum_task_status" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1871 1893])
+                    ("queueSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1894 1911])
+                    ("opt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("COptions" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1912 1932]))                  
+                :type ("enum_py_reply_status" type (:type "class") nil nil))
+                nil [1823 5328]))          
+    :file "PyTools.cpp"
+    :pointmax 5329
+    :fsize 5368
+    :lastmodtime '(20853 1522 0 0)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("SEND_REPLY_FILE" . ((string "\"SendReply.py\"" 124 . 138)))
+          ("SEND_REPLY_MODULE" . ((string "\"SendReply\"" 165 . 176)))
+          )
+
+    )
+   )
+  :file "!home!revir!workspace!safesitetask_old!python!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

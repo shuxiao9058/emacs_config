@@ -1,0 +1,457 @@
+;; Object nix/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "nix/"
+  :tables
+  (list
+    (semanticdb-table "mime_util_xdg.cc"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("base/nix/mime_util_xdg.h" include nil nil [171 206])
+            ("cstdlib" include (:system-flag t) nil [208 226])
+            ("list" include (:system-flag t) nil [227 242])
+            ("map" include (:system-flag t) nil [243 257])
+            ("vector" include (:system-flag t) nil [258 275])
+            ("base/environment.h" include nil nil [277 306])
+            ("base/file_util.h" include nil nil [307 334])
+            ("base/lazy_instance.h" include nil nil [335 366])
+            ("base/logging.h" include nil nil [367 392])
+            ("base/memory/scoped_ptr.h" include nil nil [393 428])
+            ("base/memory/singleton.h" include nil nil [429 463])
+            ("base/nix/xdg_util.h" include nil nil [464 494])
+            ("base/string_split.h" include nil nil [495 525])
+            ("base/string_util.h" include nil nil [526 555])
+            ("base/synchronization/lock.h" include nil nil [556 594])
+            ("base/third_party/xdg_mime/xdgmime.h" include nil nil [595 641])
+            ("base/threading/thread_restrictions.h" include nil nil [642 689])
+            ("base/time.h" include nil nil [690 712])
+            ("unnamed" type
+               (:members 
+                  ( ("IconTheme" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [824 840])
+                    ("g_mime_util_xdg_lock" variable (:type ("base::LazyInstance::Leaky" type (:type "class") nil nil)) (reparse-symbol namespacesubparts) [927 1018])
+                    ("MimeUtilConstants" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1047 1054])
+                            ("IconThemeMap" type
+                               (:typedef ("std::map" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil)
+                                          ("IconTheme" type (:pointer 1) nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "std::map"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [1057 1112])
+                            ("IconDirMtimeMap" type
+                               (:typedef ("std::map" type
+                                     (:template-specifier 
+                                        ( ("FilePath" type nil nil nil)
+                                          ("base::Time" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "std::map"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [1115 1170])
+                            ("IconFormats" type
+                               (:typedef ("std::vector" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "std::vector"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [1173 1218])
+                            ("kUpdateIntervalInSeconds" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type "int")
+                                (reparse-symbol classsubparts) [1262 1308])
+                            ("kDefaultThemeNum" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1312 1353])
+                            ("GetInstance" function
+                               (:pointer 1
+                                :typemodifiers ("static")
+                                :type ("MimeUtilConstants" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1357 1450])
+                            ("icon_dirs_" variable (:type ("IconDirMtimeMap" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1500 1527])
+                            ("icon_formats_" variable (:type ("IconFormats" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1556 1582])
+                            ("icon_themes_" variable (:type ("IconThemeMap" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1616 1642])
+                            ("default_themes_" variable
+                               (:pointer 1
+                                :dereference 1
+                                :type ("IconTheme" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1670 1715])
+                            ("last_check_time_" variable (:type ("base::TimeTicks" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1719 1752])
+                            ("private" label nil (reparse-symbol classsubparts) [1985 1993])
+                            ("MimeUtilConstants" function
+                               (:constructor-flag t
+                                :type ("MimeUtilConstants" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1996 2216])
+                            ("MimeUtilConstants" function
+                               (:prototype-flag t
+                                :destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [2219 2240])
+                            ("DefaultSingletonTraits" type
+                               (:prototype t
+                                :template-specifier 
+                                  ( ("MimeUtilConstants" type nil nil nil))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [2251 2300])
+                            ("DISALLOW_COPY_AND_ASSIGN" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable (:type ("MimeUtilConstants" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2329 2347]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [2304 2348]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1020 2351])
+                    ("IconTheme" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2568 2575])
+                            ("SubDirInfo" type
+                               (:members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [2680 2687])
+                                    ("Type" type
+                                       (:members 
+                                          ( ("Fixed" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [2739 2745])
+                                            ("Scalable" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [2752 2761])
+                                            ("Threshold" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [2768 2783]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [2721 2784])
+                                    ("SubDirInfo" function
+                                       (:constructor-flag t
+                                        :type ("SubDirInfo" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2789 2924])
+                                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2929 2941])
+                                    ("type" variable (:type ("Type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2995 3005])
+                                    ("max_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3037 3053])
+                                    ("min_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3108 3124])
+                                    ("threshold" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3179 3196]))                                  
+                                :type "class")
+                                (reparse-symbol classsubparts) [2658 3257])
+                            ("IconTheme" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("name" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3280 3304]))                                  
+                                :type ("IconTheme" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3270 3305])
+                            ("IconTheme" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [3309 3324])
+                            ("GetIconPath" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("icon_name" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3543 3572])
+                                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [3573 3582])
+                                    ("inherits" variable (:type "bool") (reparse-symbol arg-sub-list) [3583 3597]))                                  
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3522 3598])
+                            ("LoadTheme" function
+                               (:prototype-flag t
+                                :pointer 1
+                                :typemodifiers ("static")
+                                :arguments 
+                                  ( ("theme_name" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3727 3757]))                                  
+                                :type ("IconTheme" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3699 3758])
+                            ("private" label nil (reparse-symbol classsubparts) [3761 3769])
+                            ("GetIconPathUnderSubdir" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("icon_name" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3876 3905])
+                                    ("subdir" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3940 3966]))                                  
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3844 3967])
+                            ("IsValid" function (:type "bool") (reparse-symbol classsubparts) [4011 4063])
+                            ("LoadIndexTheme" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("file" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("FilePath" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4167 4188]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [4147 4189])
+                            ("MatchesSize" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("info" variable
+                                       (:pointer 1
+                                        :type ("SubDirInfo" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4346 4363])
+                                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4364 4376]))                                  
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4327 4377])
+                            ("ReadLine" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("fp" variable
+                                       (:pointer 1
+                                        :type ("FILE" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4444 4453]))                                  
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4423 4454])
+                            ("SetDirectories" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("dirs" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4555 4579]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [4535 4580])
+                            ("index_theme_loaded_" variable (:type "bool") (reparse-symbol classsubparts) [4584 4609])
+                            ("dirs_" variable (:type ("std::list" type
+                                 (:template-specifier 
+                                    ( ("FilePath" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4708 4734])
+                            ("subdirs_" variable (:type ("std::map" type
+                                 (:template-specifier 
+                                    ( ("std::string" type nil nil nil)
+                                      ("int" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4809 4845])
+                            ("info_array_" variable (:type "int") (reparse-symbol classsubparts) [4873 4885])
+                            ("inherits_" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4917 4939]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2549 4988])
+                    ("IconTheme" function
+                       (:constructor-flag t
+                        :parent "IconTheme"
+                        :arguments 
+                          ( ("name" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [5011 5035]))                          
+                        :type ("IconTheme" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [4990 5890])
+                    ("GetIconPath" function
+                       (:parent "IconTheme"
+                        :arguments 
+                          ( ("icon_name" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [5924 5953])
+                            ("size" variable (:type "int") (reparse-symbol arg-sub-list) [5954 5963])
+                            ("inherits" variable (:type "bool") (reparse-symbol arg-sub-list) [5996 6010]))                          
+                        :type ("FilePath" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [5892 7238])
+                    ("LoadTheme" function
+                       (:pointer 1
+                        :parent "IconTheme"
+                        :arguments 
+                          ( ("theme_name" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7272 7302]))                          
+                        :type ("IconTheme" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [7240 7726])
+                    ("GetIconPathUnderSubdir" function
+                       (:parent "IconTheme"
+                        :arguments 
+                          ( ("icon_name" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7771 7800])
+                            ("subdir" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7844 7870]))                          
+                        :type ("FilePath" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [7728 8384])
+                    ("LoadIndexTheme" function
+                       (:parent "IconTheme"
+                        :arguments 
+                          ( ("file" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8417 8438]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [8386 10416])
+                    ("MatchesSize" function
+                       (:parent "IconTheme"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("SubDirInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10448 10465])
+                            ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10466 10478]))                          
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [10418 11041])
+                    ("ReadLine" function
+                       (:parent "IconTheme"
+                        :arguments 
+                          ( ("fp" variable
+                               (:pointer 1
+                                :type ("FILE" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [11075 11084]))                          
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [11043 11451])
+                    ("SetDirectories" function
+                       (:parent "IconTheme"
+                        :arguments 
+                          ( ("dirs" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [11484 11508]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [11453 12131])
+                    ("CheckDirExistsAndGetMtime" function
+                       (:arguments 
+                          ( ("dir" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12164 12184])
+                            ("last_modified" variable
+                               (:pointer 1
+                                :type ("base::Time" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12216 12242]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [12133 12465])
+                    ("TryAddIconDir" function
+                       (:arguments 
+                          ( ("dir" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12556 12576]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [12537 12744])
+                    ("AddXDGDataDir" function
+                       (:arguments 
+                          ( ("dir" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12837 12857]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [12818 12991])
+                    ("InitIconDir" function (:type "void") (reparse-symbol namespacesubparts) [13030 14092])
+                    ("EnsureUpdated" function (:type "void") (reparse-symbol namespacesubparts) [14094 15253])
+                    ("LookupFallbackIcon" function
+                       (:arguments 
+                          ( ("icon_name" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15350 15379]))                          
+                        :type ("FilePath" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [15322 15944])
+                    ("InitDefaultThemes" function (:type "void") (reparse-symbol namespacesubparts) [15988 17805])
+                    ("LookupIconInDefaultTheme" function
+                       (:arguments 
+                          ( ("icon_name" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [17912 17941])
+                            ("size" variable (:type "int") (reparse-symbol arg-sub-list) [17942 17951]))                          
+                        :type ("FilePath" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [17878 18528])
+                    ("MimeUtilConstants" function
+                       (:destructor-flag t
+                        :parent "MimeUtilConstants"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [18530 18652]))                  
+                :type "namespace")
+                nil [811 18655])
+            ("base" type
+               (:members 
+                  ( ("nix" type
+                       (:members 
+                          ( ("GetFileMimeType" function
+                               (:arguments 
+                                  ( ("filepath" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("FilePath" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [18733 18758]))                                  
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [18705 18991])
+                            ("GetDataMimeType" function
+                               (:arguments 
+                                  ( ("data" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19021 19045]))                                  
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [18993 19230])
+                            ("GetMimeIcon" function
+                               (:arguments 
+                                  ( ("mime_type" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19918 19947])
+                                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19948 19960]))                                  
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [19897 21484]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [18688 21487]))                  
+                :type "namespace")
+                nil [18671 21507]))          
+      :file "mime_util_xdg.cc"
+      :pointmax 21527
+      :fsize 21526
+      :lastmodtime '(20900 35809 48945 211000)
+      :unmatched-syntax '((punctuation 4871 . 4872) (semantic-list 4869 . 4871) (symbol 4859 . 4869) (punctuation 4858 . 4859) (symbol 4848 . 4858) (EXPLICIT 3261 . 3269) (FRIEND 2244 . 2250)))
+    (semanticdb-table "mime_util_xdg.h"
+      :file "mime_util_xdg.h"
+      :fsize 1478
+      :lastmodtime '(20900 35809 48945 211000))
+    (semanticdb-table "xdg_util.h"
+      :file "xdg_util.h"
+      :fsize 2785
+      :lastmodtime '(20900 35809 48945 211000)))
+  :file "!home!revir!workspace!safesitetask!base!nix!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

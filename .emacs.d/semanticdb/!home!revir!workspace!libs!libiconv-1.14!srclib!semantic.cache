@@ -1,0 +1,49 @@
+;; Object srclib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "srclib/"
+  :tables (list 
+   (semanticdb-table "Makefile.am"
+    :major-mode 'makefile-automake-mode
+    :tags 
+        '( ("AUTOMAKE_OPTIONS" variable (:default-value ("1.5" "gnits" "no-dependencies")) nil [891 936])
+            ("EXTRA_DIST" variable nil nil [936 949])
+            ("BUILT_SOURCES" variable nil nil [949 965])
+            ("MOSTLYCLEANFILES" variable (:default-value ("core" "*.stackdump")) nil [965 1001])
+            ("MOSTLYCLEANDIRS" variable nil nil [1001 1019])
+            ("noinst_LIBRARIES" variable nil nil [1020 1039])
+            ("AM_CPPFLAGS" variable nil nil [1040 1054])
+            ("Makefile.gnulib" include nil nil [1055 1079]))          
+    :file "Makefile.am"
+    :pointmax 1079
+    :fsize 1078
+    :lastmodtime '(19233 47523 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "progname.c"
+    :major-mode 'c-mode
+    :tags nil
+    :file "progname.c"
+    :pointmax 3177
+    :fsize 3194
+    :lastmodtime '(20871 21088 519842 823000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "Makefile.gnulib"
+    :file "Makefile.gnulib"
+    :fsize 48599
+    :lastmodtime '(20030 37253 0 0)
+    )
+   (semanticdb-table "stdio.in.h"
+    :major-mode 'c-mode
+    :tags nil
+    :file "stdio.in.h"
+    :pointmax 48458
+    :fsize 48457
+    :lastmodtime '(20871 21532 763164 400000)
+    :unmatched-syntax '((punctuation 859 . 860) (symbol 845 . 859) (punctuation 844 . 845) (punctuation 835 . 836) (symbol 815 . 835) (punctuation 814 . 815) (punctuation 859 . 860) (symbol 845 . 859) (punctuation 844 . 845) (punctuation 835 . 836) (symbol 815 . 835) (punctuation 814 . 815))
+    )
+   )
+  :file "!home!revir!workspace!libs!libiconv-1.14!srclib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

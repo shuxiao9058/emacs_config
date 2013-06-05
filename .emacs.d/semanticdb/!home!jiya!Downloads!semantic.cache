@@ -1,0 +1,18 @@
+;; Object Downloads/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Downloads/"
+  :tables
+  (list
+    (semanticdb-table "Hello.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("main" function (:type "int") nil [21 73]))          
+      :file "Hello.c"
+      :pointmax 74
+      :fsize 73
+      :lastmodtime '(20909 57372 226338 543000)
+      :unmatched-syntax nil))
+  :file "!home!jiya!Downloads!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

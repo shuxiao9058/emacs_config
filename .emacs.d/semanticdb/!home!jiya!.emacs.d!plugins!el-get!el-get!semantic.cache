@@ -1,0 +1,16 @@
+;; Object el-get/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "el-get/"
+  :tables
+  (list
+    (semanticdb-table "el-get-status.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "el-get-status.el"
+      :pointmax 13005
+      :fsize 13004
+      :lastmodtime '(20910 51968 655771 686000)
+      :unmatched-syntax nil))
+  :file "!home!jiya!.emacs.d!plugins!el-get!el-get!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

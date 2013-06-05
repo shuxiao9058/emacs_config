@@ -1,0 +1,125 @@
+;; Object safesitetask/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "safesitetask/"
+  :tables
+  (list
+    (semanticdb-table "main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("stdafx.h" include (:system-flag t) nil [1 20])
+            ("base/at_exit.h" include (:system-flag t) nil [22 47])
+            ("base/command_line.h" include (:system-flag t) nil [48 78])
+            ("base/memory/ref_counted.h" include (:system-flag t) nil [79 115])
+            ("core/TaskManager.h" include (:system-flag t) nil [116 145])
+            ("Init" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :type "int")
+                nil [149 167])
+            ("AtExit" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :type "void")
+                nil [168 189])
+            ("main" function
+               (:arguments 
+                  ( ("__argc" variable (:type "int") (reparse-symbol arg-sub-list) [301 312])
+                    ("__argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [313 333]))                  
+                :type "int")
+                nil [292 1173])
+            ("Init" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1175 1663])
+            ("AtExit" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [1665 1739]))          
+      :file "main.cpp"
+      :pointmax 1740
+      :fsize 1806
+      :lastmodtime '(20900 31992 948529 373000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Makefile"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("MAKEFLAGS" variable (:default-value ("-r")) nil [331 344])
+            ("srcdir" variable (:default-value (".")) nil [374 386])
+            ("abs_srcdir" variable (:default-value ("$(abspath $(srcdir))")) nil [386 421])
+            ("abs_builddir" variable (:default-value ("$(abspath $(builddir))")) nil [910 949])
+            ("depsdir" variable (:default-value ("$(builddir)/.deps")) nil [949 978])
+            ("obj" variable (:default-value ("$(builddir)/obj")) nil [1006 1029])
+            ("abs_obj" variable (:default-value ("$(abspath $(obj))")) nil [1029 1058])
+            ("all_deps" variable nil nil [1189 1201])
+            ("empty" variable nil nil [2314 2323])
+            ("space" variable (:default-value ("$(empty)" "$(empty)")) nil [2323 2350])
+            ("replace_spaces" variable (:default-value ("$(subst $(space),?,$1)")) nil [2443 2483])
+            ("unreplace_spaces" variable (:default-value ("$(subst ?,$(space),$1)")) nil [2483 2525])
+            ("dirx" variable (:default-value ("$(call unreplace_spaces,$(dir $(call replace_spaces,$1)))")) nil [2525 2590])
+            ("depfile" variable (:default-value ("$(depsdir)/$(call replace_spaces,$@).d")) nil [2847 2896])
+            ("DEPFLAGS" variable (:default-value ("-MMD" "-MF" "$(depfile).raw")) nil [2896 2931])
+            ("quiet_cmd_cc" variable (:default-value ("CC($(TOOLSET))" "$@")) nil [4348 4381])
+            ("cmd_cc" variable (:default-value ("$(CC.$(TOOLSET))" "$(GYP_CFLAGS)" "$(DEPFLAGS)" "$(CFLAGS.$(TOOLSET))" "-c" "-o" "$@" "$<")) nil [4381 4466])
+            ("quiet_cmd_cxx" variable (:default-value ("CXX($(TOOLSET))" "$@")) nil [4467 4502])
+            ("cmd_cxx" variable (:default-value ("$(CXX.$(TOOLSET))" "$(GYP_CXXFLAGS)" "$(DEPFLAGS)" "$(CXXFLAGS.$(TOOLSET))" "-c" "-o" "$@" "$<")) nil [4502 4593])
+            ("quiet_cmd_touch" variable (:default-value ("TOUCH" "$@")) nil [4594 4621])
+            ("cmd_touch" variable (:default-value ("touch" "$@")) nil [4621 4642])
+            ("quiet_cmd_copy" variable (:default-value ("COPY" "$@")) nil [4643 4668])
+            ("cmd_copy" variable (:default-value ("ln" "-f" "\"$<\"" "\"$@\"" "2>/dev/null" "||" "(rm -rf \"$@\" && cp -af \"$<\" \"$@\")")) nil [4740 4816])
+            ("quiet_cmd_alink" variable (:default-value ("AR($(TOOLSET))" "$@")) nil [4817 4853])
+            ("cmd_alink" variable (:default-value ("rm" "-f" "$@" "&&" "$(AR.$(TOOLSET))" "crs" "$@" "$(filter %.o,$^)")) nil [4853 4918])
+            ("quiet_cmd_alink_thin" variable (:default-value ("AR($(TOOLSET))" "$@")) nil [4919 4960])
+            ("cmd_alink_thin" variable (:default-value ("rm" "-f" "$@" "&&" "$(AR.$(TOOLSET))" "crsT" "$@" "$(filter %.o,$^)")) nil [4960 5031])
+            ("quiet_cmd_link" variable (:default-value ("LINK($(TOOLSET))" "$@")) nil [5195 5232])
+            ("cmd_link" variable (:default-value ("$(LINK.$(TOOLSET))" "$(GYP_LDFLAGS)" "$(LDFLAGS.$(TOOLSET))" "-o" "$@" "-Wl,--start-group" "$(LD_INPUTS)" "-Wl,--end-group" "$(LIBS)")) nil [5232 5360])
+            ("quiet_cmd_solink" variable (:default-value ("SOLINK($(TOOLSET))" "$@")) nil [6116 6157])
+            ("cmd_solink" variable (:default-value ("$(LINK.$(TOOLSET))" "-shared" "$(GYP_LDFLAGS)" "$(LDFLAGS.$(TOOLSET))" "-Wl,-soname=$(@F)" "-o" "$@" "-Wl,--whole-archive" "$(LD_INPUTS)" "-Wl,--no-whole-archive" "$(LIBS)")) nil [6157 6322])
+            ("quiet_cmd_solink_module" variable (:default-value ("SOLINK_MODULE($(TOOLSET))" "$@")) nil [6323 6378])
+            ("cmd_solink_module" variable (:default-value ("$(LINK.$(TOOLSET))" "-shared" "$(GYP_LDFLAGS)" "$(LDFLAGS.$(TOOLSET))" "-Wl,-soname=$(@F)" "-o" "$@" "-Wl,--start-group" "$(filter-out FORCE_DO_CMD, $^)" "-Wl,--end-group" "$(LIBS)")) nil [6378 6559])
+            ("escape_quotes" variable (:default-value ("$(subst ','\\'',$(1))")) nil [6728 6765])
+            ("escape_vars" variable (:default-value ("$(subst $$,$$$$,$(1))")) nil [7037 7073])
+            ("exact_echo" variable (:default-value ("printf" "'%s\\n'" "'$(call escape_quotes,$(1))'")) nil [7329 7385])
+            ("command_changed" variable (:default-value ("$(or $(subst $(cmd_$(1)),,$(cmd_$(call replace_spaces,$@))),\\
+                       $(subst $(cmd_$(call replace_spaces,$@)),,$(cmd_$(1))))")) nil [8076 8235])
+            ("prereq_changed" variable (:default-value ("$(filter-out FORCE_DO_CMD,$(filter-out $|,$?))")) nil [8464 8528])
+            (".PHONY" function (:arguments ("all")) nil [9794 9806])
+            ("all" function nil nil [9806 9811])
+            ("%.d" function (:arguments (";")) nil [9997 10004])
+            (".PHONY" function (:arguments ("FORCE_DO_CMD")) nil [10084 10105])
+            ("FORCE_DO_CMD" function nil nil [10105 10119])
+            ("TOOLSET" variable (:default-value ("target")) nil [10120 10138])
+            ("$(obj)" function (:arguments ("$(srcdir)/%.c" "FORCE_DO_CMD")) nil [10187 10259])
+            ("$(obj)" function (:arguments ("$(srcdir)/%.cc" "FORCE_DO_CMD")) nil [10259 10333])
+            ("$(obj)" function (:arguments ("$(srcdir)/%.cpp" "FORCE_DO_CMD")) nil [10333 10408])
+            ("$(obj)" function (:arguments ("$(srcdir)/%.cxx" "FORCE_DO_CMD")) nil [10408 10483])
+            ("$(obj)" function (:arguments ("$(srcdir)/%.S" "FORCE_DO_CMD")) nil [10483 10555])
+            ("$(obj)" function (:arguments ("$(srcdir)/%.s" "FORCE_DO_CMD")) nil [10555 10627])
+            ("$(obj)" function (:arguments ("$(obj).$(TOOLSET)/%.c" "FORCE_DO_CMD")) nil [10671 10751])
+            ("$(obj)" function (:arguments ("$(obj).$(TOOLSET)/%.cc" "FORCE_DO_CMD")) nil [10751 10833])
+            ("$(obj)" function (:arguments ("$(obj).$(TOOLSET)/%.cpp" "FORCE_DO_CMD")) nil [10833 10916])
+            ("$(obj)" function (:arguments ("$(obj).$(TOOLSET)/%.cxx" "FORCE_DO_CMD")) nil [10916 10999])
+            ("$(obj)" function (:arguments ("$(obj).$(TOOLSET)/%.S" "FORCE_DO_CMD")) nil [10999 11079])
+            ("$(obj)" function (:arguments ("$(obj).$(TOOLSET)/%.s" "FORCE_DO_CMD")) nil [11079 11159])
+            ("$(obj)" function (:arguments ("$(obj)/%.c" "FORCE_DO_CMD")) nil [11160 11229])
+            ("$(obj)" function (:arguments ("$(obj)/%.cc" "FORCE_DO_CMD")) nil [11229 11300])
+            ("$(obj)" function (:arguments ("$(obj)/%.cpp" "FORCE_DO_CMD")) nil [11300 11372])
+            ("$(obj)" function (:arguments ("$(obj)/%.cxx" "FORCE_DO_CMD")) nil [11372 11444])
+            ("$(obj)" function (:arguments ("$(obj)/%.S" "FORCE_DO_CMD")) nil [11444 11513])
+            ("$(obj)" function (:arguments ("$(obj)/%.s" "FORCE_DO_CMD")) nil [11513 11582])
+            ("quiet_cmd_regen_makefile" variable (:default-value ("ACTION" "Regenerating" "$@")) nil [11953 12003])
+            ("cmd_regen_makefile" variable (:default-value ("/usr/bin/gyp" "-fmake" "--ignore-environment" "\"--toplevel-dir=.\"" "\"--depth=.\"" "SafeSiteTask.gyp")) nil [12003 12113])
+            ("Makefile" function (:arguments ("SafeSiteTask.gypi" "SafeSiteTask.gyp" "Release.gypi" "Debug.gypi")) nil [12113 12213])
+            ("all" function nil nil [12331 12336])
+            ("d_files" variable (:default-value ("$(wildcard $(foreach f,$(all_deps),$(depsdir)/$(f).d))")) nil [12486 12552]))          
+      :file "Makefile"
+      :pointmax 12599
+      :fsize 12598
+      :lastmodtime '(20900 35472 432268 324000)
+      :unmatched-syntax nil))
+  :file "!home!revir!workspace!new!safesitetask!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,271 @@
+;; Object bin/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bin/"
+  :tables
+  (list
+    (semanticdb-table "SafeSiteSuper.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("urllib2" include nil nil [27 41])
+            ("urllib" include nil nil [42 55])
+            ("simplejson" include nil nil [56 73])
+            ("subprocess" include nil nil [74 91])
+            ("logging" include nil nil [92 106])
+            ("os" include nil nil [107 116])
+            ("codecs" include nil nil [117 130])
+            ("os.path" include nil nil [131 161])
+            ("shutil" include nil nil [162 175])
+            ("threading" include nil nil [176 192])
+            ("socket" include nil nil [193 206])
+            ("select" include nil nil [207 220])
+            ("ipc" include nil nil [221 252])
+            ("TaskConfig" include nil nil [253 283])
+            ("url_tasks" variable nil nil [285 331])
+            ("url_deleting" variable nil nil [332 385])
+            ("url_x_server" variable nil nil [386 429])
+            ("ugagent" variable nil nil [431 472])
+            ("logfile" variable nil nil [473 503])
+            ("taskBasePath" code nil nil [504 548])
+            ("logger" variable nil nil [549 559])
+            ("debugflag" variable nil nil [560 576])
+            ("task_pool" variable nil nil [577 593])
+            ("task_process_count" variable nil nil [594 616])
+            ("safesite_task_path" variable nil nil [618 655])
+            ("task_log_level" variable nil nil [656 674])
+            ("task_log_to_console" variable nil nil [745 771])
+            ("task_update_interval" variable nil nil [830 857])
+            ("task_language" variable nil nil [930 959])
+            ("__processingQueue" variable nil nil [962 984])
+            ("__mutexQueue" variable nil nil [985 1016])
+            ("GetModuleDir" function nil nil [1018 1195])
+            ("InitLog" function (:arguments 
+              ( ("logfile" variable nil (reparse-symbol function_parameters) [1208 1215]))              ) nil [1196 1900])
+            ("SRepeatableTimer" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2005 2029])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2038 2062])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2071 2087])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2096 2116]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1950 1954])
+                            ("interval" variable nil (reparse-symbol function_parameters) [1956 1964])
+                            ("function" variable nil (reparse-symbol function_parameters) [1966 1974])
+                            ("args" variable nil (reparse-symbol function_parameters) [1976 1980])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1985 1991]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1937 2117])
+                    ("start" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2131 2135]))                          )
+                        (reparse-symbol indented_block_body) [2121 2185])
+                    ("_beginTimer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2205 2209]))                          )
+                        (reparse-symbol indented_block_body) [2189 2341])
+                    ("restart" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2357 2361]))                          )
+                        (reparse-symbol indented_block_body) [2345 2385])
+                    ("stop" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2399 2403]))                          )
+                        (reparse-symbol indented_block_body) [2390 2511])
+                    ("_run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2524 2528]))                          )
+                        (reparse-symbol indented_block_body) [2515 2763]))                  
+                :type "class")
+                nil [1901 2763])
+            ("TaskPipe" type
+               (:superclasses ("object")
+                :members 
+                  ( ("s_ok, s_read_continue" code nil (reparse-symbol indented_block_body) [2833 2861])
+                    ("e_pipe_error, e_read_error, e_write_error, e_msg_error" code nil (reparse-symbol indented_block_body) [2866 2937])
+                    ("k_duration" code nil (reparse-symbol indented_block_body) [2942 2984])
+                    ("k_max_retry" variable nil (reparse-symbol indented_block_body) [3015 3030])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3132 3155])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3165 3218])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3227 3282])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3291 3313])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3322 3343])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3352 3397])
+                            ("self, self" code nil (reparse-symbol indented_block_body) [3406 3496])
+                            ("self, self" code nil (reparse-symbol indented_block_body) [3509 3594])
+                            ("logger" code nil (reparse-symbol indented_block_body) [3604 3675]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3076 3080]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3063 3676])
+                    ("__del__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3693 3697]))                          )
+                        (reparse-symbol indented_block_body) [3681 3810])
+                    ("GetClientFd" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3831 3835]))                          )
+                        (reparse-symbol indented_block_body) [3815 3868])
+                    ("ConnectClient" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3891 3895]))                          )
+                        (reparse-symbol indented_block_body) [3873 4407])
+                    ("__ReadMsg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4426 4430]))                          )
+                        (reparse-symbol indented_block_body) [4412 7060])
+                    ("__ProcessMsg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7083 7087]))                          )
+                        (reparse-symbol indented_block_body) [7066 7929])
+                    ("__ProcessMsg_Header" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7984 7988]))                          )
+                        (reparse-symbol indented_block_body) [7960 8766])
+                    ("__SendMsg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8785 8789])
+                            ("body_msg" variable nil (reparse-symbol function_parameters) [8791 8799])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [8801 8808]))                          )
+                        (reparse-symbol indented_block_body) [8771 9516])
+                    ("__Send_Hello" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9538 9542]))                          )
+                        (reparse-symbol indented_block_body) [9521 9697])
+                    ("__KeepAlive" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9722 9726]))                          )
+                        (reparse-symbol indented_block_body) [9706 9874])
+                    ("SendMsg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9891 9895])
+                            ("body_msg" variable nil (reparse-symbol function_parameters) [9897 9905])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [9907 9914]))                          )
+                        (reparse-symbol indented_block_body) [9879 10046])
+                    ("PostMsg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10067 10071])
+                            ("body_msg" variable nil (reparse-symbol function_parameters) [10073 10081]))                          )
+                        (reparse-symbol indented_block_body) [10055 10338])
+                    ("ReadMsg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10355 10359]))                          )
+                        (reparse-symbol indented_block_body) [10343 10546]))                  
+                :type "class")
+                nil [2765 10546])
+            ("TaskPool" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [10654 10675])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10684 10703])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10712 10735])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10744 10775])
+                            ("for" code nil (reparse-symbol indented_block_body) [10817 11081])
+                            ("if" code nil (reparse-symbol indented_block_body) [11106 11205])
+                            ("logger" code nil (reparse-symbol indented_block_body) [11214 11275])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11284 11327]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10639 10643]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10626 11328])
+                    ("GetCount" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11346 11350]))                          )
+                        (reparse-symbol indented_block_body) [11333 11386])
+                    ("GetAvailableProcess" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11415 11419])
+                            ("remain" variable nil (reparse-symbol function_parameters) [11421 11427]))                          )
+                        (reparse-symbol indented_block_body) [11391 12142])
+                    ("ReleaseTask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12163 12167])
+                            ("taskIndex" variable nil (reparse-symbol function_parameters) [12169 12178]))                          )
+                        (reparse-symbol indented_block_body) [12147 12712])
+                    ("GetAvailableCount" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12739 12743]))                          )
+                        (reparse-symbol indented_block_body) [12717 12783])
+                    ("Reset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12802 12806])
+                            ("task_index" variable nil (reparse-symbol function_parameters) [12808 12818]))                          )
+                        (reparse-symbol indented_block_body) [12792 13420])
+                    ("__CreateTaskProcess" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13449 13453]))                          )
+                        (reparse-symbol indented_block_body) [13425 14737]))                  
+                :type "class")
+                nil [10547 14737])
+            ("delete_task" function (:arguments 
+              ( ("absPath" variable nil (reparse-symbol function_parameters) [14754 14761]))              ) nil [14738 15347])
+            ("reply_x" function (:arguments 
+              ( ("taskURL" variable nil (reparse-symbol function_parameters) [15360 15367])
+                ("options" variable nil (reparse-symbol function_parameters) [15369 15376]))              ) nil [15348 16339])
+            ("reply_x_failing" function (:arguments 
+              ( ("replyUrl" variable nil (reparse-symbol function_parameters) [16360 16368])
+                ("resultPath" variable nil (reparse-symbol function_parameters) [16370 16380])
+                ("info" variable nil (reparse-symbol function_parameters) [16382 16386]))              ) nil [16340 17167])
+            ("task_detectsite" function (:arguments 
+              ( ("taskoptions" variable nil (reparse-symbol function_parameters) [17188 17199]))              ) nil [17168 18768])
+            ("task_start" function (:arguments 
+              ( ("taskoptions" variable nil (reparse-symbol function_parameters) [18784 18795]))              ) nil [18769 28947])
+            ("task_progress" function (:arguments 
+              ( ("task_index" variable nil (reparse-symbol function_parameters) [28966 28976])
+                ("task_pipe" variable nil (reparse-symbol function_parameters) [28978 28987])
+                ("x_url" variable nil (reparse-symbol function_parameters) [28989 28994])
+                ("reportPath" variable nil (reparse-symbol function_parameters) [28996 29006])
+                ("resultPath" variable nil (reparse-symbol function_parameters) [29008 29018]))              ) nil [28948 33823])
+            ("process_task" function (:arguments 
+              ( ("taskoptions" variable nil (reparse-symbol function_parameters) [33849 33862]))              ) nil [33832 35116])
+            ("request_tasks" function nil nil [35134 35980])
+            ("request_deleting_tasks" function nil nil [36004 37020])
+            ("if" code nil nil [37025 37422]))          
+      :file "SafeSiteSuper.py"
+      :pointmax 37582
+      :fsize 37581
+      :lastmodtime '(20905 64391 376662 377000)
+      :unmatched-syntax nil)
+    (semanticdb-table "TaskConfig.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("taskcfg" variable nil nil [1 946]))          
+      :file "TaskConfig.py"
+      :pointmax 947
+      :fsize 946
+      :lastmodtime '(20900 35808 158945 185000)
+      :unmatched-syntax nil))
+  :file "!home!revir!workspace!safesitetask!bin!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,1013 @@
+;; Object .emacs.d/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file ".emacs.d/"
+  :tables
+  (list
+    (semanticdb-table "makefile-runner.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("makefile-runner--makefile" variable nil nil [1640 1899])
+            ("makefile-runner--makefiles" variable (:default-value (quote (("Makefile" makefile-runner--get-targets-make "cd %s; make %s") ("build.xml" makefile-runner--get-targets-ant "cd %s; ant %s")))) nil [1917 2210])
+            ("makefile-runner--last-target" variable nil nil [2212 2283])
+            ("makefile-runner--hist" variable nil nil [2285 2351])
+            ("makefile-runner--find-makefile" function nil nil [2353 3531])
+            ("makefile-runner--get-targets-make" function (:arguments ("file")) nil [3533 4218])
+            ("makefile-runner--get-targets-ant" function (:arguments ("file")) nil [4220 4673])
+            ("makefile-runner--get-targets" function (:arguments ("file")) nil [4678 5010])
+            ("makefile-runner" function
+               (:user-visible-flag t
+                :arguments ("target" "makefile"))
+                nil [5027 6823])
+            ("makefile-runner" package nil nil [6825 6851]))          
+      :file "makefile-runner.el"
+      :pointmax 6886
+      :fsize 6885
+      :lastmodtime '(20910 51908 952761 792000)
+      :unmatched-syntax nil)
+    (semanticdb-table "python.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ansi-color" include nil nil [8874 8895])
+            ("comint" include nil nil [8896 8913])
+            ("outline-heading-end-regexp" variable nil nil [9055 9090])
+            ("compilation-error-regexp-alist" variable nil nil [9013 9052])
+            ("view-return-to-alist" variable nil nil [8981 9010])
+            ("cl" include nil nil [8936 8949])
+            ("comint-mode" function (:prototype-flag t) nil [9093 9125])
+            ("add-to-list" code nil nil [9142 9215])
+            ("add-to-list" code nil nil [9231 9308])
+            ("python" customgroup (:user-visible-flag t) nil [9310 9466])
+            ("python-mode-map" variable (:default-value (let ((map (make-sparse-keymap))) (define-key map [remap backward-sentence] (quote python-nav-backward-block)) (define-key map [remap forward-sentence] (quote python-nav-forward-block)) (define-key map [remap backward-up-list] (quote python-nav-backward-up-list)) (define-key map "
+" (quote imenu)) (define-key map "" (quote python-indent-dedent-line-backspace)) (define-key map (kbd "<backtab>") (quote python-indent-dedent-line)) (define-key map "<" (quote python-indent-shift-left)) (define-key map ">" (quote python-indent-shift-right)) (define-key map ":" (quote python-indent-electric-colon)) (define-key map "c" (quote python-skeleton-class)) (define-key map "d" (quote python-skeleton-def)) (define-key map "f" (quote python-skeleton-for)) (define-key map "i" (quote python-skeleton-if)) (define-key map "t" (quote python-skeleton-try)) (define-key map "w" (quote python-skeleton-while)) (define-key map "" (quote run-python)) (define-key map "" (quote python-shell-send-string)) (define-key map "" (quote python-shell-send-region)) (define-key map "\230" (quote python-shell-send-defun)) (define-key map "" (quote python-shell-send-buffer)) (define-key map "" (quote python-shell-send-file)) (define-key map "" (quote python-shell-switch-to-shell)) (define-key map "" (quote python-check)) (define-key map "" (quote python-eldoc-at-point)) (substitute-key-definition (quote complete-symbol) (quote completion-at-point) map global-map) (easy-menu-define python-menu map "Python Mode menu" (\` ("Python" :help "Python-specific Features" ["Shift region left" python-indent-shift-left :active mark-active :help "Shift region left by a single indentation step"] ["Shift region right" python-indent-shift-right :active mark-active :help "Shift region right by a single indentation step"] "-" ["Start of def/class" beginning-of-defun :help "Go to start of outermost definition around point"] ["End of def/class" end-of-defun :help "Go to end of definition around point"] ["Mark def/class" mark-defun :help "Mark outermost definition around point"] ["Jump to def/class" imenu :help "Jump to a class or function definition"] "--" ("Skeletons") "---" ["Start interpreter" run-python :help "Run inferior Python process in a separate buffer"] ["Switch to shell" python-shell-switch-to-shell :help "Switch to running inferior Python process"] ["Eval string" python-shell-send-string :help "Eval string in inferior Python session"] ["Eval buffer" python-shell-send-buffer :help "Eval buffer in inferior Python session"] ["Eval region" python-shell-send-region :help "Eval region in inferior Python session"] ["Eval defun" python-shell-send-defun :help "Eval defun in inferior Python session"] ["Eval file" python-shell-send-file :help "Eval file in inferior Python session"] ["Debugger" pdb :help "Run pdb under GUD"] "----" ["Check file" python-check :help "Check file for errors"] ["Help on symbol" python-eldoc-at-point :help "Get help on symbol at point"] ["Complete symbol" completion-at-point :help "Complete symbol before point"]))) map)) nil [9484 13125])
+            ("python-rx" function (:arguments ("regexps")) nil [15476 15887])
+            ("python-rx-constituents" variable
+               (:constant-flag t
+                :default-value (\` ((block-start \, (rx symbol-start (or "def" "class" "if" "elif" "else" "try" "except" "finally" "for" "while" "with") symbol-end)) (decorator \, (rx line-start (* space) 64 (any letter 95) (* (any word 95)))) (defun \, (rx symbol-start (or "def" "class") symbol-end)) (if-name-main \, (rx line-start "if" (+ space) "__name__" (+ space) "==" (+ space) (any 39 34) "__main__" (any 39 34) (* space) 58)) (symbol-name \, (rx (any letter 95) (* (any word 95)))) (open-paren \, (rx (or "{" "[" "("))) (close-paren \, (rx (or "}" "]" ")"))) (simple-operator \, (rx (any 43 45 47 38 94 126 124 42 60 62 61 37))) (not-simple-operator \, (rx (not (any 43 45 47 38 94 126 124 42 60 62 61 37)))) (operator \, (rx (or "+" "-" "/" "&" "^" "~" "|" "*" "<" ">" "=" "%" "**" "//" "<<" ">>" "<=" "!=" "==" ">=" "is" "not"))) (assignment-operator \, (rx (or "=" "+=" "-=" "*=" "/=" "//=" "%=" "**=" ">>=" "<<=" "&=" "^=" "|="))) (string-delimiter \, (rx (and (or (not (any 92 39 34)) point (and (or (not (any 92)) point) 92 (* 92 92) (any 39 34))) (* 92 92) (group (or "\"" "\"\"\"" "'" "'''"))))))))
+                nil [13177 15472])
+            ("python-syntax-context" function (:arguments ("type" "syntax-ppss")) nil [15918 16347])
+            ("python-syntax-context-type" function (:arguments ("syntax-ppss")) nil [16349 16652])
+            ("python-syntax-comment-or-string-p" function nil nil [16654 16784])
+            ("define-obsolete-function-alias" code nil nil [16786 16877])
+            ("define-obsolete-function-alias" code nil nil [16879 16980])
+            ("define-obsolete-function-alias" code nil nil [16982 17099])
+            ("python-font-lock-keywords" variable (:default-value (\` ((\, (rx symbol-start (or "and" "del" "from" "not" "while" "as" "elif" "global" "or" "with" "assert" "else" "if" "pass" "yield" "break" "except" "import" "class" "in" "raise" "continue" "finally" "is" "return" "def" "for" "lambda" "try" "print" "exec" "nonlocal" "self") symbol-end)) ((\, (rx symbol-start "def" (1+ space) (group (1+ (or word 95))))) (1 font-lock-function-name-face)) ((\, (rx symbol-start "class" (1+ space) (group (1+ (or word 95))))) (1 font-lock-type-face)) ((\, (rx symbol-start (or "Ellipsis" "False" "None" "NotImplemented" "True" "__debug__" "copyright" "credits" "exit" "license" "quit") symbol-end)) . font-lock-constant-face) ((\, (rx line-start (* (any " 	")) (group "@" (1+ (or word 95)) (0+ "." (1+ (or word 95)))))) (1 font-lock-type-face)) ((\, (rx symbol-start (or "ArithmeticError" "AssertionError" "AttributeError" "BaseException" "DeprecationWarning" "EOFError" "EnvironmentError" "Exception" "FloatingPointError" "FutureWarning" "GeneratorExit" "IOError" "ImportError" "ImportWarning" "IndexError" "KeyError" "KeyboardInterrupt" "LookupError" "MemoryError" "NameError" "NotImplementedError" "OSError" "OverflowError" "PendingDeprecationWarning" "ReferenceError" "RuntimeError" "RuntimeWarning" "StopIteration" "SyntaxError" "SyntaxWarning" "SystemError" "SystemExit" "TypeError" "UnboundLocalError" "UnicodeDecodeError" "UnicodeEncodeError" "UnicodeError" "UnicodeTranslateError" "UnicodeWarning" "UserWarning" "VMSError" "ValueError" "Warning" "WindowsError" "ZeroDivisionError" "StandardError" "BufferError" "BytesWarning" "IndentationError" "ResourceWarning" "TabError") symbol-end)) . font-lock-type-face) ((\, (rx symbol-start (or "abs" "all" "any" "bin" "bool" "callable" "chr" "classmethod" "compile" "complex" "delattr" "dict" "dir" "divmod" "enumerate" "eval" "filter" "float" "format" "frozenset" "getattr" "globals" "hasattr" "hash" "help" "hex" "id" "input" "int" "isinstance" "issubclass" "iter" "len" "list" "locals" "map" "max" "memoryview" "min" "next" "object" "oct" "open" "ord" "pow" "print" "property" "range" "repr" "reversed" "round" "set" "setattr" "slice" "sorted" "staticmethod" "str" "sum" "super" "tuple" "type" "vars" "zip" "__import__" "basestring" "cmp" "execfile" "file" "long" "raw_input" "reduce" "reload" "unichr" "unicode" "xrange" "apply" "buffer" "coerce" "intern" "ascii" "bytearray" "bytes" "exec" "__all__" "__doc__" "__name__" "__package__") symbol-end)) . font-lock-builtin-face) ((\, (lambda (limit) (let ((re (python-rx (group (+ (any word 46 95))) (32 91 (+ (not (any 93))) 93) (* space) assignment-operator))) (when (re-search-forward re limit t) (while (and (python-syntax-context (quote paren)) (re-search-forward re limit t))) (if (and (not (python-syntax-context (quote paren))) (not (equal (char-after (point-marker)) 61))) t (set-match-data nil)))))) (1 font-lock-variable-name-face nil nil)) ((\, (lambda (limit) (let ((re (python-rx (group (+ (any word 46 95))) (* space) (* 44 (* space) (+ (any word 46 95)) (* space)) 44 (* space) (+ (any word 46 95)) (* space) assignment-operator))) (when (and (re-search-forward re limit t) (goto-char (nth 3 (match-data)))) (while (and (python-syntax-context (quote paren)) (re-search-forward re limit t)) (goto-char (nth 3 (match-data)))) (if (not (python-syntax-context (quote paren))) t (set-match-data nil)))))) (1 font-lock-variable-name-face nil nil))))) nil [17101 22259])
+            ("python-syntax-propertize-function" variable
+               (:constant-flag t
+                :default-value (syntax-propertize-rules ((python-rx string-delimiter) (0 (ignore (python-syntax-stringify))))))
+                nil [22261 22410])
+            ("python-syntax-count-quotes" function (:arguments ("quote-char" "point" "limit")) nil [22412 22871])
+            ("python-syntax-stringify" function nil nil [22873 24503])
+            ("python-mode-syntax-table" variable (:default-value (let ((table (make-syntax-table))) (let ((symbol (string-to-syntax "_")) (sst (standard-syntax-table))) (dotimes (i 128) (unless (= i 95) (if (equal symbol (aref sst i)) (modify-syntax-entry i "." table))))) (modify-syntax-entry 36 "." table) (modify-syntax-entry 37 "." table) (modify-syntax-entry 35 "<" table) (modify-syntax-entry 10 ">" table) (modify-syntax-entry 39 "\"" table) (modify-syntax-entry 96 "$" table) table)) nil [24505 25218])
+            ("python-dotty-syntax-table" variable (:default-value (let ((table (make-syntax-table python-mode-syntax-table))) (modify-syntax-entry 46 "w" table) (modify-syntax-entry 95 "w" table) table)) nil [25220 25500])
+            ("python-indent-offset" variable (:default-value 4) nil [25521 25650])
+            ("python-indent-guess-indent-offset" variable (:default-value t) nil [25652 25820])
+            ("python-indent-trigger-commands" variable (:default-value (quote (indent-for-tab-command yas-expand yas/expand))) nil [25822 26017])
+            ("define-obsolete-variable-alias" code nil nil [26019 26097])
+            ("define-obsolete-variable-alias" code nil nil [26099 26196])
+            ("python-indent-current-level" variable nil nil [26198 26306])
+            ("python-indent-levels" variable (:default-value (quote (0))) nil [26308 26413])
+            ("python-indent-dedenters" variable (:default-value (quote ("else" "elif" "except" "finally"))) nil [26415 26621])
+            ("python-indent-guess-indent-offset" function (:user-visible-flag t) nil [26623 28135])
+            ("python-indent-context" function nil nil [28137 30910])
+            ("python-indent-calculate-indentation" function nil nil [30912 38384])
+            ("python-indent-calculate-levels" function nil nil [38386 39082])
+            ("python-indent-toggle-levels" function nil nil [39084 39379])
+            ("python-indent-line" function (:arguments ("force-toggle")) nil [39381 41256])
+            ("python-indent-line-function" function nil nil [41258 41401])
+            ("python-indent-dedent-line" function (:user-visible-flag t) nil [41403 41768])
+            ("python-indent-dedent-line-backspace" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [41770 42056])
+            ("put" code nil nil [42057 42128])
+            ("python-indent-region" function (:arguments ("start" "end")) nil [42130 43413])
+            ("python-indent-shift-left" function
+               (:user-visible-flag t
+                :arguments ("start" "end" "count"))
+                nil [43415 44438])
+            ("add-to-list" code nil nil [44440 44507])
+            ("python-indent-shift-right" function
+               (:user-visible-flag t
+                :arguments ("start" "end" "count"))
+                nil [44509 45161])
+            ("python-indent-electric-colon" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [45163 45999])
+            ("put" code nil nil [46000 46055])
+            ("python-indent-post-self-insert-function" function nil nil [46057 46877])
+            ("python-nav-beginning-of-defun-regexp" variable (:default-value (python-rx line-start (* space) defun (+ space) (group symbol-name))) nil [46897 47146])
+            ("python-nav--beginning-of-defun" function (:arguments ("arg")) nil [47148 49151])
+            ("python-nav-beginning-of-defun" function (:arguments ("arg")) nil [49153 49877])
+            ("python-nav-end-of-defun" function (:user-visible-flag t) nil [49879 50645])
+            ("python-nav-beginning-of-statement" function (:user-visible-flag t) nil [50647 51143])
+            ("python-nav-end-of-statement" function
+               (:user-visible-flag t
+                :arguments ("noend"))
+                nil [51145 52806])
+            ("python-nav-backward-statement" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [52808 53043])
+            ("python-nav-forward-statement" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [53045 53581])
+            ("python-nav-beginning-of-block" function (:user-visible-flag t) nil [53583 54651])
+            ("python-nav-end-of-block" function (:user-visible-flag t) nil [54653 55253])
+            ("python-nav-backward-block" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [55255 55482])
+            ("python-nav-forward-block" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [55484 56436])
+            ("python-nav-lisp-forward-sexp-safe" function (:arguments ("arg")) nil [56438 57000])
+            ("python-nav--forward-sexp" function (:arguments ("dir")) nil [57002 61521])
+            ("python-nav--backward-sexp" function nil nil [61523 61618])
+            ("python-nav-forward-sexp" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [61620 61985])
+            ("python-nav--up-list" function (:arguments ("dir")) nil [61987 63570])
+            ("python-nav-up-list" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [63572 64030])
+            ("python-nav-backward-up-list" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [64032 64386])
+            ("python-shell-buffer-name" variable (:default-value "Python") nil [64413 64556])
+            ("python-shell-interpreter" variable (:default-value "python") nil [64558 64678])
+            ("python-shell-internal-buffer-name" variable (:default-value "Python Internal") nil [64680 64854])
+            ("python-shell-interpreter-args" variable (:default-value "-i") nil [64856 64985])
+            ("python-shell-prompt-regexp" variable (:default-value ">>> ") nil [64987 65207])
+            ("python-shell-prompt-block-regexp" variable (:default-value "[.][.][.] ") nil [65209 65436])
+            ("python-shell-prompt-output-regexp" variable nil nil [65438 65651])
+            ("python-shell-prompt-pdb-regexp" variable (:default-value "[(<]*[Ii]?[Pp]db[>)]+ ") nil [65653 65888])
+            ("python-shell-enable-font-lock" variable (:default-value t) nil [65890 66132])
+            ("python-shell-process-environment" variable nil nil [66134 66518])
+            ("python-shell-extra-pythonpaths" variable nil nil [66520 66784])
+            ("python-shell-exec-path" variable nil nil [66786 67128])
+            ("python-shell-virtualenv-path" variable nil nil [67130 67458])
+            ("python-shell-setup-codes" variable (:default-value (quote (python-shell-completion-setup-code python-ffap-setup-code python-eldoc-setup-code))) nil [67460 67771])
+            ("python-shell-compilation-regexp-alist" variable (:default-value (\` (((\, (rx line-start (1+ (any " 	")) "File \"" (group (1+ (not (any "\"<")))) "\", line " (group (1+ digit)))) 1 2) ((\, (rx " in file " (group (1+ not-newline)) " on line " (group (1+ digit)))) 1 2) ((\, (rx line-start "> " (group (1+ (not (any "(\"<")))) "(" (group (1+ digit)) ")" (1+ (not (any "("))) "()")) 1 2)))) nil [67773 68315])
+            ("python-shell-get-process-name" function (:arguments ("dedicated")) nil [68317 68874])
+            ("python-shell-internal-get-process-name" function nil nil [68876 69827])
+            ("python-shell-parse-command" function nil nil [69829 70186])
+            ("python-shell-calculate-process-environment" function nil nil [70188 71276])
+            ("python-shell-calculate-exec-path" function nil nil [71278 71644])
+            ("python-comint-output-filter-function" function (:arguments ("output")) nil [71646 71840])
+            ("python-shell--parent-buffer" variable nil nil [71842 71882])
+            ("python-shell-output-syntax-table" variable (:default-value (let ((table (make-syntax-table python-dotty-syntax-table))) (modify-syntax-entry 39 "." table) (modify-syntax-entry 34 "." table) (modify-syntax-entry 40 "." table) (modify-syntax-entry 91 "." table) (modify-syntax-entry 123 "." table) (modify-syntax-entry 41 "." table) (modify-syntax-entry 93 "." table) (modify-syntax-entry 125 "." table) table)) nil [71884 72414])
+            ("define-derived-mode" code nil nil [72416 75958])
+            ("python-shell-make-comint" function (:arguments ("cmd" "proc-name" "pop" "internal")) nil [75960 77459])
+            ("run-python" function
+               (:user-visible-flag t
+                :arguments ("cmd" "dedicated" "show"))
+                nil [77476 78459])
+            ("run-python-internal" function nil nil [78461 79393])
+            ("python-shell-get-process" function nil nil [79395 80101])
+            ("python-shell-get-or-create-process" function nil nil [80103 81039])
+            ("python-shell-internal-buffer" variable nil nil [81041 81242])
+            ("python-shell-internal-last-output" variable nil nil [81244 81440])
+            ("python-shell-internal-get-or-create-process" function nil nil [81442 82175])
+            ("define-obsolete-function-alias" code nil nil [82177 82276])
+            ("define-obsolete-variable-alias" code nil nil [82278 82364])
+            ("define-obsolete-variable-alias" code nil nil [82366 82467])
+            ("python-shell-send-string" function
+               (:user-visible-flag t
+                :arguments ("string" "process" "msg"))
+                nil [82469 83565])
+            ("python-shell-output-filter-in-progress" variable nil nil [83567 83618])
+            ("python-shell-output-filter-buffer" variable nil nil [83619 83665])
+            ("python-shell-output-filter" function (:arguments ("string")) nil [83667 85271])
+            ("python-shell-send-string-no-output" function (:arguments ("string" "process" "msg")) nil [85273 86243])
+            ("python-shell-internal-send-string" function (:arguments ("string")) nil [86245 86834])
+            ("define-obsolete-function-alias" code nil nil [86836 86933])
+            ("define-obsolete-function-alias" code nil nil [86935 87031])
+            ("python-shell-send-region" function
+               (:user-visible-flag t
+                :arguments ("start" "end"))
+                nil [87033 87448])
+            ("python-shell-send-buffer" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [87450 87970])
+            ("python-shell-send-defun" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [87972 88645])
+            ("python-shell-send-file" function
+               (:user-visible-flag t
+                :arguments ("file-name" "process" "temp-file-name"))
+                nil [88647 89807])
+            ("python-shell-switch-to-shell" function (:user-visible-flag t) nil [89809 89984])
+            ("python-shell-send-setup-code" function nil nil [89986 90379])
+            ("add-hook" code nil nil [90381 90459])
+            ("python-shell-completion-setup-code" variable (:default-value "try:
+    import readline
+except ImportError:
+    def __COMPLETER_all_completions(text): []
+else:
+    import rlcompleter
+    readline.set_completer(rlcompleter.Completer().complete)
+    def __COMPLETER_all_completions(text):
+        import sys
+        completions = []
+        try:
+            i = 0
+            while True:
+                res = readline.get_completer()(text, i)
+                if not res: break
+                i += 1
+                completions.append(res)
+        except NameError:
+            pass
+        return completions") nil [90485 91178])
+            ("python-shell-completion-string-code" variable (:default-value "';'.join(__COMPLETER_all_completions('''%s'''))
+") nil [91180 91391])
+            ("python-shell-completion-module-string-code" variable nil nil [91393 91796])
+            ("python-shell-completion-pdb-string-code" variable (:default-value "';'.join(globals().keys() + locals().keys())") nil [91798 92007])
+            ("python-shell-completion-get-completions" function (:arguments ("process" "line" "input")) nil [92009 94267])
+            ("python-shell-completion-complete-at-point" function (:arguments ("process")) nil [94269 95847])
+            ("python-shell-completion-complete-or-indent" function (:user-visible-flag t) nil [95849 96265])
+            ("python-pdbtrack-activate" variable (:default-value t) nil [96296 96437])
+            ("python-pdbtrack-stacktrace-info-regexp" variable (:default-value "^> \\([^\"(<]+\\)(\\([0-9]+\\))\\([?a-zA-Z0-9_<>]+\\)()") nil [96439 96716])
+            ("python-pdbtrack-tracked-buffer" variable nil nil [96718 96910])
+            ("python-pdbtrack-buffers-to-kill" variable nil nil [96912 97015])
+            ("python-pdbtrack-set-tracked-buffer" function (:arguments ("file-name")) nil [97017 97563])
+            ("python-pdbtrack-comint-output-filter-function" function (:arguments ("output")) nil [97565 100428])
+            ("python-completion-complete-at-point" function nil nil [100455 100895])
+            ("add-to-list" code nil nil [100897 101001])
+            ("python-fill-comment-function" variable (:default-value (quote python-fill-comment)) nil [101025 101221])
+            ("python-fill-string-function" variable (:default-value (quote python-fill-string)) nil [101223 101415])
+            ("python-fill-decorator-function" variable (:default-value (quote python-fill-decorator)) nil [101417 101621])
+            ("python-fill-paren-function" variable (:default-value (quote python-fill-paren)) nil [101623 101811])
+            ("python-fill-docstring-style" variable (:default-value (quote pep-257)) nil [101813 103513])
+            ("python-fill-paragraph" function
+               (:user-visible-flag t
+                :arguments ("justify"))
+                nil [103515 104780])
+            ("python-fill-comment" function (:arguments ("justify")) nil [104782 104982])
+            ("python-fill-string" function (:arguments ("justify")) nil [104984 108305])
+            ("python-fill-decorator" function (:arguments ("justify")) nil [108307 108480])
+            ("python-fill-paren" function (:arguments ("justify")) nil [108482 109621])
+            ("python-skeleton-autoinsert" variable nil nil [109640 109890])
+            ("define-obsolete-variable-alias" code nil nil [109892 109983])
+            ("python-skeleton-available" variable (:default-value (quote nil)) nil [109985 110065])
+            ("define-abbrev-table" code nil nil [110067 110447])
+            ("python-skeleton-define" function (:arguments ("name" "doc" "skel")) nil [110449 111125])
+            ("python-define-auxiliary-skeleton" function (:arguments ("name" "doc" "skel")) nil [111127 111827])
+            ("python-define-auxiliary-skeleton" code nil nil [111829 111872])
+            ("python-define-auxiliary-skeleton" code nil nil [111874 111919])
+            ("python-define-auxiliary-skeleton" code nil nil [111921 111967])
+            ("python-skeleton-define" code nil nil [111969 112142])
+            ("python-skeleton-define" code nil nil [112144 112256])
+            ("python-skeleton-define" code nil nil [112258 112371])
+            ("python-skeleton-define" code nil nil [112373 112597])
+            ("python-skeleton-define" code nil nil [112599 112842])
+            ("python-skeleton-define" code nil nil [112844 113076])
+            ("python-skeleton-add-menu-items" function nil nil [113078 113455])
+            ("python-ffap-setup-code" variable (:default-value "def __FFAP_get_module_path(module):
+    try:
+        import os
+        path = __import__(module).__file__
+        if path[-4:] == '.pyc' and os.path.exists(path[0:-1]):
+            path = path[:-1]
+        return path
+    except:
+        return ''") nil [113468 113825])
+            ("python-ffap-string-code" variable (:default-value "__FFAP_get_module_path('''%s''')
+") nil [113827 113998])
+            ("python-ffap-module-path" function (:arguments ("module")) nil [114000 114545])
+            ("eval-after-load" code nil nil [114547 114719])
+            ("python-check-command" variable (:default-value "pyflakes") nil [114739 114858])
+            ("python-check-buffer-name" variable (:default-value "*Python check: %s*") nil [114860 114993])
+            ("python-check-custom-command" variable nil nil [114995 115053])
+            ("python-check" function
+               (:user-visible-flag t
+                :arguments ("command"))
+                nil [115055 116122])
+            ("python-eldoc-setup-code" variable (:default-value "def __PYDOC_get_help(obj):
+    try:
+        import inspect
+        if hasattr(obj, 'startswith'):
+            obj = eval(obj, globals())
+        doc = inspect.getdoc(obj)
+        if not doc and callable(obj):
+            target = None
+            if inspect.isclass(obj) and hasattr(obj, '__init__'):
+                target = obj.__init__
+                objtype = 'class'
+            else:
+                target = obj
+                objtype = 'def'
+            if target:
+                args = inspect.formatargspec(
+                    *inspect.getargspec(target)
+                )
+                name = obj.__name__
+                doc = '{objtype} {name}{args}'.format(
+                    objtype=objtype, name=name, args=args
+                )
+        else:
+            doc = doc.splitlines()[0]
+    except:
+        doc = ''
+    try:
+        exec('print doc')
+    except SyntaxError:
+        print(doc)") nil [116137 117172])
+            ("python-eldoc-string-code" variable (:default-value "__PYDOC_get_help('''%s''')
+") nil [117174 117350])
+            ("python-eldoc--get-doc-at-point" function (:arguments ("force-input" "force-process")) nil [117352 118051])
+            ("python-eldoc-function" function nil nil [118053 118325])
+            ("python-eldoc-at-point" function
+               (:user-visible-flag t
+                :arguments ("symbol"))
+                nil [118327 118797])
+            ("add-to-list" code nil nil [118799 118898])
+            ("python-imenu-prev-index-position" function nil nil [118913 119319])
+            ("python-info-current-defun" function (:arguments ("include-type")) nil [119341 122374])
+            ("python-info-current-symbol" function (:arguments ("replace-self")) nil [122376 123300])
+            ("python-info-statement-starts-block-p" function nil nil [123302 123504])
+            ("python-info-statement-ends-block-p" function nil nil [123506 123908])
+            ("python-info-beginning-of-statement-p" function nil nil [123910 124120])
+            ("python-info-end-of-statement-p" function nil nil [124122 124314])
+            ("python-info-beginning-of-block-p" function nil nil [124316 124506])
+            ("python-info-end-of-block-p" function nil nil [124508 124678])
+            ("python-info-closing-block" function nil nil [124680 125861])
+            ("python-info-closing-block-message" function (:arguments ("closing-block-point")) nil [125863 126504])
+            ("python-info-line-ends-backslash-p" function (:arguments ("line-number")) nil [126506 127090])
+            ("python-info-beginning-of-backslash" function (:arguments ("line-number")) nil [127092 127675])
+            ("python-info-continuation-line-p" function nil nil [127677 129233])
+            ("python-info-block-continuation-line-p" function nil nil [129235 129537])
+            ("python-info-assignment-continuation-line-p" function nil nil [129539 130363])
+            ("python-info-looking-at-beginning-of-defun" function (:arguments ("syntax-ppss")) nil [130365 130691])
+            ("python-info-current-line-comment-p" function nil nil [130693 130880])
+            ("python-info-current-line-empty-p" function nil nil [130882 131220])
+            ("python-util-goto-line" function (:arguments ("line-number")) nil [131247 131381])
+            ("python-util-clone-local-variables" function (:arguments ("from-buffer" "regexp")) nil [131407 131877])
+            ("python-util-forward-comment" function (:arguments ("direction")) nil [131879 132294])
+            ("define-derived-mode" code nil nil [132313 135362])
+            ("python" package nil nil [135365 135382]))          
+      :file "python.el"
+      :pointmax 135479
+      :fsize 135479
+      :lastmodtime '(20910 51908 992761 575000)
+      :unmatched-syntax '((close-paren 15887 . 15888) (symbol 13157 . 13174) (open-paren 13156 . 13157) (close-paren 9090 . 9091) (symbol 8916 . 8933) (open-paren 8915 . 8916)))
+    (semanticdb-table "pos-tip.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("pos-tip-version" variable
+               (:constant-flag t
+                :default-value "0.4.5")
+                nil [159 193])
+            ("pos-tip-border-width" variable (:default-value 1) nil [6444 6520])
+            ("pos-tip-internal-border-width" variable (:default-value 2) nil [6522 6600])
+            ("pos-tip-foreground-color" variable (:default-value "black") nil [6602 6694])
+            ("pos-tip-background-color" variable (:default-value "lightyellow") nil [6696 6794])
+            ("pos-tip-tab-width" variable nil nil [6796 6968])
+            ("pos-tip-use-relative-coordinates" variable nil nil [6970 7327])
+            ("pos-tip-window-system" function (:arguments ("frame")) nil [7485 7924])
+            ("pos-tip-normalize-natnum" function (:arguments ("object" "n")) nil [7926 8179])
+            ("pos-tip-saved-frame-coordinates" variable (:default-value (quote (0 . 0))) nil [8181 8293])
+            ("pos-tip-frame-offset" variable nil nil [8295 8439])
+            ("pos-tip-frame-offset-array" variable (:default-value [nil nil nil nil]) nil [8441 8805])
+            ("pos-tip-frame-top-left-coordinates" function (:arguments ("frame")) nil [8807 10642])
+            ("pos-tip-frame-relative-position" function (:arguments ("frame1" "frame2" "w32-frame" "frame-coord1" "frame-coord2")) nil [10644 12045])
+            ("pos-tip-upperside-p" variable nil nil [12047 12211])
+            ("pos-tip-w32-saved-max-width-height" variable nil nil [12213 12413])
+            ("pos-tip-compute-pixel-position" function (:arguments ("pos" "window" "pixel-width" "pixel-height" "frame-coordinates" "dx" "dy")) nil [12415 16646])
+            ("pos-tip-cancel-timer" function nil nil [16648 16816])
+            ("pos-tip-avoid-mouse" function (:arguments ("left" "right" "top" "bottom" "frame")) nil [16818 18013])
+            ("pos-tip-show-no-propertize" function (:arguments ("string" "tip-color" "pos" "window" "timeout" "pixel-width" "pixel-height" "frame-coordinates" "dx" "dy")) nil [18015 22484])
+            ("pos-tip-split-string" function (:arguments ("string" "width" "margin" "justify" "squeeze" "max-rows")) nil [22486 24408])
+            ("pos-tip-fill-string" function (:arguments ("string" "width" "margin" "justify" "squeeze" "max-rows")) nil [24410 25903])
+            ("pos-tip-truncate-string" function (:arguments ("string" "width" "height")) nil [25905 26452])
+            ("pos-tip-string-width-height" function (:arguments ("string")) nil [26454 27026])
+            ("pos-tip-x-display-width" function (:arguments ("frame")) nil [27028 27289])
+            ("pos-tip-x-display-height" function (:arguments ("frame")) nil [27291 27553])
+            ("pos-tip-tooltip-width" function (:arguments ("width" "char-width")) nil [27555 27742])
+            ("pos-tip-tooltip-height" function (:arguments ("height" "char-height" "frame")) nil [27744 28225])
+            ("make-face" code nil nil [28227 28252])
+            ("pos-tip-show" function (:arguments ("string" "tip-color" "pos" "window" "timeout" "width" "frame-coordinates" "dx" "dy")) nil [28254 31298])
+            ("defalias" code nil nil [31300 31364])
+            ("pos-tip-calibrate-frame-offset" function (:arguments ("frame")) nil [31366 32481])
+            ("pos-tip-w32-max-width-height" function
+               (:user-visible-flag t
+                :arguments ("keep-maximize"))
+                nil [32483 33468])
+            ("pos-tip" package nil nil [33471 33489]))          
+      :file "pos-tip.el"
+      :pointmax 33520
+      :fsize 33541
+      :lastmodtime '(20910 51908 952761 792000)
+      :unmatched-syntax nil)
+    (semanticdb-table "my-base.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("global-set-key" code nil nil [283 318])
+            ("global-set-key" code nil nil [319 348])
+            ("global-set-key" code nil nil [349 381])
+            ("global-set-key" code nil nil [382 418])
+            ("global-set-key" code nil nil [419 472])
+            ("global-set-key" code nil nil [473 524])
+            ("global-set-key" code nil nil [525 576])
+            ("global-set-key" code nil nil [577 615])
+            ("global-set-key" code nil nil [616 654])
+            ("global-set-key" code nil nil [655 691])
+            ("setq" code nil nil [887 920])
+            ("setq" code nil nil [921 944])
+            ("ido-mode" code nil nil [945 957])
+            ("setq" code nil nil [958 997])
+            ("setq" code nil nil [998 1083])
+            ("open-next-line" include nil nil [1114 1139])
+            ("autopair" include nil nil [1211 1230])
+            ("autopair-global-mode" code nil nil [1231 1253])
+            ("ibuffer" include nil nil [1312 1330])
+            ("global-set-key" code nil nil [1333 1374])
+            ("setq-default" code nil nil [1423 1459])
+            ("add-hook" code nil nil [1462 1507])
+            ("linum+" include nil nil [1530 1547])
+            ("setq" code nil nil [1548 1574])
+            ("global-set-key" code nil nil [1591 1648])
+            ("global-set-key" code nil nil [1649 1706])
+            ("setq" code nil nil [1726 1769])
+            ("setq" code nil nil [1818 1852])
+            ("setq" code nil nil [1855 1895])
+            ("setq" code nil nil [1898 1938])
+            ("setq" code nil nil [1941 1982])
+            ("setq" code nil nil [1985 2019])
+            ("info-look" include nil nil [2021 2041])
+            ("info-lookup-add-help" code nil nil [2042 2149])
+            ("setq" code nil nil [2622 2652])
+            ("setq-default" code nil nil [2658 2687])
+            ("setq" code nil nil [2764 2788])
+            ("setq" code nil nil [2789 2819])
+            ("setq" code nil nil [2943 2992])
+            ("show-paren-mode" code nil nil [3004 3023])
+            ("setq" code nil nil [3024 3060])
+            ("setq" code nil nil [3319 3349])
+            ("setq" code nil nil [3365 3402])
+            ("setq" code nil nil [3439 3468])
+            ("setq" code nil nil [3749 3786])
+            ("setq" code nil nil [3835 3872])
+            ("setq" code nil nil [3935 3956])
+            ("mouse-avoidance-mode" code nil nil [3981 4012])
+            ("setq" code nil nil [4027 4055])
+            ("add-hook" code nil nil [4069 4221])
+            ("setq-default" code nil nil [4236 4271])
+            ("setq" code nil nil [4272 4307])
+            ("setq" code nil nil [4308 4347])
+            ("setq" code nil nil [4361 4387])
+            ("setq-default" code nil nil [4388 4419])
+            ("setq" code nil nil [4437 4464])
+            ("setq" code nil nil [4465 4490])
+            ("fset" code nil nil [4508 4537])
+            ("hl-line" include nil nil [4548 4566])
+            ("setq" code nil nil [4567 4595])
+            ("setq" code nil nil [4785 4818])
+            ("setq" code nil nil [4829 4853])
+            ("setq" code nil nil [4950 4990])
+            ("setq" code nil nil [5020 5046])
+            ("setq" code nil nil [5047 5080])
+            ("setq" code nil nil [5097 5131])
+            ("setq" code nil nil [5247 5279])
+            ("setq" code nil nil [5299 5406])
+            ("setq" code nil nil [5498 5527])
+            ("cua-mode" code nil nil [5529 5541])
+            ("setq" code nil nil [5542 5579])
+            ("transient-mark-mode" code nil nil [5621 5644])
+            ("setq" code nil nil [5685 5720])
+            ("setq-default" code nil nil [5770 5802])
+            ("setq" code nil nil [5814 5848])
+            ("set-clipboard-coding-system" code nil nil [5873 5909])
+            ("setq" code nil nil [5925 5953])
+            ("setq" code nil nil [5971 6001])
+            ("setq-default" code nil nil [6049 6085])
+            ("setq" code nil nil [6113 6131])
+            ("setq" code nil nil [6169 6200])
+            ("session" include nil nil [6337 6355])
+            ("add-hook" code nil nil [6358 6405])
+            ("setq" code nil nil [6432 6458])
+            ("setq" code nil nil [6459 6492])
+            ("setq" code nil nil [6493 6561]))          
+      :file "my-base.el"
+      :pointmax 6562
+      :fsize 8115
+      :lastmodtime '(20910 55209 368215 240000)
+      :unmatched-syntax nil)
+    (semanticdb-table "open-next-line.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("open-next-line" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [31 272])
+            ("global-set-key" code nil nil [273 317])
+            ("open-previous-line" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [348 580])
+            ("global-set-key" code nil nil [581 629])
+            ("newline-and-indent" variable (:default-value t) nil [658 769])
+            ("open-next-line" package nil nil [771 796]))          
+      :file "open-next-line.el"
+      :pointmax 796
+      :fsize 795
+      :lastmodtime '(20910 51908 952761 792000)
+      :unmatched-syntax nil)
+    (semanticdb-table "autopair.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [6935 6948])
+            ("autopair-pair-criteria" variable (:default-value (quote help-balance)) nil [6963 7160])
+            ("autopair-skip-criteria" variable (:default-value (quote help-balance)) nil [7162 7360])
+            ("autopair-emulation-alist" variable nil nil [7362 7477])
+            ("autopair-dont-activate" variable nil nil [7479 7580])
+            ("make-variable-buffer-local" code nil nil [7581 7633])
+            ("autopair-extra-pairs" variable nil nil [7635 8616])
+            ("make-variable-buffer-local" code nil nil [8618 8668])
+            ("autopair-dont-pair" variable (:default-value (\` (:string (39) :comment (39)))) nil [8670 9523])
+            ("make-variable-buffer-local" code nil nil [9524 9572])
+            ("autopair-action" variable nil nil [9574 10025])
+            ("autopair-wrap-action" variable nil nil [10028 10422])
+            ("autopair-handle-action-fns" variable (:default-value (quote nil)) nil [10424 10972])
+            ("make-variable-buffer-local" code nil nil [10973 11029])
+            ("autopair-handle-wrap-action-fns" variable (:default-value (quote nil)) nil [11031 11617])
+            ("make-variable-buffer-local" code nil nil [11618 11679])
+            ("define-globalized-minor-mode" code nil nil [11714 11791])
+            ("autopair-on" function nil nil [11793 11887])
+            ("define-minor-mode" code nil nil [11889 15549])
+            ("autopair-syntax-ppss" function nil nil [15574 16896])
+            ("autopair-find-pair" function (:arguments ("delim")) nil [16898 17813])
+            ("autopair-calculate-wrap-action" function nil nil [17815 18474])
+            ("autopair-fallback" function (:arguments ("fallback-keys")) nil [18476 19379])
+            ("autopair-autowrap" variable nil nil [19381 19537])
+            ("autopair-skip-whitespace" variable nil nil [19539 19733])
+            ("autopair-blink" variable (:default-value (if (boundp (quote blink-matching-paren)) blink-matching-paren t)) nil [19735 19921])
+            ("autopair-blink-delay" variable (:default-value 0.1) nil [19923 19998])
+            ("autopair-document-bindings" function (:arguments ("fallback-keys")) nil [20000 20475])
+            ("autopair-escaped-p" function (:arguments ("syntax-info")) nil [20477 20539])
+            ("autopair-exception-p" function (:arguments ("where-sym" "exception-where-sym" "blacklist" "fn")) nil [20541 20898])
+            ("autopair-up-list" function (:arguments ("syntax-info" "closing")) nil [20900 22242])
+            ("autopair-insert-or-skip-quote" function nil nil [22304 25336])
+            ("put" code nil nil [25340 25514])
+            ("autopair-in-unterminated-string-p" function (:arguments ("autopair-triplet")) nil [25516 25738])
+            ("autopair-insert-opening" function nil nil [25746 25934])
+            ("put" code nil nil [25935 26115])
+            ("autopair-skip-close-maybe" function nil nil [26117 26307])
+            ("put" code nil nil [26308 26479])
+            ("autopair-backspace" function nil nil [26481 26675])
+            ("put" code nil nil [26676 26846])
+            ("autopair-newline" function nil nil [26848 27071])
+            ("put" code nil nil [27072 27267])
+            ("autopair-skip-p" function nil nil [27269 28676])
+            ("autopair-pair-p" function nil nil [28678 32497])
+            ("autopair-post-command-handler" function nil nil [32529 33859])
+            ("autopair-blink-matching-open" function nil nil [33861 34056])
+            ("autopair-blink" function (:arguments ("pos")) nil [34058 34252])
+            ("autopair-default-handle-action" function (:arguments ("action" "pair" "pos-before")) nil [34254 36067])
+            ("autopair-default-handle-wrap-action" function (:arguments ("action" "pair" "pos-before" "region-before")) nil [36069 37830])
+            ("autopair-python-triple-quote-action" function (:arguments ("action" "pair" "pos-before")) nil [37874 38850])
+            ("autopair-latex-mode-paired-delimiter-action" function (:arguments ("action" "pair" "pos-before")) nil [38897 39705])
+            ("autopair-extra-insert-opening" function nil nil [39771 39971])
+            ("put" code nil nil [39972 40169])
+            ("autopair-extra-skip-close-maybe" function nil nil [40171 40352])
+            ("put" code nil nil [40353 40541])
+            ("autopair-extra-pair-p" function nil nil [40543 40871])
+            ("autopair-extra-skip-p" function nil nil [40873 41615])
+            ("autopair-insert-or-skip-paired-delimiter" function (:user-visible-flag t) nil [41717 41930])
+            ("put" code nil nil [41932 42149])
+            ("put" code nil nil [42498 42548])
+            ("put" code nil nil [42549 42601])
+            ("put" code nil nil [42602 42658])
+            ("put" code nil nil [42659 42715])
+            ("put" code nil nil [42716 42774])
+            ("put" code nil nil [42775 42829])
+            ("put" code nil nil [42830 42873])
+            ("autopair-should-autowrap" function nil nil [42875 43136])
+            ("cua--pre-command-handler-1" function (:arguments ("around" "autopair-override" "activate")) nil [43138 43325])
+            ("delete-selection-pre-hook" function (:arguments ("around" "autopair-override" "activate")) nil [43327 43513])
+            ("autopair" package nil nil [43516 43535]))          
+      :file "autopair.el"
+      :pointmax 43565
+      :fsize 43564
+      :lastmodtime '(20910 51908 952761 792000)
+      :unmatched-syntax nil)
+    (semanticdb-table "linum+.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("linum" include nil nil [2025 2041])
+            ("linum+" customgroup (:user-visible-flag t) nil [2043 2115])
+            ("linum-format" variable (:default-value (quote smart)) nil [2132 2929])
+            ("setq" code nil nil [2931 2957])
+            ("linum+-dynamic-format" variable (:default-value "%%%dd|") nil [2974 3128])
+            ("linum+-smart-format" variable (:default-value "%%%dd|") nil [3145 3295])
+            ("linum+-generate-linum-format" function (:arguments ("format-type" "limit")) nil [3312 4348])
+            ("linum-update-window" function (:arguments ("win")) nil [4365 6015])
+            ("linum+" package nil nil [6017 6034]))          
+      :file "linum+.el"
+      :pointmax 6060
+      :fsize 6059
+      :lastmodtime '(20910 51908 952761 792000)
+      :unmatched-syntax nil)
+    (semanticdb-table "session.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("session" package nil nil [5156 5174])
+            ("custom" include nil nil [5175 5192])
+            ("defunx" function (:arguments ("name" "arglist" "definition")) nil [6417 7923])
+            ("cond-emacs-xemacs-macfn" function (:arguments ("args" "msg")) nil [5427 6187])
+            ("cond-emacs-xemacs" function (:arguments ("args")) nil [5289 5424])
+            ("cl" include nil nil [5273 5286])
+            ("minibuffer-local-ns-map" variable nil nil [8040 8072])
+            ("yank-menu" variable nil nil [8019 8037])
+            ("menu-bar-files-menu" variable nil nil [7988 8016])
+            ("put-buffer-names-in-file-menu" variable nil nil [7947 7985])
+            ("session-version" variable
+               (:constant-flag t
+                :default-value "2.3a")
+                nil [8282 8417])
+            ("session" customgroup (:user-visible-flag t) nil [8617 8845])
+            ("session-globals" customgroup (:user-visible-flag t) nil [8847 8975])
+            ("session-places" customgroup (:user-visible-flag t) nil [8977 9092])
+            ("session-miscellaneous" customgroup (:user-visible-flag t) nil [9094 9222])
+            ("session-initialize" variable (:default-value t) nil [9224 10057])
+            ("session-menu-max-size" variable
+               (:user-visible-flag t
+                :default-value 36)
+                nil [10261 10412])
+            ("session-file-menu-max-string" variable
+               (:user-visible-flag t
+                :default-value (if (if (boundp (quote put-buffer-names-in-file-menu)) put-buffer-names-in-file-menu nil) (cons 50 20) 50))
+                nil [10414 11084])
+            ("session-edit-menu-max-string" variable
+               (:user-visible-flag t
+                :default-value 50)
+                nil [11086 11344])
+            ("session-compact-yank-gap-regexp" variable
+               (:user-visible-flag t
+                :default-value "\\(
+\\|[ 	][ 	][ 	]\\)[ 	
+]*")
+                nil [11346 11793])
+            ("session-menu-permanent-string" variable
+               (:user-visible-flag t
+                :default-value " *")
+                nil [11795 12123])
+            ("session-set-file-name-exclude-regexp" variable
+               (:user-visible-flag t
+                :default-value "[/\\]\\.overview\\|[/\\]\\.session\\|News[/\\]")
+                nil [12321 12654])
+            ("session-menu-accelerator-support" variable (:default-value (and (featurep (quote menu-accelerator-support)) (fboundp (quote submenu-generate-accelerator-spec)) (quote submenu-generate-accelerator-spec))) nil [12656 12905])
+            ("session-abbrev-inhibit-function" variable (:default-value (cond ((fboundp (quote file-remote-p)) (quote file-remote-p)) ((fboundp (quote efs-ftp-path)) (quote efs-ftp-path)) ((fboundp (quote ange-ftp-ftp-name)) (quote ange-ftp-ftp-name)) ((fboundp (quote ange-ftp-ftp-path)) (quote ange-ftp-ftp-path)))) nil [12975 13595])
+            ("session-directory-sep-char" variable (:default-value (if (memq system-type (quote (ms-dos windows-nt))) 92 47)) nil [13597 13775])
+            ("session-save-file-coding-system" variable (:default-value (cond-emacs-xemacs :EMACS (quote iso-latin-1-with-esc) :XEMACS (and (featurep (quote mule)) (quote escape-quoted)))) nil [13777 14057])
+            ("session-globals-max-size" variable
+               (:user-visible-flag t
+                :default-value 50)
+                nil [14295 14662])
+            ("session-globals-max-string" variable
+               (:user-visible-flag t
+                :default-value 1024)
+                nil [14664 14810])
+            ("session-registers-max-string" variable
+               (:user-visible-flag t
+                :default-value 1024)
+                nil [14812 14953])
+            ("session-save-file" variable (:default-value (expand-file-name ".session" (cond ((boundp (quote user-emacs-directory)) user-emacs-directory) ((boundp (quote user-init-directory)) user-init-directory) (t "~")))) nil [14955 15520])
+            ("session-old-save-file" variable (:default-value (expand-file-name ".session" "~")) nil [15522 15655])
+            ("session-save-print-spec" variable
+               (:user-visible-flag t
+                :default-value (quote (t 2 1024)))
+                nil [15657 15975])
+            ("session-save-file-modes" variable (:default-value 384) nil [15977 16253])
+            ("session-before-save-hook" variable nil nil [16257 16459])
+            ("session-after-load-save-file-hook" variable (:default-value (cond-emacs-xemacs :EMACS (and (default-boundp (quote yank-menu)) (fboundp (quote menu-bar-update-yank-menu)) (quote (session-refresh-yank-menu))))) nil [16461 16782])
+            ("session-globals-regexp" variable (:default-value "-\\(ring\\|history\\)\\'") nil [16784 17069])
+            ("session-globals-exclude" variable (:default-value (quote (load-history register-alist vc-comment-ring flyspell-auto-correct-ring org-mark-ring planner-browser-file-display-rule-ring))) nil [17071 17418])
+            ("session-globals-include" variable (:default-value (quote ((kill-ring 10) (session-file-alist 100 t) (file-name-history 200) search-ring regexp-search-ring))) nil [17420 18682])
+            ("session-registers" variable
+               (:user-visible-flag t
+                :default-value (quote ((48 . 57) 45 61 92 96 region (97 . 122))))
+                nil [18894 19937])
+            ("session-locals-include" variable (:default-value (quote (overwrite-mode))) nil [19939 20309])
+            ("session-locals-predicate" variable (:default-value (quote local-variable-p)) nil [20311 21008])
+            ("session-register-swap-out" variable (:default-value (if (fboundp (quote register-swap-out)) (quote register-swap-out) (quote session-register-swap-out))) nil [21010 21353])
+            ("session-jump-undo-threshold" variable
+               (:user-visible-flag t
+                :default-value 240)
+                nil [21582 22002])
+            ("session-jump-undo-remember" variable
+               (:user-visible-flag t
+                :default-value 2)
+                nil [22004 22228])
+            ("session-after-jump-to-last-change-hook" variable nil nil [22230 22403])
+            ("session-use-truenames-default" variable
+               (:constant-flag t
+                :default-value (cond-emacs-xemacs :EMACS (string= (abbreviate-file-name (file-truename "~")) "~") :XEMACS (and (string= (abbreviate-file-name (file-truename "~") t) "~") (if (eq system-type (quote windows-nt)) (quote session-xemacs-buffer-local-mswindows-file-p) t))))
+                nil [23114 23414])
+            ("session-use-truenames" variable
+               (:user-visible-flag t
+                :default-value session-use-truenames-default)
+                nil [23416 23951])
+            ("session-auto-store" variable
+               (:user-visible-flag t
+                :default-value t)
+                nil [23953 24647])
+            ("session-undo-check" variable
+               (:user-visible-flag t
+                :default-value 1)
+                nil [24649 25612])
+            ("session-kill-buffer-commands" variable
+               (:user-visible-flag t
+                :default-value (quote (kill-this-buffer)))
+                nil [25614 26008])
+            ("session-buffer-check-function" variable (:default-value (quote session-default-buffer-check-p)) nil [26010 26792])
+            ("session-mode-disable-list" variable
+               (:user-visible-flag t
+                :default-value (quote (vm-mode gnus-score-mode message-mode tar-mode)))
+                nil [26794 27052])
+            ("session-mode-enable-list" variable (:user-visible-flag t) nil [27054 27261])
+            ("session-name-disable-regexp" variable
+               (:user-visible-flag t
+                :default-value (concat "\\`" (regexp-quote (if (fboundp (quote temp-directory)) (temp-directory) "/tmp"))))
+                nil [27263 27550])
+            ("session-name-enable-regexp" variable (:user-visible-flag t) nil [27552 27749])
+            ("session-last-change" variable nil nil [27987 28250])
+            ("make-variable-buffer-local" code nil nil [28251 28300])
+            ("session-file-alist" variable nil nil [28302 28936])
+            ("session-jump-to-last-change-counter" variable nil nil [28938 29053])
+            ("session-jump-to-last-change-recent" variable nil nil [29055 29164])
+            ("session-undo-position" function (:arguments ("num" "pos1" "pos2")) nil [29355 33289])
+            ("session-jump-to-last-change" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [33306 36382])
+            ("defunx" code nil nil [36663 36983])
+            ("session-yank" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [36985 37246])
+            ("session-popup-yank-menu" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [37248 37523])
+            ("session-yank-menu-filter" function (:arguments ("menu-items")) nil [37525 38526])
+            ("session-yank-string" function (:arguments ("string" "half-len-str" "callback" "active")) nil [38528 39715])
+            ("defunx" code nil nil [39750 40191])
+            ("session-file-opened-recompute" function (:user-visible-flag t) nil [40371 40540])
+            ("session-file-changed-recompute" function
+               (:user-visible-flag t
+                :arguments ("for-opened"))
+                nil [40542 41067])
+            ("session-file-opened-menu-filter" function (:arguments ("menu-items")) nil [41069 41331])
+            ("session-file-changed-menu-filter" function (:arguments ("menu-items" "files" "find-fn")) nil [41333 43101])
+            ("session-file-prune-name" function (:arguments ("elem" "max-string")) nil [43103 44229])
+            ("session-menu-maybe-accelerator" function (:arguments ("menu-items" "menu")) nil [44231 44807])
+            ("session-abbrev-file-name" function (:arguments ("name")) nil [44809 45292])
+            ("session-find-file" function
+               (:user-visible-flag t
+                :arguments ("filename"))
+                nil [45478 45774])
+            ("session-set-file-name-history" function nil nil [45776 46614])
+            ("session-find-file-hook" function nil nil [46616 47708])
+            ("session-kill-buffer-hook" function nil nil [47710 48645])
+            ("session-register-swap-out" function nil nil [48857 49264])
+            ("session-successful-p" variable nil nil [49481 49585])
+            ("session-xemacs-buffer-local-mswindows-file-p" function nil nil [49773 50216])
+            ("session-buffer-file-name" function nil nil [50218 50475])
+            ("session-toggle-permanent-flag" function
+               (:user-visible-flag t
+                :arguments ("arg" "check"))
+                nil [50699 51576])
+            ("session-store-buffer-places" function (:arguments ("arg")) nil [51578 53789])
+            ("session-find-file-not-found-hook" function nil nil [53791 54221])
+            ("session-default-buffer-check-p" function (:arguments ("buffer")) nil [54436 55608])
+            ("session-save-session" function
+               (:user-visible-flag t
+                :arguments ("force"))
+                nil [55793 59011])
+            ("session-save-insert-variable" function (:arguments ("symbol" "val" "spec")) nil [59013 60817])
+            ("defunx" code nil nil [60819 61012])
+            ("session-save-registers" function nil nil [61014 62039])
+            ("session-history-help-string" variable (:default-value (quote (concat (if (device-on-window-system-p) (substitute-command-keys "Click \\<list-mode-map>\\[list-mode-item-mouse-selected] on a history element to select it.
+") "") (substitute-command-keys "In this buffer, type RET to select the element near point.
+
+")))) nil [62259 62633])
+            ("session-minibuffer-history-help" function (:user-visible-flag t) nil [62635 63417])
+            ("defunx" code nil nil [63419 63536])
+            ("defunx" code nil nil [63849 64970])
+            ("defunx" code nil nil [64972 65753])
+            ("defunx" code nil nil [65755 67154])
+            ("session-initialize-do" function nil nil [67156 69578])
+            ("session-initialize-and-set" function (:arguments ("symbol" "value")) nil [69580 70191])
+            ("session-use-package" variable nil nil [70269 70845])
+            ("session-initialize" function (:user-visible-flag t) nil [70862 71273]))          
+      :file "session.el"
+      :pointmax 71342
+      :fsize 71342
+      :lastmodtime '(20910 51908 956095 107000)
+      :unmatched-syntax '((close-paren 8072 . 8073) (symbol 7927 . 7944) (open-paren 7926 . 7927) (close-paren 7923 . 7924) (symbol 5253 . 5270) (open-paren 5252 . 5253)))
+    (semanticdb-table ".emacs.desktop"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("setq" code nil nil [347 386])
+            ("setq" code nil nil [387 412])
+            ("setq" code nil nil [413 439])
+            ("setq" code nil nil [440 495])
+            ("setq" code nil nil [496 525])
+            ("setq" code nil nil [526 551])
+            ("setq" code nil nil [552 1263])
+            ("desktop-create-buffer" code nil nil [1334 1565])
+            ("desktop-create-buffer" code nil nil [1567 1795])
+            ("desktop-create-buffer" code nil nil [1797 2054])
+            ("desktop-create-buffer" code nil nil [2056 2296]))          
+      :file ".emacs.desktop"
+      :pointmax 2716
+      :fsize 2297
+      :lastmodtime '(20910 51908 952761 792000)
+      :unmatched-syntax nil)
+    (semanticdb-table "init.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("add-to-list" code nil nil [1 39])
+            ("add-to-list" code nil nil [40 103])
+            ("add-to-list" code nil nil [105 176])
+            ("load-theme" code nil nil [177 200])
+            ("add-to-list" code nil nil [315 371])
+            ("load-file" code nil nil [372 434])
+            ("setq" code nil nil [435 1445])
+            ("semantic-mode" code nil nil [1446 1463])
+            ("global-semantic-highlight-edits-mode" code nil nil [1464 1526])
+            ("semantic/ia" include nil nil [1527 1549])
+            ("semantic/bovine/gcc" include nil nil [1550 1580])
+            ("setq-mode-local" code nil nil [1680 1791])
+            ("setq-mode-local" code nil nil [1794 1905])
+            ("my-semantic-hook" function nil nil [1907 1966])
+            ("add-hook" code nil nil [1967 2016])
+            ("semanticdb-enable-gnu-global-databases" code nil nil [2066 2114])
+            ("semanticdb-enable-gnu-global-databases" code nil nil [2115 2165])
+            ("global-set-key" code nil nil [2364 2411])
+            ("global-set-key" code nil nil [2412 2461])
+            ("global-set-key" code nil nil [2462 2524])
+            ("global-set-key" code nil nil [2525 2584])
+            ("global-set-key" code nil nil [2585 2629])
+            ("global-set-key" code nil nil [2630 3320])
+            ("cedet-user-include-dirs" variable
+               (:constant-flag t
+                :default-value (list "." ".." "../include" "../../include" "../inc" "../../inc" "../common" "../public" "../../common" "../../public"))
+                nil [3322 3489])
+            ("semantic-hook-add-inc" function nil nil [3568 3762])
+            ("add-hook" code nil nil [3763 3817])
+            ("makefile-runner" include nil nil [3858 3884])
+            ("load-file" code nil nil [3901 3939])
+            ("global-set-key" code nil nil [3940 3978])
+            ("define-key" code nil nil [3979 4024])
+            ("setq" code nil nil [4025 4115])
+            ("speedbar-frame-mode" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [4128 4197])
+            ("speedbar-get-focus" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [4198 4266])
+            ("add-hook" code nil nil [4268 4480])
+            ("setq" code nil nil [4482 4518])
+            ("setq" code nil nil [4520 4595])
+            ("load" code nil nil [4630 4649])
+            ("python" include (:directory "python.el") nil [4724 4753])
+            ("setq" code nil nil [4764 5233])
+            ("add-to-list" code nil nil [5245 5297])
+            ("pymacs-apply" function (:prototype-flag t) nil [5331 5364])
+            ("pymacs-call" function (:prototype-flag t) nil [5365 5397])
+            ("pymacs-eval" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [5398 5436])
+            ("pymacs-exec" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [5437 5475])
+            ("pymacs-load" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [5476 5514])
+            ("pymacs-autoload" function (:prototype-flag t) nil [5515 5551])
+            ("add-to-list" code nil nil [5746 5805])
+            ("unless" code nil nil [5807 6032])
+            ("el-get" code nil nil [6034 6048])
+            ("setq" code nil nil [6049 6132])
+            ("add-to-list" code nil nil [6180 6235])
+            ("yasnippet" include nil nil [6236 6256])
+            ("yas-global-mode" code nil nil [6257 6276])
+            ("add-to-list" code nil nil [6389 6444])
+            ("add-to-list" code nil nil [6445 6504])
+            ("auto-complete-config" include nil nil [6506 6537])
+            ("auto-complete+" include nil nil [6538 6563])
+            ("util" include nil nil [6564 6579])
+            ("ahei-misc" include nil nil [6580 6600])
+            ("ac-config-default" code nil nil [6602 6621])
+            ("add-to-list" code nil nil [6622 6705])
+            ("global-auto-complete-mode" code nil nil [6706 6733])
+            ("ac-set-trigger-key" code nil nil [6734 6760])
+            ("ac-set-trigger-key" code nil nil [6761 6789])
+            ("eal-define-keys" code nil nil [6791 6906])
+            ("pos-tip" include nil nil [6908 6926])
+            ("setq" code nil nil [6927 6964])
+            ("setq" code nil nil [6981 7007])
+            ("setq" code nil nil [7008 7038])
+            ("setq" code nil nil [7039 7055])
+            ("setq" code nil nil [7056 7080])
+            ("setq" code nil nil [7082 7203])
+            ("set-default" code nil nil [7204 7490])
+            ("add-to-list" code nil nil [7534 7587])
+            ("tabbar" include nil nil [7588 7605])
+            ("tabbar-mode" code nil nil [7606 7619])
+            ("define-prefix-command" code nil nil [7620 7656])
+            ("global-set-key" code nil nil [7657 7711])
+            ("global-set-key" code nil nil [7712 7767])
+            ("global-set-key" code nil nil [7768 7818])
+            ("global-set-key" code nil nil [7819 7869])
+            ("compile-settings" include nil nil [7946 7973])
+            ("ac-settings-4-cc" function nil nil [8015 8248])
+            ("eval-after-load" code nil nil [8249 8366])
+            ("ac-settings-4-autopair" function nil nil [8368 9260])
+            ("eval-after-load" code nil nil [9261 9317])
+            ("ac-settings-4-lisp" function nil nil [9319 10057])
+            ("ac-settings-4-java" function nil nil [10059 10503])
+            ("ac-settings-4-c" function nil nil [10505 10825])
+            ("ac-settings-4-cpp" function nil nil [10827 11149])
+            ("ac-settings-4-text" function nil nil [11151 11367])
+            ("ac-settings-4-eshell" function nil nil [11369 11685])
+            ("ac-settings-4-ruby" function nil nil [11687 11887])
+            ("ac-settings-4-html" function nil nil [11889 12149])
+            ("ac-settings-4-tcl" function nil nil [12151 12410])
+            ("ac-settings-4-awk" function nil nil [12412 12671])
+            ("am-add-hooks" code nil nil [12673 12837])
+            ("apply-args-list-to-fun" code nil nil [12839 13295])
+            ("json-format" function nil nil [13347 13486])
+            ("wcy-define-key-in-transient-mode" function (:arguments ("global-p" "key" "cmd-mark-active" "cmd-mark-no-active")) nil [13533 13894])
+            ("wcy-isearch-forward-on-selection" function (:arguments ("regexp-p" "no-recursive-edit")) nil [13896 14230])
+            ("wcy-define-key-in-transient-mode" code nil nil [14232 14399])
+            ("custom-set-variables" code nil nil [14400 14793])
+            ("custom-set-faces" code nil nil [14794 15033]))          
+      :file "init.el"
+      :pointmax 15034
+      :fsize 15049
+      :lastmodtime '(20911 7683 381426 532000)
+      :unmatched-syntax nil)
+    (semanticdb-table "sourcepair.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("sourcepair-source-extensions" variable
+               (:user-visible-flag t
+                :default-value (quote (".cpp" ".cxx" ".cc" ".C" ".c" ".CC" ".c++")))
+                nil [4579 5133])
+            ("sourcepair-header-extensions" variable
+               (:user-visible-flag t
+                :default-value (quote (".h" ".hpp" ".hh" ".H" ".hxx")))
+                nil [5135 5649])
+            ("sourcepair-private-header-suffixes" variable
+               (:user-visible-flag t
+                :default-value (quote ("_p" "_impl")))
+                nil [5651 6253])
+            ("sourcepair-source-path" variable
+               (:user-visible-flag t
+                :default-value (quote (".")))
+                nil [6255 6936])
+            ("sourcepair-header-path" variable
+               (:user-visible-flag t
+                :default-value (quote (".")))
+                nil [6938 7213])
+            ("sourcepair-recurse-ignore" variable
+               (:user-visible-flag t
+                :default-value (quote ("CVS")))
+                nil [7215 7616])
+            ("sourcepair-header-file-p" function (:arguments ("filename")) nil [7618 8104])
+            ("sourcepair-source-file-p" function (:arguments ("filename")) nil [8107 8591])
+            ("sourcepair-remove-private-suffixes" function (:arguments ("basename")) nil [8594 8941])
+            ("sourcepair-analyze-filename" function (:arguments ("filename")) nil [8943 9648])
+            ("sourcepair-find-one-of" function (:arguments ("path" "choices" "recurse")) nil [9650 10977])
+            ("sourcepair-matching-file-for-file" function (:arguments ("filename")) nil [10979 12267])
+            ("sourcepair-load" function (:user-visible-flag t) nil [12269 13286])
+            ("sourcepair-jump-to-headerfile" function
+               (:user-visible-flag t
+                :arguments ("prefix"))
+                nil [13288 13868])
+            ("sourcepair-yank-advice" function nil nil [13870 15322])
+            ("sourcepair" package nil nil [15360 15381]))          
+      :file "sourcepair.el"
+      :pointmax 15412
+      :fsize 15411
+      :lastmodtime '(20910 51908 956095 107000)
+      :unmatched-syntax nil))
+  :file "!home!jiya!.emacs.d!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

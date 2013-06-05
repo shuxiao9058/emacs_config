@@ -1,0 +1,232 @@
+;; Object threading/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "threading/"
+  :tables
+  (list
+    (semanticdb-table "thread.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_THREADING_THREAD_H_" variable (:constant-flag t) nil [212 236])
+            ("string" include (:system-flag t) nil [238 255])
+            ("base/base_export.h" include nil nil [257 286])
+            ("base/message_loop.h" include nil nil [287 317])
+            ("base/message_loop_proxy.h" include nil nil [318 354])
+            ("base/threading/platform_thread.h" include nil nil [355 398])
+            ("base" type
+               (:members 
+                  ( ("PlatformThread::Delegate" variable (:type "int") (reparse-symbol namespacesubparts) [1077 7483]))                  
+                :type "namespace")
+                nil [400 7486]))          
+      :file "thread.h"
+      :pointmax 7543
+      :fsize 7545
+      :lastmodtime '(20900 35810 945611 936000)
+      :unmatched-syntax '((punctuation 1075 . 1076) (symbol 1068 . 1074) (symbol 1056 . 1067) (CLASS 1050 . 1055))
+      :lexical-table 
+        '(("BASE_THREADING_THREAD_H_")
+          )
+)
+    (semanticdb-table "non_thread_safe.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_THREADING_NON_THREAD_SAFE_H_" variable (:constant-flag t) nil [221 254])
+            ("base/compiler_specific.h" include nil nil [506 541])
+            ("ENABLE_NON_THREAD_SAFE" variable (:constant-flag t) nil [645 667])
+            ("base/threading/non_thread_safe_impl.h" include nil nil [744 792])
+            ("base" type
+               (:members 
+                  ( ("NonThreadSafeDoNothing" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1052 1059])
+                            ("CalledOnValidThread" function (:type "bool") (reparse-symbol classsubparts) [1062 1117])
+                            ("protected" label nil (reparse-symbol classsubparts) [1120 1130])
+                            ("NonThreadSafeDoNothing" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [1133 1161])
+                            ("DetachFromThread" function (:type "void") (reparse-symbol classsubparts) [1164 1190]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1020 1193])
+                    ("NonThreadSafe" type
+                       (:typedef ("NonThreadSafeImpl" type (:type "class") nil nil)
+                        :superclasses "NonThreadSafeImpl"
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [2092 2132]))                  
+                :type "namespace")
+                nil [801 2252]))          
+      :file "non_thread_safe.h"
+      :pointmax 2308
+      :fsize 2310
+      :lastmodtime '(20900 35810 945611 936000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BASE_THREADING_NON_THREAD_SAFE_H_")
+          )
+)
+    (semanticdb-table "thread_collision_warner.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_THREADING_THREAD_COLLISION_WARNER_H_" variable (:constant-flag t) nil [229 270])
+            ("memory" include (:system-flag t) nil [272 289])
+            ("base/atomicops.h" include nil nil [291 318])
+            ("base/base_export.h" include nil nil [319 348])
+            ("base/compiler_specific.h" include nil nil [349 384])
+            ("DFAKE_MUTEX" variable (:constant-flag t) nil [3287 3298])
+            ("DFAKE_SCOPED_LOCK" variable (:constant-flag t) nil [3460 3477])
+            ("DFAKE_SCOPED_RECURSIVE_LOCK" variable (:constant-flag t) nil [3714 3741])
+            ("DFAKE_SCOPED_LOCK_THREAD_LOCKED" variable (:constant-flag t) nil [3892 3923])
+            ("base" type
+               (:members 
+                  ( ("AsserterBase" variable (:type ("BASE_EXPORT" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol namespacesubparts) [4533 4625])
+                    ("AsserterBase" variable (:type "int") (reparse-symbol namespacesubparts) [4670 4750])
+                    ("ThreadCollisionWarner" variable (:type ("BASE_EXPORT" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [4752 7385]))                  
+                :type "namespace")
+                nil [4218 7388]))          
+      :file "thread_collision_warner.h"
+      :pointmax 7462
+      :fsize 7464
+      :lastmodtime '(20900 35810 942278 602000)
+      :unmatched-syntax '((thing 4627 . 4633) (thing 4634 . 4645) (thing 4646 . 4660) (thing 4661 . 4662) (thing 4663 . 4669))
+      :lexical-table 
+        '(("DFAKE_SCOPED_LOCK_THREAD_LOCKED" (spp-arg-list ("obj") 3923 . 3928) . 
+              ((symbol "base" 3936 . 3940) (punctuation ":" 3940 . 3941) (punctuation ":" 3941 . 3942) (symbol "ThreadCollisionWarner" 3942 . 3963) (punctuation ":" 3963 . 3964) (punctuation ":" 3964 . 3965) (symbol "Check" 3965 . 3970) (spp-symbol-merge ((symbol "check_" 3971 . 3977) (symbol "obj" 3979 . 3982)) 3971 . 3982) (semantic-list "(&obj)" 3982 . 3988)))
+          ("BASE_THREADING_THREAD_COLLISION_WARNER_H_")
+          ("DFAKE_SCOPED_RECURSIVE_LOCK" (spp-arg-list ("obj") 3741 . 3746) . 
+              ((symbol "base" 3754 . 3758) (punctuation ":" 3758 . 3759) (punctuation ":" 3759 . 3760) (symbol "ThreadCollisionWarner" 3760 . 3781) (punctuation ":" 3781 . 3782) (punctuation ":" 3782 . 3783) (symbol "ScopedRecursiveCheck" 3783 . 3803) (spp-symbol-merge ((symbol "sr_check_" 3804 . 3813) (symbol "obj" 3815 . 3818)) 3804 . 3818) (semantic-list "(&obj)" 3818 . 3824)))
+          ("DFAKE_MUTEX" (spp-arg-list ("obj") 3298 . 3303) . 
+              ((MUTABLE "mutable" 3311 . 3318) (symbol "base" 3319 . 3323) (punctuation ":" 3323 . 3324) (punctuation ":" 3324 . 3325) (symbol "ThreadCollisionWarner" 3325 . 3346) (symbol "obj" 3347 . 3350)))
+          ("DFAKE_SCOPED_LOCK" (spp-arg-list ("obj") 3477 . 3482) . 
+              ((symbol "base" 3490 . 3494) (punctuation ":" 3494 . 3495) (punctuation ":" 3495 . 3496) (symbol "ThreadCollisionWarner" 3496 . 3517) (punctuation ":" 3517 . 3518) (punctuation ":" 3518 . 3519) (symbol "ScopedCheck" 3519 . 3530) (spp-symbol-merge ((symbol "s_check_" 3531 . 3539) (symbol "obj" 3541 . 3544)) 3531 . 3544) (semantic-list "(&obj)" 3544 . 3550)))
+          )
+)
+    (semanticdb-table "platform_thread.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_THREADING_PLATFORM_THREAD_H_" variable (:constant-flag t) nil [455 488])
+            ("base/base_export.h" include nil nil [490 519])
+            ("base/basictypes.h" include nil nil [520 548])
+            ("base/time.h" include nil nil [549 571])
+            ("build/build_config.h" include nil nil [572 603])
+            ("base" type
+               (:members 
+                  ( ("kInvalidThreadId" variable
+                       (:constant-flag t
+                        :type ("PlatformThreadId" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1354 1398])
+                    ("ThreadPriority" type
+                       (:members 
+                          ( ("kThreadPriority_Normal" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1463 1486])
+                            ("kThreadPriority_RealtimeAudio" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1544 1575]))                          
+                        :type "enum")
+                        (reparse-symbol namespacesubparts) [1440 1576])
+                    ("PlatformThread" variable (:type ("BASE_EXPORT" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [1625 4523]))                  
+                :type "namespace")
+                nil [719 4526]))          
+      :file "platform_thread.h"
+      :pointmax 4592
+      :fsize 4594
+      :lastmodtime '(20900 35810 945611 936000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BASE_THREADING_PLATFORM_THREAD_H_")
+          )
+)
+    (semanticdb-table "non_thread_safe_impl.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_THREADING_NON_THREAD_SAFE_IMPL_H_" variable (:constant-flag t) nil [226 264])
+            ("base/base_export.h" include nil nil [266 295])
+            ("base/threading/thread_checker_impl.h" include nil nil [296 343])
+            ("base" type
+               (:members 
+                  ( ("NonThreadSafeImpl" variable (:type ("BASE_EXPORT" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [683 1231]))                  
+                :type "namespace")
+                nil [345 1234]))          
+      :file "non_thread_safe_impl.h"
+      :pointmax 1305
+      :fsize 1307
+      :lastmodtime '(20900 35810 942278 602000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BASE_THREADING_NON_THREAD_SAFE_IMPL_H_")
+          )
+)
+    (semanticdb-table "thread_checker_impl.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_THREADING_THREAD_CHECKER_IMPL_H_" variable (:constant-flag t) nil [225 262])
+            ("base/base_export.h" include nil nil [264 293])
+            ("base/synchronization/lock.h" include nil nil [294 332])
+            ("base/threading/platform_thread.h" include nil nil [333 376])
+            ("base" type
+               (:members 
+                  ( ("ThreadCheckerImpl" variable (:type ("BASE_EXPORT" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [686 1249]))                  
+                :type "namespace")
+                nil [378 1252]))          
+      :file "thread_checker_impl.h"
+      :pointmax 1322
+      :fsize 1324
+      :lastmodtime '(20900 35810 945611 936000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BASE_THREADING_THREAD_CHECKER_IMPL_H_")
+          )
+)
+    (semanticdb-table "thread_checker.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_THREADING_THREAD_CHECKER_H_" variable (:constant-flag t) nil [220 252])
+            ("ENABLE_THREAD_CHECKER" variable (:constant-flag t) nil [781 802])
+            ("base/threading/thread_checker_impl.h" include nil nil [877 924])
+            ("base" type
+               (:members 
+                  ( ("ThreadCheckerDoNothing" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1161 1168])
+                            ("CalledOnValidThread" function (:type "bool") (reparse-symbol classsubparts) [1171 1226])
+                            ("DetachFromThread" function (:type "void") (reparse-symbol classsubparts) [1230 1256]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1129 1259])
+                    ("ThreadChecker" type
+                       (:superclasses 
+                          ( ("ThreadCheckerImpl" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2565 2616]))                  
+                :type "namespace")
+                nil [933 2745]))          
+      :file "thread_checker.h"
+      :pointmax 2810
+      :fsize 2812
+      :lastmodtime '(20900 35810 948945 270000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BASE_THREADING_THREAD_CHECKER_H_")
+          )
+))
+  :file "!home!revir!workspace!safesitetask!base!threading!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

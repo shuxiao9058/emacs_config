@@ -1,0 +1,93 @@
+;; Object queue/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "queue/"
+  :tables
+  (list
+    (semanticdb-table "done_queue.cc"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("stdafx.h" include nil nil [1 20])
+            ("done_queue.h" include nil nil [21 44])
+            ("DoneFileInfo" function
+               (:parent "DoneQueue::DoneFileInfo"
+                :type "int")
+                nil [46 117])
+            ("DoneQueue" function
+               (:constructor-flag t
+                :parent "DoneQueue"
+                :type ("DoneQueue" type (:type "class") nil nil))
+                nil [119 189])
+            ("DoneQueue" function
+               (:destructor-flag t
+                :parent "DoneQueue"
+                :type "void")
+                nil [191 219])
+            ("Add" function
+               (:parent "DoneQueue"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [241 264])
+                    ("dfi" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("DoneFileInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [265 289]))                  
+                :type "void")
+                nil [221 350])
+            ("Find" function
+               (:parent "DoneQueue"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [373 396]))                  
+                :type "bool")
+                nil [352 442])
+            ("Get" function
+               (:parent "DoneQueue"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [464 487])
+                    ("dfi" variable
+                       (:reference 1
+                        :type ("DoneFileInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [488 506]))                  
+                :type "bool")
+                nil [444 669])
+            ("Size" function
+               (:parent "DoneQueue"
+                :type ("size_t" type (:type "class") nil nil))
+                nil [671 756])
+            ("Delete" function
+               (:parent "DoneQueue"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [781 804]))                  
+                :type "bool")
+                nil [758 968])
+            ("Clear" function
+               (:parent "DoneQueue"
+                :type "void")
+                nil [970 1048]))          
+      :file "done_queue.cc"
+      :pointmax 1049
+      :fsize 1118
+      :lastmodtime '(20900 40953 139101 399000)
+      :unmatched-syntax nil)
+    (semanticdb-table "done_queue.h"
+      :file "done_queue.h"
+      :fsize 1757
+      :lastmodtime '(20900 35776 162277 547000)))
+  :file "!home!revir!workspace!safesitetask!core!queue!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,135 @@
+;; Object safesitetask_old/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "safesitetask_old/"
+  :tables (list 
+   (semanticdb-table "main.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("stdafx.h" include (:system-flag t) nil [1 20])
+            ("SafeSiteTask.h" include nil nil [21 46])
+            ("core/XMLConfig.h" include (:system-flag t) nil [47 74])
+            ("core/JobMode.h" include (:system-flag t) nil [75 100])
+            ("python/PyTools.h" include (:system-flag t) nil [101 128])
+            ("url/URI.h" include (:system-flag t) nil [129 149])
+            ("filter/FilterRegister.h" include (:system-flag t) nil [150 184])
+            ("http/CookieMangr.h" include (:system-flag t) nil [185 214])
+            ("iostream" include (:system-flag t) nil [215 234])
+            ("vector" include (:system-flag t) nil [235 252])
+            ("getopt.h" include (:system-flag t) nil [254 273])
+            ("optarg" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [274 294])
+            ("optind" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [295 313])
+            ("optopt" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [314 332])
+            ("opterr" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [333 351])
+            ("optreset" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [352 372])
+            ("s_taskID" variable
+               (:typemodifiers ("static")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [374 402])
+            ("s_cookiestr" variable
+               (:typemodifiers ("static")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [403 434])
+            ("s_dmInclude" variable
+               (:typemodifiers ("static")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [435 466])
+            ("s_dmExclude" variable
+               (:typemodifiers ("static")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [467 498])
+            ("s_ffInclude" variable
+               (:typemodifiers ("static")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [499 530])
+            ("s_ffExclude" variable
+               (:typemodifiers ("static")
+                :type ("std::string" type (:type "class") nil nil))
+                nil [531 562])
+            ("g_log_running" variable (:type "int") nil [564 599])
+            ("s_opt" variable
+               (:typemodifiers ("static")
+                :type ("COptions" type (:type "class") nil nil))
+                nil [608 630])
+            ("strMatchInt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("value" variable
+                       (:constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [655 679])
+                    ("matchList" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [680 710])
+                    ("intList" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [711 730])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [731 740]))                  
+                :type "int")
+                nil [632 956])
+            ("parse_opt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [979 988])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [989 1001]))                  
+                :type "int")
+                nil [958 13173])
+            ("InitRunningLog" function (:type "int") nil [13175 13413])
+            ("Initialize" function (:type "int") nil [13415 13645])
+            ("BeforeExit" function (:type "int") nil [13647 13771])
+            ("ReplytoXandExit" function
+               (:arguments 
+                  ( ("code" variable (:type "int") (reparse-symbol arg-sub-list) [13794 13803]))                  
+                :type "void")
+                nil [13773 14027])
+            ("ProcTaskURL" function (:type "bool") nil [14029 14940])
+            ("ProcTaskURI" function (:type "bool") nil [14942 15205])
+            ("test1" function (:type "void") nil [15207 17067])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [17078 17087])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17088 17101]))                  
+                :type "int")
+                nil [17069 18640]))          
+    :file "main.cpp"
+    :pointmax 18641
+    :fsize 18942
+    :lastmodtime '(20853 60154 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "SafeSiteTask.h"
+    :file "SafeSiteTask.h"
+    :fsize 515
+    :lastmodtime '(20853 1392 0 0)
+    )
+   )
+  :file "!home!revir!workspace!safesitetask_old!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

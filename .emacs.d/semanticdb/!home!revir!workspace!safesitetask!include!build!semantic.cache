@@ -1,0 +1,17 @@
+;; Object build/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "build/"
+  :tables
+  (list
+    (semanticdb-table "build_config.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("utils/deps/platform-arch.h" include (:system-flag t) nil [1 38]))          
+      :file "build_config.h"
+      :pointmax 39
+      :fsize 41
+      :lastmodtime '(20900 35770 925610 721000)
+      :unmatched-syntax nil))
+  :file "!home!revir!workspace!safesitetask!include!build!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,1547 @@
+;; Object base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "base/"
+  :tables (list 
+   (semanticdb-table "at_exit.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("BASE_AT_EXIT_H_" variable (:constant-flag t) nil [203 218])
+            ("stack" include (:system-flag t) nil [220 236])
+            ("base/base_export.h" include nil nil [238 267])
+            ("base/basictypes.h" include nil nil [268 296])
+            ("base/callback.h" include nil nil [297 323])
+            ("base/synchronization/lock.h" include nil nil [324 362])
+            ("base" type
+               (:members 
+                  ( ("AtExitManager" variable (:type ("BASE_EXPORT" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [950 2212]))                  
+                :type "namespace")
+                nil [364 2387]))          
+    :file "at_exit.h"
+    :pointmax 2435
+    :fsize 2437
+    :lastmodtime '(20860 50862 0 0)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("BASE_AT_EXIT_H_")
+          )
+
+    )
+   (semanticdb-table "command_line.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("BASE_COMMAND_LINE_H_" variable (:constant-flag t) nil [814 834])
+            ("stddef.h" include (:system-flag t) nil [836 855])
+            ("map" include (:system-flag t) nil [856 870])
+            ("string" include (:system-flag t) nil [871 888])
+            ("vector" include (:system-flag t) nil [889 906])
+            ("base/base_export.h" include nil nil [908 937])
+            ("build/build_config.h" include nil nil [938 969])
+            ("FilePath" type
+               (:prototype t
+                :type "class")
+                nil [971 986])
+            ("CommandLine" variable (:type ("BASE_EXPORT" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [988 7057]))          
+    :file "command_line.h"
+    :pointmax 7091
+    :fsize 7093
+    :lastmodtime '(20860 50860 0 0)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("BASE_COMMAND_LINE_H_")
+          )
+
+    )
+   (semanticdb-table "message_loop.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("base/message_loop.h" include nil nil [171 201])
+            ("algorithm" include (:system-flag t) nil [203 223])
+            ("base/bind.h" include nil nil [225 247])
+            ("base/compiler_specific.h" include nil nil [248 283])
+            ("base/debug/alias.h" include nil nil [284 313])
+            ("base/debug/trace_event.h" include nil nil [314 349])
+            ("base/lazy_instance.h" include nil nil [350 381])
+            ("base/logging.h" include nil nil [382 407])
+            ("base/memory/scoped_ptr.h" include nil nil [408 443])
+            ("base/message_loop_proxy_impl.h" include nil nil [444 485])
+            ("base/message_pump_default.h" include nil nil [486 524])
+            ("base/metrics/histogram.h" include nil nil [525 560])
+            ("base/metrics/statistics_recorder.h" include nil nil [561 606])
+            ("base/run_loop.h" include nil nil [607 633])
+            ("base/third_party/dynamic_annotations/dynamic_annotations.h" include nil nil [634 703])
+            ("base/thread_task_runner_handle.h" include nil nil [704 747])
+            ("base/threading/thread_local.h" include nil nil [748 788])
+            ("base/time.h" include nil nil [789 811])
+            ("base/tracked_objects.h" include nil nil [812 845])
+            ("base::PendingTask" using (:type ("base::PendingTask" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [1148 1172])
+            ("base::TimeDelta" using (:type ("base::TimeDelta" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [1173 1195])
+            ("base::TimeTicks" using (:type ("base::TimeTicks" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [1196 1218])
+            ("unnamed" type
+               (:members 
+                  ( ("lazy_tls_ptr" variable (:type ("base::LazyInstance" type
+                         (:template-specifier 
+                            ( ("base::ThreadLocalPointer" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [1391 1495])
+                    ("kTaskRunEvent" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1646 1676])
+                    ("kTimerEvent" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1677 1705])
+                    ("kLeastNonZeroMessageId" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1783 1820])
+                    ("kMaxMessageId" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1821 1852])
+                    ("kNumberOfDistinctMessagesDisplayed" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1853 1905])
+                    ("VALUE_TO_NUMBER_AND_NAME" variable (:constant-flag t) (reparse-symbol namespacesubparts) [2607 2631])
+                    ("event_descriptions_" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :type ("base::LinearHistogram::DescriptionPair" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2654 3055])
+                    ("enable_histogrammer_" variable (:type "bool") (reparse-symbol namespacesubparts) [3057 3091])
+                    ("message_pump_for_ui_factory_" variable
+                       (:pointer 1
+                        :type ("MessageLoop::MessagePumpFactory" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3093 3162])
+                    ("GetTaskTraceID" function
+                       (:arguments 
+                          ( ("task" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("PendingTask" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3395 3419])
+                            ("loop" variable
+                               (:pointer 1
+                                :type ("MessageLoop" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3420 3438]))                          
+                        :type ("uint64" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3373 3564]))                  
+                :type "namespace")
+                nil [1220 3567])
+            ("TaskObserver" function
+               (:parent "MessageLoop::TaskObserver"
+                :type "int")
+                nil [4371 4416])
+            ("TaskObserver" function
+               (:destructor-flag t
+                :parent "MessageLoop::TaskObserver"
+                :type "void")
+                nil [4418 4464])
+            ("DestructionObserver" function
+               (:destructor-flag t
+                :parent "MessageLoop::DestructionObserver"
+                :type "void")
+                nil [4466 4526])
+            ("MessageLoop" function
+               (:constructor-flag t
+                :parent "MessageLoop"
+                :arguments 
+                  ( ("type" variable (:type ("Type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4635 4645]))                  
+                :type ("MessageLoop" type (:type "class") nil nil))
+                nil [4610 6501])
+            ("MessageLoop" function
+               (:destructor-flag t
+                :parent "MessageLoop"
+                :type "void")
+                nil [6503 8217])
+            ("current" function
+               (:pointer 1
+                :parent "MessageLoop"
+                :type ("MessageLoop" type (:type "class") nil nil))
+                nil [8229 8494])
+            ("EnableHistogrammer" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("enable" variable (:type "bool") (reparse-symbol arg-sub-list) [8543 8555]))                  
+                :type "void")
+                nil [8506 8592])
+            ("InitMessagePumpForUIFactory" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("factory" variable
+                       (:pointer 1
+                        :type ("MessagePumpFactory" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8650 8678]))                  
+                :type "void")
+                nil [8604 8765])
+            ("AddDestructionObserver" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("destruction_observer" variable
+                       (:pointer 1
+                        :type ("DestructionObserver" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8813 8855]))                  
+                :type "void")
+                nil [8767 8949])
+            ("RemoveDestructionObserver" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("destruction_observer" variable
+                       (:pointer 1
+                        :type ("DestructionObserver" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9000 9042]))                  
+                :type "void")
+                nil [8951 9139])
+            ("PostTask" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("from_here" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("tracked_objects::Location" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9173 9216])
+                    ("task" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("base::Closure" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9217 9243]))                  
+                :type "void")
+                nil [9141 9431])
+            ("PostDelayedTask" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("from_here" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("tracked_objects::Location" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9472 9515])
+                    ("task" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("base::Closure" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9520 9546])
+                    ("delay" variable (:type ("TimeDelta" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9551 9567]))                  
+                :type "void")
+                nil [9433 9749])
+            ("PostNonNestableTask" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("from_here" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("tracked_objects::Location" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9794 9837])
+                    ("task" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("base::Closure" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9842 9868]))                  
+                :type "void")
+                nil [9751 10057])
+            ("PostNonNestableDelayedTask" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("from_here" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("tracked_objects::Location" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10109 10152])
+                    ("task" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("base::Closure" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10157 10183])
+                    ("delay" variable (:type ("TimeDelta" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10188 10204]))                  
+                :type "void")
+                nil [10059 10387])
+            ("Run" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [10389 10460])
+            ("RunUntilIdle" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [10462 10551])
+            ("QuitWhenIdle" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [10553 10756])
+            ("QuitNow" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [10758 10927])
+            ("IsType" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("type" variable (:type ("Type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10954 10964]))                  
+                :type "bool")
+                nil [10929 10998])
+            ("QuitCurrentWhenIdle" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [11000 11079])
+            ("QuitWhenIdleClosure" function
+               (:parent "MessageLoop"
+                :type ("base::Closure" type (:type "class") nil nil))
+                nil [11091 11186])
+            ("SetNestableTasksAllowed" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("allowed" variable (:type "bool") (reparse-symbol arg-sub-list) [11230 11243]))                  
+                :type "void")
+                nil [11188 11469])
+            ("NestableTasksAllowed" function
+               (:parent "MessageLoop"
+                :type "bool")
+                nil [11471 11555])
+            ("IsNested" function
+               (:parent "MessageLoop"
+                :type "bool")
+                nil [11557 11625])
+            ("AddTaskObserver" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("task_observer" variable
+                       (:pointer 1
+                        :type ("TaskObserver" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11661 11689]))                  
+                :type "void")
+                nil [11627 11769])
+            ("RemoveTaskObserver" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("task_observer" variable
+                       (:pointer 1
+                        :type ("TaskObserver" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11808 11836]))                  
+                :type "void")
+                nil [11771 11919])
+            ("AssertIdle" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [11921 12122])
+            ("is_running" function
+               (:parent "MessageLoop"
+                :type "bool")
+                nil [12124 12222])
+            ("RunHandler" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [12602 12758])
+            ("RunInternal" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [13007 13355])
+            ("ProcessNextDelayedNonNestableTask" function
+               (:parent "MessageLoop"
+                :type "bool")
+                nil [13357 13691])
+            ("RunTask" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("pending_task" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("PendingTask" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13719 13751]))                  
+                :type "void")
+                nil [13693 15257])
+            ("DeferOrRunPendingTask" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("pending_task" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("PendingTask" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15299 15331]))                  
+                :type "bool")
+                nil [15259 15712])
+            ("AddToDelayedWorkQueue" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("pending_task" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("PendingTask" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15754 15786]))                  
+                :type "void")
+                nil [15714 15869])
+            ("ReloadWorkQueue" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [15871 16529])
+            ("DeletePendingTasks" function
+               (:parent "MessageLoop"
+                :type "bool")
+                nil [16531 17629])
+            ("CalculateDelayedRuntime" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("delay" variable (:type ("TimeDelta" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17678 17694]))                  
+                :type ("TimeTicks" type (:type "class") nil nil))
+                nil [17631 19012])
+            ("AddToIncomingQueue" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("pending_task" variable
+                       (:pointer 1
+                        :type ("PendingTask" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19094 19120]))                  
+                :type "void")
+                nil [19057 20340])
+            ("StartHistogrammer" function
+               (:parent "MessageLoop"
+                :type "void")
+                nil [20522 21053])
+            ("HistogramEvent" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("event" variable (:type "int") (reparse-symbol arg-sub-list) [21088 21098]))                  
+                :type "void")
+                nil [21055 21193])
+            ("DoWork" function
+               (:parent "MessageLoop"
+                :type "bool")
+                nil [21195 22005])
+            ("DoDelayedWork" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("next_delayed_work_time" variable
+                       (:pointer 1
+                        :type ("TimeTicks" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22039 22073]))                  
+                :type "bool")
+                nil [22007 23197])
+            ("DoIdleWork" function
+               (:parent "MessageLoop"
+                :type "bool")
+                nil [23199 23373])
+            ("DeleteSoonInternal" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("from_here" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("tracked_objects::Location" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23412 23455])
+                    ("" variable (:type "void") (reparse-symbol arg-sub-list) [23493 23507])
+                    ("object" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23559 23578]))                  
+                :type "void")
+                nil [23375 23645])
+            ("ReleaseSoonInternal" function
+               (:parent "MessageLoop"
+                :arguments 
+                  ( ("from_here" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("tracked_objects::Location" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23690 23733])
+                    ("" variable (:type "void") (reparse-symbol arg-sub-list) [23738 23753])
+                    ("object" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23772 23791]))                  
+                :type "void")
+                nil [23647 23859])
+            ("AddObserver" function
+               (:parent "MessageLoopForUI"
+                :arguments 
+                  ( ("observer" variable
+                       (:pointer 1
+                        :type ("Observer" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24570 24589]))                  
+                :type "void")
+                nil [24535 24629])
+            ("RemoveObserver" function
+               (:parent "MessageLoopForUI"
+                :arguments 
+                  ( ("observer" variable
+                       (:pointer 1
+                        :type ("Observer" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24669 24688]))                  
+                :type "void")
+                nil [24631 24731]))          
+    :file "message_loop.cc"
+    :pointmax 26265
+    :fsize 26267
+    :lastmodtime '(20871 25586 839723 891000)
+    :unmatched-syntax '((semantic-list 23753 . 23766) (semantic-list 23742 . 23753) (semantic-list 23507 . 23520) (semantic-list 23497 . 23507))
+    :lexical-table 
+        '(("VALUE_TO_NUMBER_AND_NAME" (spp-arg-list ("name") 2631 . 2637) . ((semantic-list "{name, #name}" 2638 . 2651) (punctuation "," 2651 . 2652)))
+          )
+
+    )
+   (semanticdb-table "message_loop.h"
+    :file "message_loop.h"
+    :fsize 26194
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "bind.h"
+    :file "bind.h"
+    :fsize 26419
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "compiler_specific.h"
+    :file "compiler_specific.h"
+    :fsize 45
+    :lastmodtime '(20860 51102 0 0)
+    )
+   (semanticdb-table "lazy_instance.h"
+    :file "lazy_instance.h"
+    :fsize 8834
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "logging.h"
+    :file "logging.h"
+    :fsize 39215
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "message_loop_proxy_impl.h"
+    :file "message_loop_proxy_impl.h"
+    :fsize 2060
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "message_pump_default.h"
+    :file "message_pump_default.h"
+    :fsize 1093
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "run_loop.h"
+    :file "run_loop.h"
+    :fsize 3819
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "thread_task_runner_handle.h"
+    :file "thread_task_runner_handle.h"
+    :fsize 1091
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "time.h"
+    :file "time.h"
+    :fsize 21509
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "tracked_objects.h"
+    :file "tracked_objects.h"
+    :fsize 34455
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "message_pump_libevent.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("base/message_pump_libevent.h" include nil nil [171 210])
+            ("errno.h" include (:system-flag t) nil [212 230])
+            ("fcntl.h" include (:system-flag t) nil [231 249])
+            ("unistd.h" include (:system-flag t) nil [250 269])
+            ("base/auto_reset.h" include nil nil [271 299])
+            ("base/compiler_specific.h" include nil nil [300 335])
+            ("base/logging.h" include nil nil [336 361])
+            ("base/memory/scoped_ptr.h" include nil nil [440 475])
+            ("base/observer_list.h" include nil nil [476 507])
+            ("base/posix/eintr_wrapper.h" include nil nil [508 545])
+            ("base/time.h" include nil nil [546 568])
+            ("event.h" include (:system-flag t) nil [612 630])
+            ("base" type
+               (:members 
+                  ( ("SetNonBlocking" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [1642 1649]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1616 1773])
+                    ("FileDescriptorWatcher" function
+                       (:constructor-flag t
+                        :parent "MessagePumpLibevent::FileDescriptorWatcher"
+                        :type ("FileDescriptorWatcher" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1775 1965])
+                    ("FileDescriptorWatcher" function
+                       (:destructor-flag t
+                        :parent "MessagePumpLibevent::FileDescriptorWatcher"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1967 2093])
+                    ("StopWatchingFileDescriptor" function
+                       (:parent "MessagePumpLibevent::FileDescriptorWatcher"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [2095 2387])
+                    ("Init" function
+                       (:parent "MessagePumpLibevent::FileDescriptorWatcher"
+                        :arguments 
+                          ( ("e" variable
+                               (:pointer 1
+                                :type ("event" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2443 2452]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [2389 2503])
+                    ("ReleaseEvent" function
+                       (:pointer 1
+                        :parent "MessagePumpLibevent::FileDescriptorWatcher"
+                        :type ("event" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2505 2631])
+                    ("OnFileCanReadWithoutBlocking" function
+                       (:parent "MessagePumpLibevent::FileDescriptorWatcher"
+                        :arguments 
+                          ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [2716 2723])
+                            ("pump" variable
+                               (:pointer 1
+                                :type ("MessagePumpLibevent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2724 2750]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [2633 2997])
+                    ("OnFileCanWriteWithoutBlocking" function
+                       (:parent "MessagePumpLibevent::FileDescriptorWatcher"
+                        :arguments 
+                          ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [3083 3090])
+                            ("pump" variable
+                               (:pointer 1
+                                :type ("MessagePumpLibevent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3091 3117]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [2999 3247])
+                    ("MessagePumpLibevent" function
+                       (:constructor-flag t
+                        :parent "MessagePumpLibevent"
+                        :type ("MessagePumpLibevent" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3249 3504])
+                    ("MessagePumpLibevent" function
+                       (:destructor-flag t
+                        :parent "MessagePumpLibevent"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3506 3917])
+                    ("WatchFileDescriptor" function
+                       (:parent "MessagePumpLibevent"
+                        :arguments 
+                          ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [3965 3972])
+                            ("persistent" variable (:type "bool") (reparse-symbol arg-sub-list) [4019 4035])
+                            ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [4082 4091])
+                            ("controller" variable
+                               (:pointer 1
+                                :type ("FileDescriptorWatcher" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4138 4172])
+                            ("delegate" variable
+                               (:pointer 1
+                                :type ("Watcher" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4219 4237]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [3919 6062])
+                    ("AddIOObserver" function
+                       (:parent "MessagePumpLibevent"
+                        :arguments 
+                          ( ("obs" variable
+                               (:pointer 1
+                                :type ("IOObserver" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6104 6120]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6064 6158])
+                    ("RemoveIOObserver" function
+                       (:parent "MessagePumpLibevent"
+                        :arguments 
+                          ( ("obs" variable
+                               (:pointer 1
+                                :type ("IOObserver" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6203 6219]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6160 6260])
+                    ("timer_callback" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [6334 6341])
+                            ("events" variable (:type "short") (reparse-symbol arg-sub-list) [6342 6355])
+                            ("context" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [6356 6370]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6307 6428])
+                    ("Run" function
+                       (:parent "MessagePumpLibevent"
+                        :arguments 
+                          ( ("delegate" variable
+                               (:pointer 1
+                                :type ("Delegate" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6474 6493]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6444 8374])
+                    ("Quit" function
+                       (:parent "MessagePumpLibevent"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8376 8549])
+                    ("ScheduleWork" function
+                       (:parent "MessagePumpLibevent"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8551 8855])
+                    ("ScheduleDelayedWork" function
+                       (:parent "MessagePumpLibevent"
+                        :arguments 
+                          ( ("delayed_work_time" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("TimeTicks" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8908 8943]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8857 9195])
+                    ("WillProcessIOEvent" function
+                       (:parent "MessagePumpLibevent"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9197 9317])
+                    ("DidProcessIOEvent" function
+                       (:parent "MessagePumpLibevent"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9319 9437])
+                    ("Init" function
+                       (:parent "MessagePumpLibevent"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [9439 10144])
+                    ("OnLibeventNotification" function
+                       (:parent "MessagePumpLibevent"
+                        :arguments 
+                          ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [10205 10212])
+                            ("flags" variable (:type "short") (reparse-symbol arg-sub-list) [10213 10225])
+                            ("context" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [10275 10289]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10156 10837])
+                    ("OnWakeup" function
+                       (:parent "MessagePumpLibevent"
+                        :arguments 
+                          ( ("socket" variable (:type "int") (reparse-symbol arg-sub-list) [10936 10947])
+                            ("flags" variable (:type "short") (reparse-symbol arg-sub-list) [10948 10960])
+                            ("context" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [10961 10975]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10901 11378]))                  
+                :type "namespace")
+                nil [1519 11381]))          
+    :file "message_pump_libevent.cc"
+    :pointmax 11401
+    :fsize 11403
+    :lastmodtime '(20871 24643 606415 502000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "message_pump_gtk.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("base/message_pump_gtk.h" include nil nil [171 205])
+            ("gtk/gtk.h" include (:system-flag t) nil [207 227])
+            ("gdk/gdkx.h" include (:system-flag t) nil [228 249])
+            ("base/profiler/scoped_profile.h" include nil nil [251 292])
+            ("base/debug/trace_event.h" include nil nil [293 328])
+            ("unnamed" type
+               (:members 
+                  ( ("EventToTypeString" function
+                       (:pointer 1
+                        :constant-flag t
+                        :arguments 
+                          ( ("event" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("GdkEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [373 395]))                          
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [343 2670]))                  
+                :type "namespace")
+                nil [330 2673])
+            ("base" type
+               (:members 
+                  ( ("MessagePumpGtk" function
+                       (:constructor-flag t
+                        :parent "MessagePumpGtk"
+                        :type ("MessagePumpGtk" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2693 2804])
+                    ("DispatchEvents" function
+                       (:parent "MessagePumpGtk"
+                        :arguments 
+                          ( ("event" variable
+                               (:pointer 1
+                                :type ("GdkEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2842 2858]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [2806 3202])
+                    ("GetDefaultXDisplay" function
+                       (:pointer 1
+                        :parent "MessagePumpGtk"
+                        :type ("Display" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3214 3578])
+                    ("MessagePumpGtk" function
+                       (:destructor-flag t
+                        :parent "MessagePumpGtk"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3580 3729])
+                    ("WillProcessEvent" function
+                       (:parent "MessagePumpGtk"
+                        :arguments 
+                          ( ("event" variable
+                               (:pointer 1
+                                :type ("GdkEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3769 3785]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3731 3869])
+                    ("DidProcessEvent" function
+                       (:parent "MessagePumpGtk"
+                        :arguments 
+                          ( ("event" variable
+                               (:pointer 1
+                                :type ("GdkEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3908 3924]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3871 4007])
+                    ("EventDispatcher" function
+                       (:parent "MessagePumpGtk"
+                        :arguments 
+                          ( ("event" variable
+                               (:pointer 1
+                                :type ("GdkEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4056 4072])
+                            ("data" variable (:type ("gpointer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4073 4087]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [4019 4204]))                  
+                :type "namespace")
+                nil [2675 4207]))          
+    :file "message_pump_gtk.cc"
+    :pointmax 4227
+    :fsize 4229
+    :lastmodtime '(20860 50860 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "message_pump_gtk.h"
+    :file "message_pump_gtk.h"
+    :fsize 2175
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "message_pump_libevent.h"
+    :file "message_pump_libevent.h"
+    :fsize 5908
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "auto_reset.h"
+    :file "auto_reset.h"
+    :fsize 1203
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "observer_list.h"
+    :file "observer_list.h"
+    :fsize 6298
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "process_util_posix.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("dirent.h" include (:system-flag t) nil [171 190])
+            ("errno.h" include (:system-flag t) nil [191 209])
+            ("fcntl.h" include (:system-flag t) nil [210 228])
+            ("signal.h" include (:system-flag t) nil [229 248])
+            ("stdlib.h" include (:system-flag t) nil [249 268])
+            ("sys/resource.h" include (:system-flag t) nil [269 294])
+            ("sys/time.h" include (:system-flag t) nil [295 316])
+            ("sys/types.h" include (:system-flag t) nil [317 339])
+            ("sys/wait.h" include (:system-flag t) nil [340 361])
+            ("unistd.h" include (:system-flag t) nil [362 381])
+            ("iterator" include (:system-flag t) nil [383 402])
+            ("limits" include (:system-flag t) nil [403 420])
+            ("set" include (:system-flag t) nil [421 435])
+            ("base/allocator/type_profiler_control.h" include nil nil [437 486])
+            ("base/command_line.h" include nil nil [487 517])
+            ("base/compiler_specific.h" include nil nil [518 553])
+            ("base/debug/debugger.h" include nil nil [554 586])
+            ("base/debug/stack_trace.h" include nil nil [587 622])
+            ("base/file_util.h" include nil nil [623 650])
+            ("base/files/dir_reader_posix.h" include nil nil [651 691])
+            ("base/logging.h" include nil nil [692 717])
+            ("base/memory/scoped_ptr.h" include nil nil [718 753])
+            ("base/posix/eintr_wrapper.h" include nil nil [754 791])
+            ("base/process_util.h" include nil nil [792 822])
+            ("base/stringprintf.h" include nil nil [823 853])
+            ("base/synchronization/waitable_event.h" include nil nil [854 902])
+            ("base/third_party/dynamic_annotations/dynamic_annotations.h" include nil nil [903 972])
+            ("base/threading/platform_thread.h" include nil nil [973 1016])
+            ("base/threading/thread_restrictions.h" include nil nil [1017 1064])
+            ("environ" variable
+               (:pointer 2
+                :typemodifiers ("extern")
+                :type "char")
+                nil [1280 1302])
+            ("base" type
+               (:members 
+                  ( ("unnamed" type
+                       (:members 
+                          ( ("GetEnvironment" function
+                               (:pointer 2
+                                :type "char")
+                                (reparse-symbol namespacesubparts) [1427 1535])
+                            ("SetEnvironment" function
+                               (:arguments 
+                                  ( ("env" variable
+                                       (:pointer 2
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [1642 1653]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [1622 1736])
+                            ("WaitpidWithTimeout" function
+                               (:arguments 
+                                  ( ("handle" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1761 1782])
+                                    ("wait_milliseconds" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1783 1807])
+                                    ("success" variable
+                                       (:pointer 1
+                                        :type "bool")
+                                        (reparse-symbol arg-sub-list) [1831 1845]))                                  
+                                :type "int")
+                                (reparse-symbol namespacesubparts) [1738 4441])
+                            ("ResetChildSignalHandlersToDefaults" function (:type "void") (reparse-symbol namespacesubparts) [4443 5074])
+                            ("GetTerminationStatusImpl" function
+                               (:arguments 
+                                  ( ("handle" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5119 5140])
+                                    ("can_block" variable (:type "bool") (reparse-symbol arg-sub-list) [5184 5199])
+                                    ("exit_code" variable
+                                       (:pointer 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [5243 5258]))                                  
+                                :type ("TerminationStatus" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [5076 6289]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1329 6292])
+                    ("GetCurrentProcId" function (:type ("ProcessId" type (:type "class") nil nil)) (reparse-symbol namespacesubparts) [6318 6369])
+                    ("GetCurrentProcessHandle" function (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol namespacesubparts) [6371 6443])
+                    ("OpenProcessHandle" function
+                       (:arguments 
+                          ( ("pid" variable (:type ("ProcessId" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6468 6482])
+                            ("handle" variable
+                               (:pointer 1
+                                :type ("ProcessHandle" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6483 6505]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [6445 6642])
+                    ("OpenPrivilegedProcessHandle" function
+                       (:arguments 
+                          ( ("pid" variable (:type ("ProcessId" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6677 6691])
+                            ("handle" variable
+                               (:pointer 1
+                                :type ("ProcessHandle" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6692 6714]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [6644 6862])
+                    ("OpenProcessHandleWithAccess" function
+                       (:arguments 
+                          ( ("pid" variable (:type ("ProcessId" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6897 6911])
+                            ("access_flags" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6945 6965])
+                            ("handle" variable
+                               (:pointer 1
+                                :type ("ProcessHandle" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6999 7021]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [6864 7169])
+                    ("CloseProcessHandle" function
+                       (:arguments 
+                          ( ("process" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7195 7217]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7171 7274])
+                    ("GetProcId" function
+                       (:arguments 
+                          ( ("process" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7296 7318]))                          
+                        :type ("ProcessId" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [7276 7340])
+                    ("KillProcess" function
+                       (:arguments 
+                          ( ("process_id" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7553 7578])
+                            ("exit_code" variable (:type "int") (reparse-symbol arg-sub-list) [7579 7593])
+                            ("wait" variable (:type "bool") (reparse-symbol arg-sub-list) [7594 7604]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [7536 9015])
+                    ("KillProcessGroup" function
+                       (:arguments 
+                          ( ("process_group_id" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9039 9070]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [9017 9243])
+                    ("ScopedDIRClose" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [9314 9321])
+                            ("()" function
+                               (:operator-flag t
+                                :typemodifiers ("inline")
+                                :arguments 
+                                  ( ("x" variable
+                                       (:pointer 1
+                                        :type ("DIR" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [9347 9354]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [9324 9404]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [9290 9407])
+                    ("ScopedDIR" type
+                       (:typedef ("scoped_ptr_malloc" type
+                             (:template-specifier 
+                                ( ("DIR" type nil nil nil)
+                                  ("ScopedDIRClose" type nil nil nil))                                
+                              :type "class")
+                              nil nil)
+                        :superclasses "scoped_ptr_malloc"
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [9408 9465])
+                    ("CloseSuperfluousFds" function
+                       (:arguments 
+                          ( ("saved_mapping" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("base::InjectiveMultimap" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10219 10264]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10194 12451])
+                    ("AlterEnvironment" function
+                       (:pointer 2
+                        :arguments 
+                          ( ("changes" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("EnvironmentVector" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12477 12510])
+                            ("env" variable
+                               (:pointer 2
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [12535 12564]))                          
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [12453 15853])
+                    ("LaunchProcess" function
+                       (:arguments 
+                          ( ("argv" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::vector" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [15874 15911])
+                            ("options" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("LaunchOptions" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15931 15960])
+                            ("process_handle" variable
+                               (:pointer 1
+                                :type ("ProcessHandle" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15980 16010]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [15855 24239])
+                    ("LaunchProcess" function
+                       (:arguments 
+                          ( ("cmdline" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("CommandLine" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [24261 24288])
+                            ("options" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("LaunchOptions" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [24308 24337])
+                            ("process_handle" variable
+                               (:pointer 1
+                                :type ("ProcessHandle" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [24357 24387]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [24242 24456])
+                    ("ProcessMetrics" function
+                       (:destructor-flag t
+                        :parent "ProcessMetrics"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [24834 24871])
+                    ("RaiseProcessToHighPriority" function (:type "void") (reparse-symbol namespacesubparts) [24873 25066])
+                    ("GetTerminationStatus" function
+                       (:arguments 
+                          ( ("handle" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25107 25128])
+                            ("exit_code" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [25129 25144]))                          
+                        :type ("TerminationStatus" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [25068 25225])
+                    ("WaitForTerminationStatus" function
+                       (:arguments 
+                          ( ("handle" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25270 25291])
+                            ("exit_code" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [25335 25350]))                          
+                        :type ("TerminationStatus" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [25227 25430])
+                    ("WaitForExitCode" function
+                       (:arguments 
+                          ( ("handle" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25453 25474])
+                            ("exit_code" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [25475 25490]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [25432 25800])
+                    ("WaitForExitCodeWithTimeout" function
+                       (:arguments 
+                          ( ("handle" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25834 25855])
+                            ("exit_code" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [25856 25871])
+                            ("timeout" variable (:type ("base::TimeDelta" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25904 25928]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [25802 26338])
+                    ("WaitForSingleProcess" function
+                       (:arguments 
+                          ( ("handle" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29000 29021])
+                            ("wait" variable (:type ("base::TimeDelta" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29022 29043]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [28974 29823])
+                    ("TimeValToMicroseconds" function
+                       (:arguments 
+                          ( ("tv" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("timeval" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [29853 29878]))                          
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [29825 30068])
+                    ("GetAppOutputInternalResult" type
+                       (:members 
+                          ( ("EXECUTE_FAILURE" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [30215 30231])
+                            ("EXECUTE_SUCCESS" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [30234 30250])
+                            ("GOT_MAX_OUTPUT" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [30253 30268]))                          
+                        :type "enum")
+                        (reparse-symbol namespacesubparts) [30179 30271])
+                    ("GetAppOutputInternal" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("argv" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::vector" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [31367 31404])
+                            ("envp" variable
+                               (:pointer 1
+                                :dereference 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [31409 31428])
+                            ("output" variable
+                               (:pointer 1
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [31433 31453])
+                            ("max_output" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31458 31476])
+                            ("do_search_path" variable (:type "bool") (reparse-symbol arg-sub-list) [31481 31501])
+                            ("exit_code" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [31506 31521]))                          
+                        :type ("GetAppOutputInternalResult" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [31307 35380])
+                    ("GetAppOutput" function
+                       (:arguments 
+                          ( ("cl" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("CommandLine" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [35400 35422])
+                            ("output" variable
+                               (:pointer 1
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [35423 35443]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [35382 35489])
+                    ("GetAppOutput" function
+                       (:arguments 
+                          ( ("argv" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::vector" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [35509 35546])
+                            ("output" variable
+                               (:pointer 1
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [35547 35567]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [35491 35882])
+                    ("GetAppOutputRestricted" function
+                       (:arguments 
+                          ( ("cl" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("CommandLine" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [36031 36053])
+                            ("output" variable
+                               (:pointer 1
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [36082 36102])
+                            ("max_output" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36103 36121]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [36003 36492])
+                    ("GetAppOutputWithExitCode" function
+                       (:arguments 
+                          ( ("cl" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("CommandLine" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [36524 36546])
+                            ("output" variable
+                               (:pointer 1
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [36577 36597])
+                            ("exit_code" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [36628 36643]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [36494 36916])
+                    ("WaitForProcessesToExit" function
+                       (:arguments 
+                          ( ("executable_name" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("FilePath::StringType" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [36946 36990])
+                            ("wait" variable (:type ("base::TimeDelta" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37019 37040])
+                            ("filter" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("ProcessFilter" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [37069 37097]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [36918 37623])
+                    ("CleanupProcesses" function
+                       (:arguments 
+                          ( ("executable_name" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("FilePath::StringType" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [37647 37691])
+                            ("wait" variable (:type ("base::TimeDelta" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37714 37735])
+                            ("exit_code" variable (:type "int") (reparse-symbol arg-sub-list) [37758 37772])
+                            ("filter" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("ProcessFilter" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [37795 37823]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [37625 38009])
+                    ("unnamed" type
+                       (:members 
+                          ( ("IsChildDead" function
+                               (:typemodifiers ("static")
+                                :arguments 
+                                  ( ("child" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38167 38179]))                                  
+                                :type "bool")
+                                (reparse-symbol namespacesubparts) [38143 38431])
+                            ("BackgroundReaper" type
+                               (:superclasses 
+                                  ( ("PlatformThread::Delegate" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [38631 38638])
+                                    ("BackgroundReaper" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("child" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38658 38670])
+                                            ("timeout" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [38671 38688]))                                          
+                                        :type ("BackgroundReaper" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [38641 38743])
+                                    ("WaitForChildToDie" function (:type "void") (reparse-symbol classsubparts) [38880 40009])
+                                    ("private" label nil (reparse-symbol classsubparts) [40012 40020])
+                                    ("child_" variable
+                                       (:constant-flag t
+                                        :type ("pid_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [40023 40042])
+                                    ("timeout_" variable
+                                       (:constant-flag t
+                                        :type "unsigned int")
+                                        (reparse-symbol classsubparts) [40142 40166])
+                                    ("DISALLOW_COPY_AND_ASSIGN" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("BackgroundReaper" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40195 40212]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [40170 40213]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [38571 40216]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [38036 40219])
+                    ("EnsureProcessTerminated" function
+                       (:arguments 
+                          ( ("process" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40264 40286]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40235 40553])
+                    ("EnsureProcessGetsReaped" function
+                       (:arguments 
+                          ( ("process" variable (:type ("ProcessHandle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40584 40606]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40555 40825]))                  
+                :type "namespace")
+                nil [1311 40860]))          
+    :file "process_util_posix.cc"
+    :pointmax 40876
+    :fsize 40882
+    :lastmodtime '(20871 26126 956376 280000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "file_util.h"
+    :file "file_util.h"
+    :fsize 25100
+    :lastmodtime '(20860 55534 0 0)
+    )
+   (semanticdb-table "process_util.h"
+    :file "process_util.h"
+    :fsize 37570
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "stringprintf.h"
+    :file "stringprintf.h"
+    :fsize 2116
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "at_exit.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("base/at_exit.h" include nil nil [171 196])
+            ("stddef.h" include (:system-flag t) nil [198 217])
+            ("ostream" include (:system-flag t) nil [218 236])
+            ("base/bind.h" include nil nil [238 260])
+            ("base/callback.h" include nil nil [261 287])
+            ("base/logging.h" include nil nil [288 313])
+            ("base" type
+               (:members 
+                  ( ("g_top_manager" variable
+                       (:pointer 1
+                        :typemodifiers ("static")
+                        :type ("AtExitManager" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [793 836])
+                    ("AtExitManager" function
+                       (:constructor-flag t
+                        :parent "AtExitManager"
+                        :type ("AtExitManager" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [838 1105])
+                    ("AtExitManager" function
+                       (:destructor-flag t
+                        :parent "AtExitManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1107 1347])
+                    ("RegisterCallback" function
+                       (:parent "AtExitManager"
+                        :arguments 
+                          ( ("func" variable (:type ("AtExitCallbackType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1396 1420])
+                            ("param" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1421 1433]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1359 1494])
+                    ("RegisterTask" function
+                       (:parent "AtExitManager"
+                        :arguments 
+                          ( ("task" variable (:type ("base::Closure" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1539 1558]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1506 1752])
+                    ("ProcessCallbacksNow" function
+                       (:parent "AtExitManager"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1764 2117])
+                    ("AtExitManager" function
+                       (:constructor-flag t
+                        :parent "AtExitManager"
+                        :arguments 
+                          ( ("shadow" variable (:type "bool") (reparse-symbol arg-sub-list) [2148 2160]))                          
+                        :type ("AtExitManager" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2119 2255]))                  
+                :type "namespace")
+                nil [315 2258]))          
+    :file "at_exit.cc"
+    :pointmax 2278
+    :fsize 2280
+    :lastmodtime '(20860 50860 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "callback.h"
+    :file "callback.h"
+    :fsize 30437
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "base_export.h"
+    :file "base_export.h"
+    :fsize 951
+    :lastmodtime '(20860 50860 0 0)
+    )
+   (semanticdb-table "basictypes.h"
+    :file "basictypes.h"
+    :fsize 14275
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "process_posix.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("base/process.h" include nil nil [171 196])
+            ("sys/types.h" include (:system-flag t) nil [198 220])
+            ("sys/time.h" include (:system-flag t) nil [221 242])
+            ("sys/resource.h" include (:system-flag t) nil [243 268])
+            ("base/process_util.h" include nil nil [270 300])
+            ("base/logging.h" include nil nil [301 326])
+            ("base" type
+               (:members 
+                  ( ("Current" function
+                       (:parent "Process"
+                        :type ("Process" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [356 431])
+                    ("pid" function
+                       (:parent "Process"
+                        :type ("ProcessId" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [433 533])
+                    ("is_current" function
+                       (:parent "Process"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [535 619])
+                    ("Close" function
+                       (:parent "Process"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [621 851])
+                    ("Terminate" function
+                       (:parent "Process"
+                        :arguments 
+                          ( ("result_code" variable (:type "int") (reparse-symbol arg-sub-list) [877 893]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [853 1094])
+                    ("IsProcessBackgrounded" function
+                       (:parent "Process"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [1119 1217])
+                    ("SetProcessBackgrounded" function
+                       (:parent "Process"
+                        :arguments 
+                          ( ("value" variable (:type "bool") (reparse-symbol arg-sub-list) [1256 1267]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [1219 1444])
+                    ("CanBackgroundProcesses" function
+                       (:parent "Process"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [1456 1514])
+                    ("GetPriority" function
+                       (:parent "Process"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [1524 1626]))                  
+                :type "namespace")
+                nil [328 1629]))          
+    :file "process_posix.cc"
+    :pointmax 1648
+    :fsize 1650
+    :lastmodtime '(20860 50860 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "process.h"
+    :file "process.h"
+    :fsize 2666
+    :lastmodtime '(20860 50862 0 0)
+    )
+   (semanticdb-table "process_linux.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("base/process.h" include nil nil [171 196])
+            ("errno.h" include (:system-flag t) nil [198 216])
+            ("sys/resource.h" include (:system-flag t) nil [217 242])
+            ("base/file_util.h" include nil nil [244 271])
+            ("base/lazy_instance.h" include nil nil [272 303])
+            ("base/logging.h" include nil nil [304 329])
+            ("base/stringprintf.h" include nil nil [330 360])
+            ("base/string_split.h" include nil nil [361 391])
+            ("base/synchronization/lock.h" include nil nil [392 430])
+            ("unnamed" type
+               (:members 
+                  ( ("kForegroundPriority" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [444 478])
+                    ("kBackgroundPriority" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [2220 2254]))                  
+                :type "namespace")
+                nil [432 2263])
+            ("base" type
+               (:members 
+                  ( ("IsProcessBackgrounded" function
+                       (:parent "Process"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [2283 2842])
+                    ("SetProcessBackgrounded" function
+                       (:parent "Process"
+                        :arguments 
+                          ( ("background" variable (:type "bool") (reparse-symbol arg-sub-list) [2881 2897]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [2844 3480])
+                    ("CheckForNicePermission" type
+                       (:members 
+                          ( ("CheckForNicePermission" function
+                               (:constructor-flag t
+                                :type ("CheckForNicePermission" type (:type "struct") nil nil))
+                                (reparse-symbol classsubparts) [3516 3924])
+                            ("can_reraise_priority" variable (:type "bool") (reparse-symbol classsubparts) [3929 3955]))                          
+                        :type "struct")
+                        (reparse-symbol namespacesubparts) [3482 3958])
+                    ("CanBackgroundProcesses" function
+                       (:parent "Process"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [3970 4261]))                  
+                :type "namespace")
+                nil [2265 4264]))          
+    :file "process_linux.cc"
+    :pointmax 4284
+    :fsize 4286
+    :lastmodtime '(20860 50860 0 0)
+    :unmatched-syntax '((punctuation 3924 . 3925))
+    )
+   (semanticdb-table "string_split.h"
+    :file "string_split.h"
+    :fsize 3612
+    :lastmodtime '(20860 50860 0 0)
+    )
+   )
+  :file "!home!revir!workspace!new!safesitetask!base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

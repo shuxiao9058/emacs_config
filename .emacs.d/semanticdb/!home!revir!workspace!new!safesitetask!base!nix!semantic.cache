@@ -1,0 +1,113 @@
+;; Object nix/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "nix/"
+  :tables (list 
+   (semanticdb-table "xdg_util.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("base/nix/xdg_util.h" include nil nil [171 201])
+            ("string" include (:system-flag t) nil [203 220])
+            ("base/environment.h" include nil nil [222 251])
+            ("base/file_path.h" include nil nil [252 279])
+            ("base/file_util.h" include nil nil [280 307])
+            ("base/third_party/xdg_user_dirs/xdg_user_dir_lookup.h" include nil nil [308 371])
+            ("unnamed" type
+               (:members 
+                  ( ("kKDE4SessionEnvVar" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [449 505]))                  
+                :type "namespace")
+                nil [373 508])
+            ("base" type
+               (:members 
+                  ( ("nix" type
+                       (:members 
+                          ( ("kDotConfigDir" variable
+                               (:dereference 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol namespacesubparts) [558 597])
+                            ("kXdgConfigHomeEnvVar" variable
+                               (:dereference 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol namespacesubparts) [598 652])
+                            ("GetXDGDirectory" function
+                               (:arguments 
+                                  ( ("env" variable
+                                       (:pointer 1
+                                        :type ("Environment" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [679 696])
+                                    ("env_name" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [697 718])
+                                    ("fallback_dir" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [744 769]))                                  
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [654 1015])
+                            ("GetXDGUserDirectory" function
+                               (:arguments 
+                                  ( ("dir_name" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [1046 1067])
+                                    ("fallback_dir" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [1068 1093]))                                  
+                                :type ("FilePath" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [1017 1342])
+                            ("GetDesktopEnvironment" function
+                               (:arguments 
+                                  ( ("env" variable
+                                       (:pointer 1
+                                        :type ("Environment" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1385 1402]))                                  
+                                :type ("DesktopEnvironment" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [1344 2918])
+                            ("GetDesktopEnvironmentName" function
+                               (:pointer 1
+                                :constant-flag t
+                                :arguments 
+                                  ( ("env" variable (:type ("DesktopEnvironment" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2958 2981]))                                  
+                                :type "char")
+                                (reparse-symbol namespacesubparts) [2920 3360])
+                            ("GetDesktopEnvironmentName" function
+                               (:pointer 1
+                                :constant-flag t
+                                :arguments 
+                                  ( ("env" variable
+                                       (:pointer 1
+                                        :type ("Environment" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3400 3417]))                                  
+                                :type "char")
+                                (reparse-symbol namespacesubparts) [3362 3485]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [541 3488]))                  
+                :type "namespace")
+                nil [524 3508]))          
+    :file "xdg_util.cc"
+    :pointmax 3528
+    :fsize 3527
+    :lastmodtime '(20860 55706 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "xdg_util.h"
+    :file "xdg_util.h"
+    :fsize 2785
+    :lastmodtime '(20860 55706 0 0)
+    )
+   )
+  :file "!home!revir!workspace!new!safesitetask!base!nix!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

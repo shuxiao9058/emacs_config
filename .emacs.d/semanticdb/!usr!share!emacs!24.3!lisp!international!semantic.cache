@@ -1,0 +1,16 @@
+;; Object international/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "international/"
+  :tables
+  (list
+    (semanticdb-table "mule.el.gz"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "mule.el.gz"
+      :pointmax 94498
+      :fsize 25616
+      :lastmodtime '(20707 18685 0 0)
+      :unmatched-syntax nil))
+  :file "!usr!share!emacs!24.3!lisp!international!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

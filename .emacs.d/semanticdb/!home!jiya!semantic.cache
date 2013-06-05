@@ -1,0 +1,32 @@
+;; Object jiya/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "jiya/"
+  :tables
+  (list
+    (semanticdb-table "hello.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("main" function (:type "int") nil [21 63]))          
+      :file "hello.c"
+      :pointmax 64
+      :fsize 63
+      :lastmodtime '(20910 53135 22786 267000)
+      :unmatched-syntax nil)
+    (semanticdb-table "test.cpp"
+      :major-mode 'c++-mode
+      :tags nil
+      :file "test.cpp"
+      :pointmax 1
+      :fsize 81
+      :lastmodtime '(20911 5455 880160 609000)
+      :unmatched-syntax nil)
+    (semanticdb-table "abc.c"
+      :major-mode 'c-mode
+      :tags nil
+      :file "abc.c"
+      :pointmax 1
+      :unmatched-syntax nil))
+  :file "!home!jiya!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

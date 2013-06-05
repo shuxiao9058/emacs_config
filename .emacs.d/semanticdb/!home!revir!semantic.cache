@@ -1,0 +1,151 @@
+;; Object revir/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "revir/"
+  :tables
+  (list
+    (semanticdb-table "test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("math" include nil nil [1 12])
+            ("a" variable nil nil [14 41])
+            ("for" code nil nil [42 146])
+            ("for" code nil nil [146 203]))          
+      :file "test.py"
+      :pointmax 210
+      :fsize 209
+      :lastmodtime '(20871 50581 299249 507000)
+      :unmatched-syntax '(($EOI 210 . 210) (DEF 201 . 204) ($EOI 219 . 219)))
+    (semanticdb-table ".emacs"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("add-to-list" code nil nil [1 49])
+            ("add-to-list" code nil nil [50 115])
+            ("add-to-list" code nil nil [117 185])
+            ("load-theme" code nil nil [186 209])
+            ("add-to-list" code nil nil [324 388])
+            ("load-file" code nil nil [389 449])
+            ("setq" code nil nil [450 1460])
+            ("semantic-mode" code nil nil [1461 1478])
+            ("global-semantic-highlight-edits-mode" code nil nil [1479 1541])
+            ("semantic/ia" include nil nil [1542 1564])
+            ("semantic/bovine/gcc" include nil nil [1565 1595])
+            ("setq-mode-local" code nil nil [1695 1806])
+            ("setq-mode-local" code nil nil [1809 1920])
+            ("my-semantic-hook" function nil nil [1922 1981])
+            ("add-hook" code nil nil [1982 2031])
+            ("semanticdb-enable-gnu-global-databases" code nil nil [2081 2129])
+            ("semanticdb-enable-gnu-global-databases" code nil nil [2130 2180])
+            ("when" code nil nil [2265 2356])
+            ("global-set-key" code nil nil [2374 2421])
+            ("global-set-key" code nil nil [2422 2471])
+            ("global-set-key" code nil nil [2472 2534])
+            ("global-set-key" code nil nil [2535 2594])
+            ("global-set-key" code nil nil [2595 2639])
+            ("global-set-key" code nil nil [2640 3330])
+            ("cedet-user-include-dirs" variable
+               (:constant-flag t
+                :default-value (list "." ".." "../include" "../../include" "/home/revir/workspace/safesitetask" "/home/revir/workspace/safesitetask/include" "../inc" "../../inc" "../common" "../public" "../../common" "../../public"))
+                nil [3332 3596])
+            ("semantic-hook-add-inc" function nil nil [3675 3869])
+            ("add-hook" code nil nil [3870 3924])
+            ("makefile-runner" include nil nil [3965 3991])
+            ("load-file" code nil nil [4008 4056])
+            ("global-set-key" code nil nil [4057 4095])
+            ("define-key" code nil nil [4096 4141])
+            ("setq" code nil nil [4142 4222])
+            ("setq" code nil nil [4223 4310])
+            ("setq" code nil nil [4311 4401])
+            ("speedbar-frame-mode" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [4414 4483])
+            ("speedbar-get-focus" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [4484 4552])
+            ("add-hook" code nil nil [4554 4766])
+            ("setq" code nil nil [4768 4804])
+            ("setq" code nil nil [4806 4881])
+            ("load" code nil nil [4916 4935])
+            ("python" include (:directory "python.el") nil [5009 5038])
+            ("setq" code nil nil [5049 5518])
+            ("pymacs-apply" function (:prototype-flag t) nil [5521 5554])
+            ("pymacs-call" function (:prototype-flag t) nil [5555 5587])
+            ("pymacs-eval" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [5588 5626])
+            ("pymacs-exec" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [5627 5665])
+            ("pymacs-load" function
+               (:prototype-flag t
+                :user-visible-flag t)
+                nil [5666 5704])
+            ("pymacs-autoload" function (:prototype-flag t) nil [5705 5741])
+            ("add-to-list" code nil nil [5936 5997])
+            ("unless" code nil nil [5999 6224])
+            ("el-get" code nil nil [6226 6240])
+            ("setq" code nil nil [6241 6319])
+            ("add-to-list" code nil nil [6367 6424])
+            ("yasnippet" include nil nil [6425 6445])
+            ("yas-global-mode" code nil nil [6446 6465])
+            ("add-to-list" code nil nil [6578 6635])
+            ("auto-complete-config" include nil nil [6636 6667])
+            ("auto-complete+" include nil nil [6668 6693])
+            ("util" include nil nil [6694 6709])
+            ("ahei-misc" include nil nil [6710 6730])
+            ("ac-config-default" code nil nil [6732 6751])
+            ("add-to-list" code nil nil [6752 6823])
+            ("global-auto-complete-mode" code nil nil [6824 6851])
+            ("ac-set-trigger-key" code nil nil [6852 6878])
+            ("ac-set-trigger-key" code nil nil [6879 6907])
+            ("eal-define-keys" code nil nil [6909 7024])
+            ("pos-tip" include nil nil [7027 7045])
+            ("setq" code nil nil [7046 7083])
+            ("setq" code nil nil [7100 7126])
+            ("setq" code nil nil [7127 7157])
+            ("setq" code nil nil [7158 7174])
+            ("setq" code nil nil [7175 7199])
+            ("setq" code nil nil [7201 7322])
+            ("set-default" code nil nil [7323 7609])
+            ("add-to-list" code nil nil [7653 7708])
+            ("tabbar" include nil nil [7709 7726])
+            ("tabbar-mode" code nil nil [7727 7740])
+            ("define-prefix-command" code nil nil [7741 7777])
+            ("global-set-key" code nil nil [7778 7832])
+            ("global-set-key" code nil nil [7833 7888])
+            ("global-set-key" code nil nil [7889 7939])
+            ("global-set-key" code nil nil [7940 7990])
+            ("compile-settings" include nil nil [8067 8094])
+            ("ac-settings-4-cc" function nil nil [8136 8369])
+            ("eval-after-load" code nil nil [8370 8487])
+            ("ac-settings-4-autopair" function nil nil [8489 9381])
+            ("eval-after-load" code nil nil [9382 9438])
+            ("ac-settings-4-lisp" function nil nil [9440 10178])
+            ("ac-settings-4-java" function nil nil [10180 10624])
+            ("ac-settings-4-c" function nil nil [10626 10946])
+            ("ac-settings-4-cpp" function nil nil [10948 11270])
+            ("ac-settings-4-text" function nil nil [11272 11488])
+            ("ac-settings-4-eshell" function nil nil [11490 11806])
+            ("ac-settings-4-ruby" function nil nil [11808 12008])
+            ("ac-settings-4-html" function nil nil [12010 12270])
+            ("ac-settings-4-tcl" function nil nil [12272 12531])
+            ("ac-settings-4-awk" function nil nil [12533 12792])
+            ("am-add-hooks" code nil nil [12794 12958])
+            ("apply-args-list-to-fun" code nil nil [12960 13416])
+            ("json-format" function nil nil [13468 13607])
+            ("wcy-define-key-in-transient-mode" function (:arguments ("global-p" "key" "cmd-mark-active" "cmd-mark-no-active")) nil [13654 14015])
+            ("wcy-isearch-forward-on-selection" function (:arguments ("regexp-p" "no-recursive-edit")) nil [14017 14351])
+            ("wcy-define-key-in-transient-mode" code nil nil [14353 14520])
+            ("custom-set-variables" code nil nil [14521 14914])
+            ("custom-set-faces" code nil nil [14915 15154]))          
+      :file ".emacs"
+      :pointmax 15155
+      :fsize 15170
+      :lastmodtime '(20903 62156 130069 655000)
+      :unmatched-syntax nil))
+  :file "!home!revir!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

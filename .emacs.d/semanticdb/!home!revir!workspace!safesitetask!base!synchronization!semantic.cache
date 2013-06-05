@@ -1,0 +1,112 @@
+;; Object synchronization/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "synchronization/"
+  :tables
+  (list
+    (semanticdb-table "lock.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_SYNCHRONIZATION_LOCK_H_" variable (:constant-flag t) nil [216 244])
+            ("base/base_export.h" include nil nil [246 275])
+            ("base/synchronization/lock_impl.h" include nil nil [276 319])
+            ("base/threading/platform_thread.h" include nil nil [320 363])
+            ("base" type
+               (:members 
+                  ( ("Lock" variable (:type ("BASE_EXPORT" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [558 2980])
+                    ("AutoLock" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [3079 3086])
+                            ("AutoLock" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("lock" variable
+                                       (:reference 1
+                                        :type ("Lock" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3107 3118]))                                  
+                                :type ("AutoLock" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3098 3159])
+                            ("AutoLock" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [3163 3229])
+                            ("private" label nil (reparse-symbol classsubparts) [3232 3240])
+                            ("lock_" variable (:type ("Lock" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3243 3255])
+                            ("DISALLOW_COPY_AND_ASSIGN" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable (:type ("AutoLock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3283 3292]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [3258 3293]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3061 3296])
+                    ("AutoUnlock" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [3446 3453])
+                            ("AutoUnlock" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("lock" variable
+                                       (:reference 1
+                                        :type ("Lock" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3476 3487]))                                  
+                                :type ("AutoUnlock" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3465 3603])
+                            ("AutoUnlock" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [3607 3647])
+                            ("private" label nil (reparse-symbol classsubparts) [3650 3658])
+                            ("lock_" variable (:type ("Lock" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3661 3673])
+                            ("DISALLOW_COPY_AND_ASSIGN" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable (:type ("AutoUnlock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3701 3712]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [3676 3713]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3426 3716]))                  
+                :type "namespace")
+                nil [365 3719]))          
+      :file "lock.h"
+      :pointmax 3780
+      :fsize 3782
+      :lastmodtime '(20900 35809 275611 885000)
+      :unmatched-syntax '((EXPLICIT 3456 . 3464) (EXPLICIT 3089 . 3097))
+      :lexical-table 
+        '(("BASE_SYNCHRONIZATION_LOCK_H_")
+          )
+)
+    (semanticdb-table "lock_impl.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BASE_SYNCHRONIZATION_LOCK_IMPL_H_" variable (:constant-flag t) nil [221 254])
+            ("build/build_config.h" include nil nil [256 287])
+            ("base/base_export.h" include nil nil [383 412])
+            ("base/basictypes.h" include nil nil [413 441])
+            ("base" type
+               (:members 
+                  ( ("internal" type
+                       (:members 
+                          ( ("LockImpl" variable (:type ("BASE_EXPORT" type
+                                 (:prototype t
+                                  :type "class")
+                                  nil nil)) (reparse-symbol namespacesubparts) [666 1491]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [460 1494]))                  
+                :type "namespace")
+                nil [443 1519]))          
+      :file "lock_impl.h"
+      :pointmax 1585
+      :fsize 1587
+      :lastmodtime '(20900 35809 278945 219000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BASE_SYNCHRONIZATION_LOCK_IMPL_H_")
+          )
+))
+  :file "!home!revir!workspace!safesitetask!base!synchronization!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

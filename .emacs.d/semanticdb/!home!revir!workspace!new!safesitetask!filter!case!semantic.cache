@@ -1,0 +1,151 @@
+;; Object case/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "case/"
+  :tables (list 
+   (semanticdb-table "FilterCase91za.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("stdafx.h" include (:system-flag t) nil [1 20])
+            ("filter/case/FilterCase91za.h" include (:system-flag t) nil [21 60])
+            ("boost/foreach.hpp" include (:system-flag t) nil [61 89])
+            ("filter/FilterFactory.h" include (:system-flag t) nil [91 124])
+            ("core/TaskOption.h" include (:system-flag t) nil [125 153])
+            ("CFilterCase91za" function
+               (:constructor-flag t
+                :parent "CFilterCase91za"
+                :type ("CFilterCase91za" type (:type "class") nil nil))
+                nil [155 225])
+            ("CFilterCase91za" function
+               (:destructor-flag t
+                :parent "CFilterCase91za"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [261 266]))                  
+                :type "void")
+                nil [227 301])
+            ("ComposeSearch" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("keyword" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [422 449])
+                    ("user" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [460 484])
+                    ("uid" variable (:type "bool") (reparse-symbol arg-sub-list) [485 494]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [379 530])
+            ("IsForum" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [663 686]))                  
+                :type "bool")
+                nil [633 812])
+            ("NForumPage" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [897 920]))                  
+                :type "int")
+                nil [865 954])
+            ("IsSubForum" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1005 1028]))                  
+                :type "bool")
+                nil [972 1047])
+            ("NSubForum" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1090 1113]))                  
+                :type "int")
+                nil [1059 1129])
+            ("IsTopic" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1287 1310]))                  
+                :type "bool")
+                nil [1257 1498])
+            ("IsTopicPageN" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1560 1583]))                  
+                :type "bool")
+                nil [1525 1602])
+            ("NTopicPage" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1645 1668]))                  
+                :type "int")
+                nil [1613 1684])
+            ("IsTopicList" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1720 1743]))                  
+                :type "bool")
+                nil [1686 1762])
+            ("NTopicList" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1796 1819]))                  
+                :type "int")
+                nil [1764 1835])
+            ("IsAttachment" function
+               (:parent "CFilterCase91za"
+                :arguments 
+                  ( ("url" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1882 1905]))                  
+                :type "bool")
+                nil [1847 1924]))          
+    :file "FilterCase91za.cpp"
+    :pointmax 1925
+    :fsize 2158
+    :lastmodtime '(20880 20047 346560 734000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!revir!workspace!new!safesitetask!filter!case!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

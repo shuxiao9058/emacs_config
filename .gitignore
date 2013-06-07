@@ -1,7 +1,12 @@
+# Folder
 .emacs.d/auto-save-list/
 .emacs.d/plugins/el-get/
+.emacs.d/eshell/
 .emacs.d/semanticdb/
+# File
 .emacs.d/.session
+.emacs.d/ac-comphist.dat
+.emacs.d/srecode-map.el
 *~
 *.elc
 .#*

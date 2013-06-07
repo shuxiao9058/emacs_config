@@ -145,10 +145,11 @@
 ;;      (color-theme-initialize)
 ;;      (color-theme-charcoal-black)))
 
-;;===============================
-;;for el-get
+;; ===============================
+;; for el-get
+(setq el-get-dir "~/.emacs.d/plugins/el-get/")
+;; el-get script folder
 (add-to-list 'load-path "~/.emacs.d/plugins/el-get/el-get/")
-(setq el-get-dir "~/.emacs.d/plugins/el-get/el-get/")
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer

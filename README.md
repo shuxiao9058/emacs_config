@@ -7,11 +7,12 @@ command:
         git submodule init
         git submodule update
   Then change to ".emacs.d/plugins/auto-complete/"directory,exec the same 
-command as before.        
+command as before.
   Copy the ".emacs.d" folder to home directory("~/").
   Run Emacs program and enjoy yourself!  
 
 Tested on Arch Linux, Emacs version is v24.3.
 
-                                                   Updated On Fri Jun 07, 2013
-                                                                         Ji Ya
+
+                                                    Updated On Fri Jun 07, 2013
+                                                                          Ji Ya

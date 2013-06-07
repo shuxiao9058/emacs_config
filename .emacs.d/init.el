@@ -115,7 +115,7 @@
 (load "my-base.el")
 ;; ==============================
 ;; python mode: from fgallina/python.el
-(require 'python "~/.emacs.d/plugins/python.el/python.el")
+(require 'python "~/.emacs.d/plugins/minors/python.el")
 ;; ipython
 (setq
  python-shell-interpreter "ipython"

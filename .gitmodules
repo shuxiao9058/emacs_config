@@ -23,9 +23,10 @@
       path = .emacs.d/plugins/git-emacs
       url = git://github.com/tsgates/git-emacs.git
 
-[submodule "python.el"]
-      path = .emacs.d/plugins/python.el
-      url = git://github.com/fgallina/python.el.git
+# not support Emacs24
+# [submodule "python.el"]
+#      path = .emacs.d/plugins/python.el
+#      url = git://github.com/fgallina/python.el.git
 
 [submodule "sourcepair.el"]
       path = .emacs.d/plugins/sourcepair.el
@@ -34,18 +35,6 @@
 [submodule "yasnippet"]
       path = .emacs.d/plugins/yasnippet
       url = git://github.com/capitaomorte/yasnippet.git
-
-[submodule ".emacs.d/pluglins/auto-complete/lib/fuzzy"]
-	path = .emacs.d/pluglins/auto-complete/lib/fuzzy
-	url = git://github.com/auto-complete/fuzzy-el.git
-[submodule ".emacs.d/pluglins/auto-complete/lib/popup"]
-	path = .emacs.d/pluglins/auto-complete/lib/popup
-	url = git://github.com/auto-complete/popup-el.git
-[submodule ".emacs.d/pluglins/auto-complete/lib/ert"]
-	path = .emacs.d/pluglins/auto-complete/lib/ert
-	url = git://github.com/ohler/ert.git
-
-
 
 # theme packs
 [submodule "solarized-emacs"]

@@ -1,6 +1,7 @@
 .emacs.d/auto-save-list/
-.emacs.d/el-get/
+.emacs.d/plugins/el-get/
 .emacs.d/semanticdb/
+.emacs.d/.session
 *~
 *.elc
 .#*

@@ -5,11 +5,44 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/")
 
+;;------------------------------------------------------------------------------
+;; theme
+;;------------------------------------------------------------------------------
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zenburn-emacs")
 (load-theme 'zenburn t)
+;;------------------------End theme-----------------------
 
-;;======cedet
-;;A gental introduction to cedet. see: http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
+;;------------------------------------------------------------------------------
+;; [f11]: toggle-fullscreen
+;;------------------------------------------------------------------------------
+(defun toggle-fullscreen ()
+  "Toggle full screen on X11"
+  (interactive)
+  (when (eq window-system 'x)
+    (set-frame-parameter
+     nil 'fullscreen
+     (when (not (frame-parameter nil 'fullscreen)) 'fullboth))))
+
+(global-set-key [f11] 'toggle-fullscreen)
+;;------------------------End toggle-fullscreen-----------------------
+
+;;------------------------------------------------------------------------------
+;; tabbar
+;;------------------------------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/plugins/tabbar/")
+(require 'tabbar)
+(tabbar-mode)
+(define-prefix-command 'lwindow-map)
+(global-set-key (kbd "<M-up>") 'tabbar-backward-group)
+(global-set-key (kbd "<M-down>") 'tabbar-forward-group)
+(global-set-key (kbd "<M-left>") 'tabbar-backward)
+(global-set-key (kbd "<M-right>") 'tabbar-forward)
+;;------------------------End tabbar-----------------------
+
+;;------------------------------------------------------------------------------
+;; cedet
+;; ²Î¿¼£ºhttp://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
+;;------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins/cedet-bzr/")
 (load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
 (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
@@ -46,7 +79,7 @@
   (imenu-add-to-menubar "TAGS"))
 (add-hook 'semantic-init-hooks 'my-semantic-hook)
 
-;; if you want to enable support for gnu global
+;;;; if you want to enable support for gnu global
 (semanticdb-enable-gnu-global-databases 'c-mode)
 (semanticdb-enable-gnu-global-databases 'c++-mode)
 ;; enable ctags for some languages:
@@ -54,7 +87,7 @@
 ;; (when (cedet-ectag-version-check)
 ;;  (semantic-load-enable-primary-exuberent-ctags-support))
 
-;; shortcut key
+;;;; shortcut key
 (global-set-key (kbd "C-=")  'senator-fold-tag)
 (global-set-key (kbd "C--")  'senator-unfold-tag)
 (global-set-key (kbd "M-/") 'semantic-ia-complete-symbol-menu)
@@ -77,46 +110,45 @@
   (list "." ".." "../include" "../../include" 
 	"../inc" "../../inc" "../common" "../public"
         "../../common" "../../public" ))
-;;(require 'semantic-c nil 'noerror) 
-;;(require 'semantic-c++  nil 'noerror)
+;; (require 'semantic-c nil 'noerror) 
+;; (require 'semantic-c++  nil 'noerror)
 (defun semantic-hook-add-inc ()
   (mapc (lambda (dir)
           (semantic-add-system-include dir 'c++-mode)
           (semantic-add-system-include dir 'c-mode))
         cedet-user-include-dirs))
 (add-hook 'semantic-init-hooks 'semantic-hook-add-inc)
+;;------------------------End cedet-----------------------
 
-;;An easy method of running Makefiles.
+;;------------------------------------------------------------------------------
+;; makefilerunner
+;; An easy method of running Makefiles.
+;;------------------------------------------------------------------------------
 (load-file "~/.emacs.d/plugins/emacs-makefile-runner/makefile-runner.el")
 (require 'makefile-runner)  
+;;------------------------End autopair-----------------------
 
+;;------------------------------------------------------------------------------
 ;; sourcepair
+;;------------------------------------------------------------------------------
 (load-file "~/.emacs.d/plugins/sourcepair.el/sourcepair.el")
 (global-set-key [f4] 'sourcepair-load)
 (define-key global-map [f1] 'sourcepair-load)
 (setq sourcepair-recurse-ignore '("CVS" "bin" "lib" "Obj" "Debug" "Release" "out" ".svn"))
+;;------------------------End sourcepair-----------------------
 
-;;speedbar
-(autoload 'speedbar-frame-mode "speedbar" "Popup a speedbar frame" t)
-(autoload 'speedbar-get-focus "speedbar" "Jump to speedbar frame" t)
-
-(add-hook 'speedbar-mode-hook
-        (lambda ()
-         (auto-raise-mode 1)
-         (add-to-list 'speedbar-frame-parameters '(top . 0))
-         (add-to-list 'speedbar-frame-parameters '(left . 0))
-         ))
-
-(setq speedbar-show-unknown-files t)
-
-(setq speedbar-tag-hierarchy-method '(speedbar-prefix-group-tag-hierarchy))
-
-;;==============================
+;;------------------------------------------------------------------------------
+;; my-base.el
+;;------------------------------------------------------------------------------
 (load "my-base.el")
-;; ==============================
-;; python mode: from fgallina/python.el
+;;------------------------End my-base-----------------------
+
+;;------------------------------------------------------------------------------
+;; Python
+;;------------------------------------------------------------------------------
+;;;; python mode: from fgallina/python.el
 (require 'python "~/.emacs.d/plugins/minors/python.el")
-;; ipython
+;;;; ipython
 (setq
  python-shell-interpreter "ipython"
  python-shell-interpreter-args ""
@@ -129,7 +161,7 @@
  python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
-;; Pymacs
+;;;; Pymacs
 (add-to-list 'load-path "~/.emacs.d/plugins/Pymacs")
 ;; (require 'python "python.el")
 (autoload 'pymacs-apply "pymacs")
@@ -138,17 +170,23 @@
 (autoload 'pymacs-exec "pymacs" nil t)
 (autoload 'pymacs-load "pymacs" nil t)
 (autoload 'pymacs-autoload "pymacs")
+;;------------------------End Python-----------------------
 
+;;------------------------------------------------------------------------------
+;; color-theme
+;;------------------------------------------------------------------------------
 ;; (require 'color-theme)
 ;; (eval-after-load "color-theme"
 ;;   '(progn
 ;;      (color-theme-initialize)
 ;;      (color-theme-charcoal-black)))
+;;------------------------End color-theme-----------------------
 
-;; ===============================
-;; for el-get
+;;------------------------------------------------------------------------------
+;; el-get
+;;------------------------------------------------------------------------------
 (setq el-get-dir "~/.emacs.d/plugins/el-get/")
-;; el-get script folder
+;;;; el-get script folder
 (add-to-list 'load-path "~/.emacs.d/plugins/el-get/el-get/")
 
 (unless (require 'el-get nil 'noerror)
@@ -160,15 +198,20 @@
 
 (el-get 'sync)
 (setq el-get-user-package-directory "~/.emacs.d/plugins/el-get/el-get-init-files/")
+;;------------------------End el-get-----------------------
 
-;;===============================
-;;yasnippet
+;;------------------------------------------------------------------------------
+;; yasnippet
+;;------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
+;;------------------------End yasnippet-----------------------
 
-;; ===============================
-;; auto-complete. see: http://blog.csdn.net/winterttr/article/details/7524336
+;;------------------------------------------------------------------------------
+;; auto-complete
+;; ²Î¿¼£ºhttp://blog.csdn.net/winterttr/article/details/7524336
+;;------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins/dea-lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 
@@ -212,32 +255,18 @@
 			   ac-source-files-in-current-dir
 			   ac-source-filename))
 
-;;==============================
-;;tabbar
-(add-to-list 'load-path "~/.emacs.d/plugins/tabbar/")
-(require 'tabbar)
-(tabbar-mode)
-(define-prefix-command 'lwindow-map)
-(global-set-key (kbd "<M-up>") 'tabbar-backward-group)
-(global-set-key (kbd "<M-down>") 'tabbar-forward-group)
-(global-set-key (kbd "<M-left>") 'tabbar-backward)
-(global-set-key (kbd "<M-right>") 'tabbar-forward)
-
 ;;outline
 ;; (require 'outline-settings)
 
-;;==============================
 (require 'compile-settings)
 
-;; Another stab at making braces and quotes pair like in
-;; TextMate:
+;; autopair
+;; Another stab at making braces and pair like in TextMate.
 (load-file "~/.emacs.d/plugins/autopair/autopair.el")
 (require 'autopair)
 (autopair-global-mode) ;; to enable in all buffers
-  
 
-;;==============================
-;;mode
+;;;; mode
 (defun ac-settings-4-cc ()
   "`auto-complete' settings for `cc-mode'."
      (dolist (command `(c-electric-backspace
@@ -394,17 +423,21 @@
    ('html-mode-hook   'ac-settings-4-html)
    ('awk-mode-hook    'ac-settings-4-awk)
    ('tcl-mode-hook    'ac-settings-4-tcl)))
+;;------------------------End auto-complete-----------------------
 
-;;===============================
-;;json formator
+;;------------------------------------------------------------------------------
+;; json formator
+;;------------------------------------------------------------------------------
 (defun json-format ()
   (interactive)
   (save-excursion
 	(shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)
 	))
+;;------------------------End jason formator-----------------------
 
-;;===============================
-;;å®ç°æœç´¢é€‰ä¸­æ–‡å­—
+;;------------------------------------------------------------------------------
+;; ÊµÏÖËÑË÷Ñ¡ÖĞÎÄ×Ö
+;;------------------------------------------------------------------------------
 (defun wcy-define-key-in-transient-mode (global-p key cmd-mark-active  cmd-mark-no-active)
   (funcall (if global-p 'global-set-key 'local-set-key)
            key
@@ -431,67 +464,81 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("7c09d29d8083ecd56b9d5c1a4b887aa2b0dfbe20412b64047686da6711d850bd" default)))
+ '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
- '(ecb-tip-of-the-day nil nil nil "disable")
- '(session-use-package t nil (session)))
-(custom-set-faces
+)
+ (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+;;------------------------End ÊµÏÖËÑË÷Ñ¡ÖĞÎÄ×Ö-----------------------
 
+;;------------------------------------------------------------------------------
 ;; git-emacs
-;; (load-file "~/.emacs.d/plugins/git-emacs/git-emacs.el")
+;;------------------------------------------------------------------------------
 (require 'git-emacs)
+;;------------------------git-emacs-----------------------
 
-;;-------------------google-c-style----------------
+;;------------------------------------------------------------------------------
+;; google-c-style
+;;------------------------------------------------------------------------------
 (load-file "~/.emacs.d/plugins/google-styleguide/google-c-style.el")  
 (add-hook 'c-mode-common-hook 'google-set-c-style)  
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-;;-------------------End google-c-style----------------
+;;------------------------google-c-style-----------------------
 
-;;-------------------auto-header----------------
-;; (load-file "~/.emacs.d/plugins/minors/auto-header.el")
-
-;; åŠ è½½auto-header.elæ–‡ä»¶,è‡ªåŠ¨æ·»åŠ æ–‡ä»¶å¤´
+;;------------------------------------------------------------------------------
+;; auto-header
+;;------------------------------------------------------------------------------
+;;;; ¼ÓÔØauto-header.elÎÄ¼ş,×Ô¶¯Ìí¼ÓÎÄ¼şÍ·
 (require 'auto-header)
 
-;; è®¾ç½®æ–‡ä»¶å¤´ä¸­çš„å§“å
+;;;; ÉèÖÃÎÄ¼şÍ·ÖĞµÄĞÕÃû
 (setq header-full-name "Allen Shaw")
 
-;; è®¾ç½®é‚®ç®±
+;;;; ÉèÖÃÓÊÏä
 (setq header-email-address "shuxiao9058#qq.com")
 
-;; è®¾ç½®æ¯æ¬¡ä¿å­˜æ—¶è¦æ›´æ–°çš„é¡¹ç›®
+;;;; ÉèÖÃÃ¿´Î±£´æÊ±Òª¸üĞÂµÄÏîÄ¿
 (setq header-update-on-save
       '(  filename
           modified
           counter
           copyright))
-;; è®¾ç½®æ–‡ä»¶å¤´çš„æ˜¾ç¤ºæ ¼å¼
+;;;; ÉèÖÃÎÄ¼şÍ·µÄÏÔÊ¾¸ñÊ½
 (setq header-field-list
       '(  
-        filename  ;æ–‡ä»¶å
-        copyright ;ç‰ˆæƒ
-        version ;ç‰ˆæœ¬
-        author    ;ä½œè€…
-        created   ;åˆ›å»ºæ—¶é—´
-        modified_by ;ä¿®æ”¹è€…
-        modified ;ä¿®æ”¹æ—¶é—´
-        update ;ä¿®æ”¹æ¬¡æ•°
-        description   ;æè¿°
+        filename  ;ÎÄ¼şÃû
+        copyright ;°æÈ¨
+        version ;°æ±¾
+        author    ;×÷Õß
+        created   ;´´½¨Ê±¼ä
+        modified_by ;ĞŞ¸ÄÕß
+        modified ;ĞŞ¸ÄÊ±¼ä
+        update ;ĞŞ¸Ä´ÎÊı
+        description   ;ÃèÊö
         ;; blank
-        ;;status  ;çŠ¶æ€ï¼Œæ˜¯å¦å‘å¸ƒ
-        ;;æ›´æ–°
+        ;;status  ;×´Ì¬£¬ÊÇ·ñ·¢²¼
+        ;;¸üĞÂ
         ;;blank
         ))
-;;-------------------End auto-header----------------
+;;------------------------End auto-header-----------------------
 
-;;------------------------Ecb-----------------------
+;;------------------------------------------------------------------------------
+;; session
+;;------------------------------------------------------------------------------
+(require 'session)
+   (add-hook 'after-init-hook 'session-initialize)
+;;------------------------End session-----------------------
+
+;;------------------------------------------------------------------------------
+;; ECB
+;; ²¿·ÖÄÚÈİÕª×Ô£º
+;; https://my-emacs-config.googlecode.com/svn-history/r54/trunk/_emacs.d/settings/auto-complete-settings.el
+;;------------------------------------------------------------------------------
 (require 'ecb)
-(setq ecb-auto-activate t
-      ecb-tip-of-the-day nil)
 
 (add-hook 'ecb-activate-hook
           (lambda ()
@@ -499,9 +546,64 @@
               (if (not (and compwin-buffer
                             (ecb-compilation-buffer-p compwin-buffer)))
                   (ecb-toggle-compile-window -1)))))
+
+;;;; Æô¶¯ECB£¬²¢ÇÒ²»ÏÔÊ¾Ã¿ÈÕÌáÊ¾
+(setq ecb-auto-activate t
+      ecb-tip-of-the-day nil)
+
+;;;; Òş²ØºÍÏÔÊ¾ECB´°¿Ú
+(define-key global-map (kbd "M-0") 'ecb-hide-ecb-windows)
+(define-key global-map (kbd "M-9") 'ecb-show-ecb-windows)
+ 
+;;;; Éè¶¨ECB´°¿Ú±ÈÀı
+(setq ecb-windows-width 0.20)
+;;(add-hook 'window-size-change-functions 'ecb-restore-default-window-sizes)
+
+;;;; Ê¹Ä³Ò»ECB´°¿Ú×î´ó»¯
+(define-key global-map (kbd "M-1") 'ecb-maximize-window-directories)
+(define-key global-map (kbd "M-2") 'ecb-maximize-window-sources)
+(define-key global-map (kbd "M-3") 'ecb-maximize-window-methods)
+(define-key global-map (kbd "M-4") 'ecb-maximize-window-history)
+;;;; »Ö¸´Ô­Ê¼´°¿Ú²¼¾Ö
+(define-key global-map (kbd "M-`") 'ecb-restore-default-window-sizes)
 ;;------------------------End Ecb-----------------------
 
-;; ä½¿ç”¨äº†è¿™ä¸ªæ‰©å±•ä¹‹åï¼Œä½ ä¸Šæ¬¡ç¦»å¼€ Emacs æ—¶çš„å…¨å±€å˜é‡ (kill-ringï¼Œå‘½ä»¤è®°å½•â€¦â€¦)ï¼Œå±€éƒ¨å˜é‡ï¼Œå¯„å­˜å™¨ï¼Œæ‰“å¼€çš„æ–‡ä»¶ï¼Œä¿® æ”¹è¿‡çš„æ–‡ä»¶å’Œæœ€åä¿®æ”¹çš„ä½ç½®ï¼Œâ€¦â€¦ å…¨éƒ¨éƒ½ä¼šè¢«è®°å½•ä¸‹æ¥ã€‚åŠ è½½äº† session ä¹‹åèœå•ä¸Šä¼šå¤šä¸¤é¡¹ï¼šæœ€è¿‘è®¿é—®è¿‡çš„æ–‡ä»¶å’Œæœ€è¿‘ ä¿®æ”¹è¿‡çš„æ–‡ä»¶
-;; (load-file "~/.emacs.d/plugins/session/lisp/session.el")
-(require 'session)
-   (add-hook 'after-init-hook 'session-initialize)
+;;------------------------------------------------------------------------------
+;; xscope
+;; ËµÃ÷£ºÊ¹ÓÃÇ°ĞèÒª½øÈëxscopeÄ¿Â¼±àÒë°²×°¡£
+;;  C-c s s ²éÕÒº¯Êı»ò±äÁ¿
+;;  C-c s g ²éÕÒº¯Êı»ò±äÁ¿µÄ¶¨Òå
+;;  C-c s c ²éÕÒº¯Êı±»µ÷ÓÃµÄµØ·½
+;;  C-c s C ²éÕÒº¯Êıµ÷ÓÃÁËÄÄĞ©º¯Êı
+;;  C-c s p ²éÕÒº¯ÊıÉÏ´Î³öÏÖµÄÎ»ÖÃ
+;;  C-c s n ²éÕÒº¯ÊıÏÂ´Î³öÏÖµÄÎ»ÖÃ
+;;------------------------------------------------------------------------------
+(load-file "~/.emacs.d/plugins/cscope-15.8a/contrib/xcscope/xcscope.el")
+(require 'xcscope)
+(setq cscope-do-not-update-database t)
+(add-hook 'c-mode-common-hook
+	  '(lambda ()
+	    (require 'xcscope)))
+;;------------------------End xcscope-----------------------
+
+;;------------------------------------------------------------------------------
+;; gdb-UIÉèÖÃ
+;;------------------------------------------------------------------------------
+(load-library "~/.emacs.d/plugins/gdb-ui/gdb-ui.el")
+(load-library "~/.emacs.d/plugins/gdb-ui/gud.el")
+(setq gdb-many-windows t)
+;;------------------------End gdb-UI-----------------------
+
+;;------------------------------------------------------------------------------
+;; Ò»Ğ©¿ì½İ¼ü
+;;------------------------------------------------------------------------------
+;;;; ÏÔÊ¾°ïÖúÃüÁî
+(global-set-key [f1] 'manual-entry)
+(global-set-key [C-f1] 'info)
+
+;;;; gdbµ÷ÊÔ
+(global-set-key [f6] 'gdb)
+
+;;;; F12µ÷µ½º¯Êı¶¨Òå
+(global-set-key [f12] 'semantic-ia-fast-jump)
+;;------------------------End Ò»Ğ©¿ì½İ¼ü-----------------------

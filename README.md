@@ -11,8 +11,8 @@ command as before.
   Copy the ".emacs.d" folder to home directory("~/").
   Run Emacs program and enjoy yourself!  
 
-Tested on Arch Linux, Emacs version is v24.3.
+Tested on Arch Linux, Ubuntu and OS X, Emacs version is v24.3.
 
 
-                                                    Updated On Fri Jun 07, 2013
-                                                                          Ji Ya
+                                                       Updated On Sat Jun 08, 2013
+                                                                              Ji Ya

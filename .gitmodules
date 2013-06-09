@@ -24,7 +24,6 @@
 # [submodule ".emacs.d/plugins/python.el"]
 #      path = .emacs.d/plugins/python.el
 #      url = git://github.com/fgallina/python.el.git
-
 [submodule ".emacs.d/plugins/php-mode"]
       path = .emacs.d/plugins/php-mode
       url = git://github.com/ejmr/php-mode.git

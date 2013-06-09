@@ -41,7 +41,7 @@
 
 ;;------------------------------------------------------------------------------
 ;; cedet
-;; ²Î¿¼£ºhttp://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
+;; å‚è€ƒï¼šhttp://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
 ;;------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins/cedet-bzr/")
 (load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
@@ -173,6 +173,19 @@
 ;;------------------------End Python-----------------------
 
 ;;------------------------------------------------------------------------------
+;; php-mode
+;;------------------------------------------------------------------------------
+;;;; åŠ è½½php-mode
+(load-file "~/.emacs.d/plugins/php-mode/php-mode.el")
+(require 'php-mode)
+;;;; æ ¹æ®æ–‡ä»¶æ‰©å±•åè‡ªåŠ¨php-mode
+(add-to-list 'auto-mode-alist '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
+;;;; å¼€å‘é¡¹ç›®æ—¶ï¼Œphpæºæ–‡ä»¶ä½¿ç”¨å…¶ä»–æ‰©å±•å
+(add-to-list 'auto-mode-alist '("\\.module\\'" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc\\'" . php-mode))
+;;------------------------End php-mode-----------------------
+
+;;------------------------------------------------------------------------------
 ;; color-theme
 ;;------------------------------------------------------------------------------
 ;; (require 'color-theme)
@@ -210,7 +223,7 @@
 
 ;;------------------------------------------------------------------------------
 ;; auto-complete
-;; ²Î¿¼£ºhttp://blog.csdn.net/winterttr/article/details/7524336
+;; å‚è€ƒï¼šhttp://blog.csdn.net/winterttr/article/details/7524336
 ;;------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins/dea-lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
@@ -436,7 +449,7 @@
 ;;------------------------End jason formator-----------------------
 
 ;;------------------------------------------------------------------------------
-;; ÊµÏÖËÑË÷Ñ¡ÖĞÎÄ×Ö
+;; å®ç°æœç´¢é€‰ä¸­æ–‡å­—
 ;;------------------------------------------------------------------------------
 (defun wcy-define-key-in-transient-mode (global-p key cmd-mark-active  cmd-mark-no-active)
   (funcall (if global-p 'global-set-key 'local-set-key)
@@ -463,17 +476,26 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(current-language-environment "Chinese-GB18030")
+ '(custom-enabled-themes (quote (deeper-blue)))
  '(custom-safe-themes (quote ("7c09d29d8083ecd56b9d5c1a4b887aa2b0dfbe20412b64047686da6711d850bd" default)))
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
-)
- (custom-set-faces
+ '(fci-rule-color "#383838")
+ '(session-use-package t nil (session))
+ '(tooltip-mode nil)
+ '(vc-annotate-background "#2B2B2B")
+ '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
+ '(vc-annotate-very-old-color "#DC8CC3"))
+ 
+(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-;;------------------------End ÊµÏÖËÑË÷Ñ¡ÖĞÎÄ×Ö-----------------------
+;;------------------------End å®ç°æœç´¢é€‰ä¸­æ–‡å­—-----------------------
 
 ;;------------------------------------------------------------------------------
 ;; git-emacs
@@ -492,36 +514,36 @@
 ;;------------------------------------------------------------------------------
 ;; auto-header
 ;;------------------------------------------------------------------------------
-;;;; ¼ÓÔØauto-header.elÎÄ¼ş,×Ô¶¯Ìí¼ÓÎÄ¼şÍ·
+;;;; åŠ è½½auto-header.elæ–‡ä»¶,è‡ªåŠ¨æ·»åŠ æ–‡ä»¶å¤´
 (require 'auto-header)
 
-;;;; ÉèÖÃÎÄ¼şÍ·ÖĞµÄĞÕÃû
+;;;; è®¾ç½®æ–‡ä»¶å¤´ä¸­çš„å§“å
 (setq header-full-name "Allen Shaw")
 
-;;;; ÉèÖÃÓÊÏä
+;;;; è®¾ç½®é‚®ç®±
 (setq header-email-address "shuxiao9058#qq.com")
 
-;;;; ÉèÖÃÃ¿´Î±£´æÊ±Òª¸üĞÂµÄÏîÄ¿
+;;;; è®¾ç½®æ¯æ¬¡ä¿å­˜æ—¶è¦æ›´æ–°çš„é¡¹ç›®
 (setq header-update-on-save
       '(  filename
           modified
           counter
           copyright))
-;;;; ÉèÖÃÎÄ¼şÍ·µÄÏÔÊ¾¸ñÊ½
+;;;; è®¾ç½®æ–‡ä»¶å¤´çš„æ˜¾ç¤ºæ ¼å¼
 (setq header-field-list
       '(  
-        filename  ;ÎÄ¼şÃû
-        copyright ;°æÈ¨
-        version ;°æ±¾
-        author    ;×÷Õß
-        created   ;´´½¨Ê±¼ä
-        modified_by ;ĞŞ¸ÄÕß
-        modified ;ĞŞ¸ÄÊ±¼ä
-        update ;ĞŞ¸Ä´ÎÊı
-        description   ;ÃèÊö
+        filename  ;æ–‡ä»¶å
+        copyright ;ç‰ˆæƒ
+        version ;ç‰ˆæœ¬
+        author    ;ä½œè€…
+        created   ;åˆ›å»ºæ—¶é—´
+        modified_by ;ä¿®æ”¹è€…
+        modified ;ä¿®æ”¹æ—¶é—´
+        update ;ä¿®æ”¹æ¬¡æ•°
+        description   ;æè¿°
         ;; blank
-        ;;status  ;×´Ì¬£¬ÊÇ·ñ·¢²¼
-        ;;¸üĞÂ
+        ;;status  ;çŠ¶æ€ï¼Œæ˜¯å¦å‘å¸ƒ
+        ;;æ›´æ–°
         ;;blank
         ))
 ;;------------------------End auto-header-----------------------
@@ -535,7 +557,7 @@
 
 ;;------------------------------------------------------------------------------
 ;; ECB
-;; ²¿·ÖÄÚÈİÕª×Ô£º
+;; éƒ¨åˆ†å†…å®¹æ‘˜è‡ªï¼š
 ;; https://my-emacs-config.googlecode.com/svn-history/r54/trunk/_emacs.d/settings/auto-complete-settings.el
 ;;------------------------------------------------------------------------------
 (require 'ecb)
@@ -547,36 +569,36 @@
                             (ecb-compilation-buffer-p compwin-buffer)))
                   (ecb-toggle-compile-window -1)))))
 
-;;;; Æô¶¯ECB£¬²¢ÇÒ²»ÏÔÊ¾Ã¿ÈÕÌáÊ¾
+;;;; å¯åŠ¨ECBï¼Œå¹¶ä¸”ä¸æ˜¾ç¤ºæ¯æ—¥æç¤º
 (setq ecb-auto-activate t
       ecb-tip-of-the-day nil)
 
-;;;; Òş²ØºÍÏÔÊ¾ECB´°¿Ú
+;;;; éšè—å’Œæ˜¾ç¤ºECBçª—å£
 (define-key global-map (kbd "M-0") 'ecb-hide-ecb-windows)
 (define-key global-map (kbd "M-9") 'ecb-show-ecb-windows)
  
-;;;; Éè¶¨ECB´°¿Ú±ÈÀı
+;;;; è®¾å®šECBçª—å£æ¯”ä¾‹
 (setq ecb-windows-width 0.20)
 ;;(add-hook 'window-size-change-functions 'ecb-restore-default-window-sizes)
 
-;;;; Ê¹Ä³Ò»ECB´°¿Ú×î´ó»¯
+;;;; ä½¿æŸä¸€ECBçª—å£æœ€å¤§åŒ–
 (define-key global-map (kbd "M-1") 'ecb-maximize-window-directories)
 (define-key global-map (kbd "M-2") 'ecb-maximize-window-sources)
 (define-key global-map (kbd "M-3") 'ecb-maximize-window-methods)
 (define-key global-map (kbd "M-4") 'ecb-maximize-window-history)
-;;;; »Ö¸´Ô­Ê¼´°¿Ú²¼¾Ö
+;;;; æ¢å¤åŸå§‹çª—å£å¸ƒå±€
 (define-key global-map (kbd "M-`") 'ecb-restore-default-window-sizes)
 ;;------------------------End Ecb-----------------------
 
 ;;------------------------------------------------------------------------------
 ;; xscope
-;; ËµÃ÷£ºÊ¹ÓÃÇ°ĞèÒª½øÈëxscopeÄ¿Â¼±àÒë°²×°¡£
-;;  C-c s s ²éÕÒº¯Êı»ò±äÁ¿
-;;  C-c s g ²éÕÒº¯Êı»ò±äÁ¿µÄ¶¨Òå
-;;  C-c s c ²éÕÒº¯Êı±»µ÷ÓÃµÄµØ·½
-;;  C-c s C ²éÕÒº¯Êıµ÷ÓÃÁËÄÄĞ©º¯Êı
-;;  C-c s p ²éÕÒº¯ÊıÉÏ´Î³öÏÖµÄÎ»ÖÃ
-;;  C-c s n ²éÕÒº¯ÊıÏÂ´Î³öÏÖµÄÎ»ÖÃ
+;; è¯´æ˜ï¼šä½¿ç”¨å‰éœ€è¦è¿›å…¥xscopeç›®å½•ç¼–è¯‘å®‰è£…ã€‚
+;;  C-c s s æŸ¥æ‰¾å‡½æ•°æˆ–å˜é‡
+;;  C-c s g æŸ¥æ‰¾å‡½æ•°æˆ–å˜é‡çš„å®šä¹‰
+;;  C-c s c æŸ¥æ‰¾å‡½æ•°è¢«è°ƒç”¨çš„åœ°æ–¹
+;;  C-c s C æŸ¥æ‰¾å‡½æ•°è°ƒç”¨äº†å“ªäº›å‡½æ•°
+;;  C-c s p æŸ¥æ‰¾å‡½æ•°ä¸Šæ¬¡å‡ºç°çš„ä½ç½®
+;;  C-c s n æŸ¥æ‰¾å‡½æ•°ä¸‹æ¬¡å‡ºç°çš„ä½ç½®
 ;;------------------------------------------------------------------------------
 (load-file "~/.emacs.d/plugins/cscope-15.8a/contrib/xcscope/xcscope.el")
 (require 'xcscope)
@@ -587,7 +609,7 @@
 ;;------------------------End xcscope-----------------------
 
 ;;------------------------------------------------------------------------------
-;; gdb-UIÉèÖÃ
+;; gdb-UIè®¾ç½®
 ;;------------------------------------------------------------------------------
 (load-library "~/.emacs.d/plugins/gdb-ui/gdb-ui.el")
 (load-library "~/.emacs.d/plugins/gdb-ui/gud.el")

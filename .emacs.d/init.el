@@ -3,7 +3,6 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb/")
 (add-to-list 'load-path "~/.emacs.d/plugins/session/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
-(add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/")
 
 ;;------------------------------------------------------------------------------
 ;; theme
@@ -45,7 +44,34 @@
 ;;------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins/cedet-bzr/")
 (load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
-(setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
+
+(require 'popup)
+;;;; add some shotcuts in popup menu mode
+(define-key popup-menu-keymap (kbd "M-n") 'popup-next)
+(define-key popup-menu-keymap (kbd "TAB") 'popup-next)
+(define-key popup-menu-keymap (kbd "<tab>") 'popup-next)
+(define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
+(define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
+
+(defun yas-popup-isearch-prompt (prompt choices &optional display-fn)
+  (when (featurep 'popup)
+    (popup-menu*
+     (mapcar
+      (lambda (choice)
+        (popup-make-item
+         (or (and display-fn (funcall display-fn choice))
+             choice)
+         :value choice))
+      choices)
+     :prompt prompt
+     ;; start isearch mode immediately
+     :isearch t
+     )))
+
+(setq yas-prompt-functions '(yas-popup-isearch-prompt yas-ido-prompt yas-no-prompt))
+
+(setq semantic-default-submodes '(
+                                  global-semantic-idle-scheduler-mode
                                   global-semanticdb-minor-mode
                                   global-semantic-idle-summary-mode
                                   global-semantic-mru-bookmark-mode
@@ -54,10 +80,9 @@
                                   global-semantic-decoration-mode
                                   global-semantic-idle-local-symbol-highlight-mode
                                   global-semantic-idle-scheduler-mode
-                                  global-semantic-idle-summary-mode  ;;show tag/function information on minibuffer.
+                                  global-semantic-idle-summary-mode
                                   global-semantic-idle-completions-mode
-
-                                  ;;
+                                  global-semantic-highlight-func-mode
                                   global-semantic-show-unmatched-syntax-mode
                                   global-semantic-show-parser-state-mode
 								  ))
@@ -66,26 +91,24 @@
 (require 'semantic/ia)
 (require 'semantic/bovine/gcc)
 
-;; TODO:System header files : (semantic-add-system-include "~/exp/include/boost_1_37" 'c++-mode)
-
-(setq-mode-local c-mode semanticdb-find-default-throttle
-                 '(project unloaded system recursive))
-
-
-(setq-mode-local c-mode semanticdb-find-default-throttle
-                 '(project unloaded system recursive))
+;; (semantic-add-system-include "~/exp/include/boost_1_37" 'c++-mode)
 
 (defun my-semantic-hook ()
   (imenu-add-to-menubar "TAGS"))
 (add-hook 'semantic-init-hooks 'my-semantic-hook)
 
 ;;;; if you want to enable support for gnu global
-(semanticdb-enable-gnu-global-databases 'c-mode)
-(semanticdb-enable-gnu-global-databases 'c++-mode)
-;; enable ctags for some languages:
-;;  Unix Shell, Perl, Pascal, Tcl, Fortran, Asm
-;; (when (cedet-ectag-version-check)
+(when (cedet-gnu-global-version-check t)
+  (semanticdb-enable-gnu-global-databases 'c-mode)
+  (semanticdb-enable-gnu-global-databases 'c++-mode))
+
+;;;; enable ctags for some languages:
+;;;;  Unix Shell, Perl, Pascal, Tcl, Fortran, Asm
+;;(when (cedet-ectag-version-check)
 ;;  (semantic-load-enable-primary-exuberent-ctags-support))
+
+;;;; use projects
+(global-ede-mode t)
 
 ;;;; shortcut key
 (global-set-key (kbd "C-=")  'senator-fold-tag)
@@ -106,18 +129,33 @@
                         (setq first (cdr (car (cdr alist)))))
                     (semantic-mrub-switch-tags first))))
 
+;; (setq semanticdb-project-roots (list (expand-file-name "/")))
 (defconst cedet-user-include-dirs
-  (list "." ".." "../include" "../../include" 
-	"../inc" "../../inc" "../common" "../public"
-        "../../common" "../../public" ))
-;; (require 'semantic-c nil 'noerror) 
-;; (require 'semantic-c++  nil 'noerror)
-(defun semantic-hook-add-inc ()
+  (list ".." "../include" "../inc" "../common" "../public"
+        "../.." "../../include" "../../inc" "../../common" "../../public"))
+(defconst cedet-win32-include-dirs
+  (list "C:/MinGW/include"
+        "C:/MinGW/include/c++/3.4.5"
+        "C:/MinGW/include/c++/3.4.5/mingw32"
+        "C:/MinGW/include/c++/3.4.5/backward"
+        "C:/MinGW/lib/gcc/mingw32/3.4.5/include"
+        "C:/Program Files/Microsoft Visual Studio/VC98/MFC/Include"))
+(defconst cedet-gnu/linux-include-dirs
+  (list "/usr/include"
+        "/usr/include/c++/4.8.1"
+        "/usr/include/c++/4.8.1/tr1"
+        "/usr/include/c++/4.8.1/tr2"
+        "/usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include"))
+(require 'semantic-c nil 'noerror)
+(let ((include-dirs cedet-user-include-dirs))
+  (when (eq system-type 'windows-nt)
+    (setq include-dirs (append include-dirs cedet-win32-include-dirs)))
+  (when (eq system-type 'gnu/linux)
+    (setq include-dirs (append include-dirs cedet-gnu/linux-include-dirs)))
   (mapc (lambda (dir)
           (semantic-add-system-include dir 'c++-mode)
           (semantic-add-system-include dir 'c-mode))
-        cedet-user-include-dirs))
-(add-hook 'semantic-init-hooks 'semantic-hook-add-inc)
+        include-dirs))
 ;;------------------------End cedet-----------------------
 
 ;;------------------------------------------------------------------------------
@@ -180,16 +218,6 @@
 ;;------------------------End php-mode-----------------------
 
 ;;------------------------------------------------------------------------------
-;; color-theme
-;;------------------------------------------------------------------------------
-;; (require 'color-theme)
-;; (eval-after-load "color-theme"
-;;   '(progn
-;;      (color-theme-initialize)
-;;      (color-theme-charcoal-black)))
-;;------------------------End color-theme-----------------------
-
-;;------------------------------------------------------------------------------
 ;; el-get
 ;;------------------------------------------------------------------------------
 (setq el-get-dir "~/.emacs.d/plugins/el-get/")
@@ -219,13 +247,9 @@
 ;; auto-complete
 ;; 参考：http://blog.csdn.net/winterttr/article/details/7524336
 ;;------------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/plugins/dea-lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 
 (require 'auto-complete-config)
-(require 'auto-complete+)
-(require 'util)
-(require 'ahei-misc)
 
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict")
@@ -233,18 +257,15 @@
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
 
-(eal-define-keys
- 'ac-complete-mode-map
- `(("<return>"   nil)
-   ("RET"        nil)
-   ("M-j"        ac-complete)))
-
 (load-file "~/.emacs.d/plugins/minors/pos-tip.el")
 (require 'pos-tip)
 (setq ac-quick-help-prefer-pos-tip t)   ;default is t
 (setq ac-use-quick-help t)
 (setq ac-quick-help-delay 1.0)
 (setq ac-dwim t)
+
+(load-file "~/.emacs.d/plugins/minors/fuzzy.el")
+(require 'fuzzy)
 (setq ac-fuzzy-enable t)
 
 (setq ac-auto-show-menu t
@@ -262,174 +283,11 @@
 			   ac-source-files-in-current-dir
 			   ac-source-filename))
 
-;;outline
-;; (require 'outline-settings)
-
-(require 'compile-settings)
-
 ;; autopair
 ;; Another stab at making braces and pair like in TextMate.
 (load-file "~/.emacs.d/plugins/autopair/autopair.el")
 (require 'autopair)
 (autopair-global-mode) ;; to enable in all buffers
-
-;;;; mode
-(defun ac-settings-4-cc ()
-  "`auto-complete' settings for `cc-mode'."
-     (dolist (command `(c-electric-backspace
-                        c-electric-backspace-kill))
-       (add-to-list 'ac-trigger-commands-on-completing command)))
-(eval-after-load "cc-mode"
-  '(progn
-	 (ac-settings-4-cc)
-	 ;; (require 'smart-operator)
-         ;; (smart-operator-mode)
-     ))
-
-(defun ac-settings-4-autopair ()
-  "`auto-complete' settings for `autopair'."
-  (defun ac-trigger-command-p (command)
-    "Return non-nil if `this-command' is a trigger command."
-    (or
-     (and
-      (symbolp command)
-      (or (memq command ac-trigger-commands)
-          (string-match "self-insert-command" (symbol-name command))
-          (string-match "electric" (symbol-name command))
-          (let* ((autopair-emulation-alist nil)
-                 (key (this-single-command-keys))
-                 (beyond-autopair (or (key-binding key)
-                                      (and (setq key (lookup-key local-function-key-map key))
-                                           (key-binding key)))))
-            (or
-             (memq beyond-autopair ac-trigger-commands)
-             (and ac-completing
-                  (memq beyond-autopair ac-trigger-commands-on-completing)))))))))
-(eval-after-load "autopair"
-  '(ac-settings-4-autopair))
-
-(defun ac-settings-4-lisp ()
-  "Auto complete settings for lisp mode."
-  (setq ac-omni-completion-sources '(("\\<featurep\s+'" ac+-source-elisp-features)
-                                     ("\\<require\s+'"  ac+-source-elisp-features)
-                                     ("\\<load\s+\""    ac-source-emacs-lisp-features)))
-  (ac+-apply-source-elisp-faces)
-  (setq ac-sources
-        '(ac-source-features
-          ac-source-functions
-          ac-source-yasnippet
-          ac-source-variables
-          ac-source-symbols
-          ac-source-dictionary
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-files-in-current-dir
-          ac-source-filename
-          ac-source-words-in-same-mode-buffers)))
-
-(defun ac-settings-4-java ()
-  (setq ac-omni-completion-sources (list (cons "\\." '(ac-source-semantic))
-                                         (cons "->" '(ac-source-semantic))))
-  (setq ac-sources
-        '(;;ac-source-semantic
-          ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
-(defun ac-settings-4-c ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-dictionary
-          ;; ac-source-semantic
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
-(defun ac-settings-4-cpp ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-dictionary
-          ;; ac-source-semantic
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
-(defun ac-settings-4-text ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-imenu)))
-
-(defun ac-settings-4-eshell ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename
-          ac-source-symbols
-          ac-source-imenu)))
-
-(defun ac-settings-4-ruby ()
-  (require 'rcodetools-settings)
-  (setq ac-omni-completion-sources
-        (list (cons "\\." '(ac-source-rcodetools))
-              (cons "::" '(ac-source-rcodetools)))))
-
-(defun ac-settings-4-html ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
-(defun ac-settings-4-tcl ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
-(defun ac-settings-4-awk ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
-(am-add-hooks
- `(lisp-mode-hook emacs-lisp-mode-hook lisp-interaction-mode-hook
-                  svn-log-edit-mode-hook change-log-mode-hook)
- 'ac-settings-4-lisp)
-
-(apply-args-list-to-fun
- (lambda (hook fun)
-   (am-add-hooks hook fun))
- `(('java-mode-hook   'ac-settings-4-java)
-   ('c-mode-hook      'ac-settings-4-c)
-   ('c++-mode-hook    'ac-settings-4-cpp)
-   ('text-mode-hook   'ac-settings-4-text)
-   ('eshell-mode-hook 'ac-settings-4-eshell)
-   ('ruby-mode-hook   'ac-settings-4-ruby)
-   ('html-mode-hook   'ac-settings-4-html)
-   ('awk-mode-hook    'ac-settings-4-awk)
-   ('tcl-mode-hook    'ac-settings-4-tcl)))
 ;;------------------------End auto-complete-----------------------
 
 ;;------------------------------------------------------------------------------
@@ -470,18 +328,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(current-language-environment "Chinese-GB18030")
- '(custom-enabled-themes (quote (deeper-blue)))
- '(custom-safe-themes (quote ("7c09d29d8083ecd56b9d5c1a4b887aa2b0dfbe20412b64047686da6711d850bd" default)))
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
- '(fci-rule-color "#383838")
- '(session-use-package t nil (session))
- '(tooltip-mode nil)
- '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
+)
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

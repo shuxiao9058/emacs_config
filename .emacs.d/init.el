@@ -44,19 +44,31 @@
 ;;------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins/cedet-bzr/")
 (load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
-;;;; Enable the Project management system
-(global-ede-mode 1)      
-;;;; uncomment out one of the following 3 lines for more or less semantic features
-;; (semantic-load-enable-minimum-features)
-(semantic-load-enable-code-helpers) 
-;; (semantic-load-enable-excessive-code-helpers) 
- 
-;; SRecode minor mode.
-(global-srecode-minor-mode 1)
-(semantic-mode 1)
 
-(require 'semantic/ia)
-(require 'semantic/bovine/gcc)
+(require 'popup)
+;;;; add some shotcuts in popup menu mode
+(define-key popup-menu-keymap (kbd "M-n") 'popup-next)
+(define-key popup-menu-keymap (kbd "TAB") 'popup-next)
+(define-key popup-menu-keymap (kbd "<tab>") 'popup-next)
+(define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
+(define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
+
+(defun yas-popup-isearch-prompt (prompt choices &optional display-fn)
+  (when (featurep 'popup)
+    (popup-menu*
+     (mapcar
+      (lambda (choice)
+        (popup-make-item
+         (or (and display-fn (funcall display-fn choice))
+             choice)
+         :value choice))
+      choices)
+     :prompt prompt
+     ;; start isearch mode immediately
+     :isearch t
+     )))
+
+(setq yas-prompt-functions '(yas-popup-isearch-prompt yas-ido-prompt yas-no-prompt))
 
 (setq semantic-default-submodes '(
                                   global-semantic-idle-scheduler-mode
@@ -74,7 +86,10 @@
                                   global-semantic-show-unmatched-syntax-mode
                                   global-semantic-show-parser-state-mode
 								  ))
+(semantic-mode 1)
 (global-semantic-highlight-edits-mode (if window-system 1 -1))
+(require 'semantic/ia)
+(require 'semantic/bovine/gcc)
 
 ;; (semantic-add-system-include "~/exp/include/boost_1_37" 'c++-mode)
 
@@ -242,11 +257,11 @@
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
 
-;; (load-file "~/.emacs.d/plugins/minors/pos-tip.el")
+(load-file "~/.emacs.d/plugins/minors/pos-tip.el")
 (require 'pos-tip)
 (setq ac-quick-help-prefer-pos-tip t)   ;default is t
 (setq ac-use-quick-help t)
-(setq ac-quick-help-delay 0.5)
+(setq ac-quick-help-delay 1.0)
 (setq ac-dwim t)
 
 (load-file "~/.emacs.d/plugins/minors/fuzzy.el")

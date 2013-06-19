@@ -13,6 +13,7 @@
 
 ;;;; 其他
 (global-set-key [f3] 'grep-find)
+(require 'smart-compile)
 (global-set-key [f7] 'smart-compile)
 ;;------------------------End 一些快捷键-----------------------
 

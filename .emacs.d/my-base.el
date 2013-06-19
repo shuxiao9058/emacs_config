@@ -149,10 +149,9 @@
 (setq set-scroll-bar-mode 'right)
 
 ;;;; 禁用工具栏
-(setq tool-bar-mode nil)
-
+(tool-bar-mode 0)
 ;;;; 禁用菜单栏
-;; (setq menu-bar-mode nil)
+;;(menu-bar-mode 0)
 
 ;;;; 在标题栏显示buffer的名字（默认不显示）
 ;;;; %f：缓冲区完整路径 

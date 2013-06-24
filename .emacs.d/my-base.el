@@ -153,6 +153,22 @@
 ;;;; 禁用菜单栏
 ;;(menu-bar-mode 0)
 
+;;;; 透明
+;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
+(set-frame-parameter (selected-frame) 'alpha '(90 75))
+(add-to-list 'default-frame-alist '(alpha 90 75))
+
+;;;; 绑定透明切换到C-c t
+(eval-when-compile (require 'cl))
+(defun toggle-transparency ()
+  (interactive)
+  (if (/=
+       (cadr (frame-parameter nil 'alpha))
+       100)
+      (set-frame-parameter nil 'alpha '(100 100))
+    (set-frame-parameter nil 'alpha '(90 75))))
+(global-set-key (kbd "C-c t") 'toggle-transparency)
+
 ;;;; 在标题栏显示buffer的名字（默认不显示）
 ;;;; %f：缓冲区完整路径 
 ;;;; %p：页面百分数

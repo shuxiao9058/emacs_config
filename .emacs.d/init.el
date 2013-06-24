@@ -257,7 +257,7 @@
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
 
-(load-file "~/.emacs.d/plugins/minors/pos-tip.el")
+;; (load-file "~/.emacs.d/plugins/minors/pos-tip.el")
 (require 'pos-tip)
 (setq ac-quick-help-prefer-pos-tip t)   ;default is t
 (setq ac-use-quick-help t)
@@ -330,7 +330,7 @@
  ;; If there is more than one, they won't work right.
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
-)
+ '(session-use-package t nil (session)))
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

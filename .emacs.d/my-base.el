@@ -47,14 +47,37 @@
 (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
 (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
 
-;;;; 设定语言环境为utf-8  
-(setq current-language-environment "utf-8")  
-;;;; (setq default-input-method "chinese-py")  
-(setq locale-coding-system 'utf-8)  
-(setq set-terminal-coding-system 'utf-8)  
-(setq set-keyboard-coding-system 'utf-8)  
-(setq set-selection-coding-system 'utf-8)  
-(setq prefer-coding-system 'utf-8)
+
+;;------------------------------------------------------------------------------
+;; 设定语言环境
+;;------------------------------------------------------------------------------
+(set-language-environment 'Chinese-GB)
+(set-keyboard-coding-system 'utf-8)
+(set-clipboard-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(modify-coding-system-alist 'process "*" 'utf-8)
+(setq default-process-coding-system '(utf-8 . utf-8))
+(setq-default pathname-coding-system 'utf-8)
+(set-file-name-coding-system 'utf-8)
+(setq ansi-color-for-comint-mode t) ;; 处理shell-mode乱码,好像没作用
+
+;; (set-language-environment 'Chinese-GB) 
+;; (set-keyboard-coding-system 'euc-cn) 
+;; (set-clipboard-coding-system 'euc-cn) 
+;; ; (set-clipboard-coding-system 'cn-gb-2312) 
+;; (set-terminal-coding-system 'euc-cn) 
+;; (set-buffer-file-coding-system 'euc-cn) 
+;; (set-selection-coding-system 'euc-cn) 
+;; ; (set-selection-coding-system 'cn-gb-2312) 
+;; (set-default-coding-systems 'euc-cn) 
+;; (setq locale-coding-system 'euc-cn) 
+;; (modify-coding-system-alist 'process "*" 'euc-cn) 
+;; (setq default-process-coding-system '(euc-cn . euc-cn)) 
+;; (setq-default pathname-coding-system 'euc-cn)
+;;------------------------End 设定语言环境-----------------------
 
 (require 'info-look)
 (info-lookup-add-help

@@ -14,15 +14,30 @@
 ;;------------------------------------------------------------------------------
 ;; [f11]: toggle-fullscreen
 ;;------------------------------------------------------------------------------
-(defun toggle-fullscreen ()
-  "Toggle full screen on X11"
-  (interactive)
-  (when (eq window-system 'x)
-    (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth))))
+(defvar my-fullscreen-p t "Check if fullscreen is on or off")
 
-(global-set-key [f11] 'toggle-fullscreen)
+(defun my-non-fullscreen ()
+  (interactive)
+  (if (fboundp 'w32-send-sys-command)
+	  ;; WM_SYSCOMMAND restore #xf120
+	  (w32-send-sys-command 61728)
+	(progn (set-frame-parameter nil 'width 82)
+		   (set-frame-parameter nil 'fullscreen 'fullheight))))
+
+(defun my-fullscreen ()
+  (interactive)
+  (if (fboundp 'w32-send-sys-command)
+	  ;; WM_SYSCOMMAND maximaze #xf030
+	  (w32-send-sys-command 61488)
+	(set-frame-parameter nil 'fullscreen 'fullboth)))
+
+(defun my-toggle-fullscreen ()
+  (interactive)
+  (setq my-fullscreen-p (not my-fullscreen-p))
+  (if my-fullscreen-p
+	  (my-non-fullscreen)
+	(my-fullscreen)))
+(global-set-key [f11] 'my-toggle-fullscreen)
 ;;------------------------End toggle-fullscreen-----------------------
 
 ;;------------------------------------------------------------------------------
@@ -139,7 +154,11 @@
         "C:/MinGW/include/c++/3.4.5/mingw32"
         "C:/MinGW/include/c++/3.4.5/backward"
         "C:/MinGW/lib/gcc/mingw32/3.4.5/include"
-        "C:/Program Files/Microsoft Visual Studio/VC98/MFC/Include"))
+        "C:/Program Files (x86)/CodeBlocks/MinGW/include"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/include/sys"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include/c++"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include/ssp"))
 (defconst cedet-gnu/linux-include-dirs
   (list "/usr/include"
         "/usr/include/c++/4.8.1"

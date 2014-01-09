@@ -3,6 +3,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb/")
 (add-to-list 'load-path "~/.emacs.d/plugins/session/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
+(add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode/")
 
 ;;------------------------------------------------------------------------------
 ;; theme
@@ -364,6 +365,22 @@
 ;;------------------------------------------------------------------------------
 (require 'git-emacs)
 ;;------------------------git-emacs-----------------------
+
+;;------------------------------------------------------------------------------
+;; markdown-mode
+;;------------------------------------------------------------------------------
+(require 'markdown-mode)
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(defun markdown-custom ()
+  "markdown-mode-hook"
+  (setq markdown-command "pandoc"))
+(add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
+;;------------------------markdown-mode-----------------------
 
 ;;------------------------------------------------------------------------------
 ;; google-c-style

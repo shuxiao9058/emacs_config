@@ -41,3 +41,6 @@
 [submodule ".emacs.d/themes/zenburn-emacs"]
       path = .emacs.d/themes/zenburn-emacs
       url = git://github.com/bbatsov/zenburn-emacs.git
+[submodule "markdown-mode"]
+	path = markdown-mode
+	url = ./.emacs.d/plugins/markdown-mode

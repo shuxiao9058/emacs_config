@@ -27,6 +27,9 @@
 [submodule ".emacs.d/plugins/php-mode"]
 	path = .emacs.d/plugins/php-mode
 	url = git://github.com/ejmr/php-mode.git
+[submodule ".emacs.d/plugins/markdown-mode"]
+	path = .emacs.d/plugins/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
 [submodule ".emacs.d/plugins/sourcepair.el"]
       path = .emacs.d/plugins/sourcepair.el
       url = git://github.com/tangyi/sourcepair.el.git
@@ -41,6 +44,4 @@
 [submodule ".emacs.d/themes/zenburn-emacs"]
       path = .emacs.d/themes/zenburn-emacs
       url = git://github.com/bbatsov/zenburn-emacs.git
-[submodule "markdown-mode"]
-	path = markdown-mode
-	url = ./.emacs.d/plugins/markdown-mode
+      

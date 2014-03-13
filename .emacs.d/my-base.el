@@ -9,7 +9,7 @@
 (global-set-key [f6] 'gdb)
 
 ;;;; F12调到函数定义
-(global-set-key [f12] 'semantic-ia-fast-jump)
+;; (global-set-key [f12] 'semantic-ia-fast-jump)
 
 ;;;; 其他
 (global-set-key [f3] 'grep-find)
@@ -51,32 +51,38 @@
 ;;------------------------------------------------------------------------------
 ;; 设定语言环境
 ;;------------------------------------------------------------------------------
-(set-language-environment 'Chinese-GB)
-(set-keyboard-coding-system 'utf-8)
-(set-clipboard-coding-system 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-buffer-file-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-selection-coding-system 'utf-8)
-(modify-coding-system-alist 'process "*" 'utf-8)
-(setq default-process-coding-system '(utf-8 . utf-8))
-(setq-default pathname-coding-system 'utf-8)
-(set-file-name-coding-system 'utf-8)
-(setq ansi-color-for-comint-mode t) ;; 处理shell-mode乱码,好像没作用
+;; 处理shell-mode乱码,好像没作用
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;; (set-language-environment 'Chinese-GB) 
-;; (set-keyboard-coding-system 'euc-cn) 
-;; (set-clipboard-coding-system 'euc-cn) 
-;; ; (set-clipboard-coding-system 'cn-gb-2312) 
-;; (set-terminal-coding-system 'euc-cn) 
-;; (set-buffer-file-coding-system 'euc-cn) 
-;; (set-selection-coding-system 'euc-cn) 
-;; ; (set-selection-coding-system 'cn-gb-2312) 
-;; (set-default-coding-systems 'euc-cn) 
-;; (setq locale-coding-system 'euc-cn) 
-;; (modify-coding-system-alist 'process "*" 'euc-cn) 
-;; (setq default-process-coding-system '(euc-cn . euc-cn)) 
-;; (setq-default pathname-coding-system 'euc-cn)
+(if (eq system-type 'windows-nt) ;; Windows NT
+     (set-language-environment 'Chinese-GB) 
+     (set-keyboard-coding-system 'euc-cn) 
+     (set-clipboard-coding-system 'euc-cn) 
+     ;; (set-clipboard-coding-system 'cn-gb-2312) 
+     (set-terminal-coding-system 'euc-cn) 
+     (set-buffer-file-coding-system 'euc-cn) 
+     (set-selection-coding-system 'euc-cn) 
+     ;; (set-selection-coding-system 'cn-gb-2312) 
+     (set-default-coding-systems 'euc-cn) 
+     (setq locale-coding-system 'euc-cn) 
+     (modify-coding-system-alist 'process "*" 'euc-cn) 
+     (setq default-process-coding-system '(euc-cn . euc-cn)) 
+     (setq-default pathname-coding-system 'euc-cn)
+ (ding)
+   (set-language-environment 'Chinese-GB)
+   (set-keyboard-coding-system 'utf-8)
+   (set-clipboard-coding-system 'utf-8)
+   (set-terminal-coding-system 'utf-8)
+   (set-buffer-file-coding-system 'utf-8)
+   (set-default-coding-systems 'utf-8)
+   (set-selection-coding-system 'utf-8)
+   (modify-coding-system-alist 'process "*" 'utf-8)
+   (setq default-process-coding-system '(utf-8 . utf-8))
+   (setq-default pathname-coding-system 'utf-8)
+   (set-file-name-coding-system 'utf-8)
+   (setq ansi-color-for-comint-mode t)
+)
 ;;------------------------End 设定语言环境-----------------------
 
 (require 'info-look)
@@ -128,13 +134,13 @@
 ;;------------------------------------------------------------------------------
 ;; 编辑器的设定
 ;;------------------------------------------------------------------------------
-;;;; 不产生备份文件
-;; (setq make-backup-files nil)
+;;;; preventing the creation of backup files
+(setq make-backup-files nil)
 ;;;; 不生成临时文件
-;; (setq-default make-backup-files nil)
+(setq-default make-backup-files nil)
 ;;;; 只渲染当前屏幕语法高亮，加快显示速度
 (setq lazy-lock-defer-on-scrolling t)
-;;(setq font-lock-support-mode 'lazy-lock-mode)
+;; (setq font-lock-support-mode 'lazy-lock-mode)
 (setq font-lock-maximum-decoration t)
 
 ;;;; 显示80列就换行
@@ -196,7 +202,7 @@
 ;;;; %f：缓冲区完整路径 
 ;;;; %p：页面百分数
 ;;;; %l：行号
-(setq frame-title-format "%f@GNU Emacs")
+(setq frame-title-format "%f %p - GNU Emacs")
 
 ;;;; 状态栏：显示时间
 (display-time)
@@ -207,7 +213,7 @@
 ;;;; 时间栏旁边启用邮件设置
 ;;(setq display-time-use-mail-icon t)
 ;;;; 时间的变化频率，单位多少来着？
-;;(setq display-time-interval 10)
+(setq display-time-interval 10)
 
 ;;;; 禁用启动信息  
 (setq inhibit-startup-message t) 
@@ -246,7 +252,7 @@
 ;;;; 设置时间戳，标识出最后一次保存文件的时间。
 (setq time-stamp-active t)
 (setq time-stamp-warn-inactive t)
-(setq time-stamp-format "%:y-%02m-%02d %3a %02H:%02M:%02S chenyang")
+(setq time-stamp-format "%:y-%02m-%02d %3a %02H:%02M:%02S")
 
 ;;;; 输入法：eim
 ;;;; 常用按键 
@@ -280,7 +286,7 @@
 ;;------------------------End 编辑器的设定-----------------------
 
 ;;;; 设置默认工作目录
-;; (setq default-directory "~/")
+(setq default-directory "~/")
 
 ;;;; 关闭烦人的出错时的提示声
 (setq visable-bell t)
@@ -288,3 +294,9 @@
 ;;;; 设置Emacs窗口启动大小
 ;; (setq default-frame-alist  
 ;;      '((height . 32) (width . 50) (menu-bar-lines . 20) (tool-bar-lines . 0)))
+
+;; add support for mingw on Windows NT
+(if (eq system-type 'windows-nt) ;; Windows NT
+    (setq exec-path (cons "C:/Program Files (x86)/Dev-Cpp/MinGW32/bin/" exec-path))
+)
+

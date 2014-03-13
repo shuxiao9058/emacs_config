@@ -3,6 +3,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb/")
 (add-to-list 'load-path "~/.emacs.d/plugins/session/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
+(add-to-list 'load-path "~/.emacs.d/plugins/eim/")
 (add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode/")
 
 ;;------------------------------------------------------------------------------
@@ -107,8 +108,6 @@
 (require 'semantic/ia)
 (require 'semantic/bovine/gcc)
 
-;; (semantic-add-system-include "~/exp/include/boost_1_37" 'c++-mode)
-
 (defun my-semantic-hook ()
   (imenu-add-to-menubar "TAGS"))
 (add-hook 'semantic-init-hooks 'my-semantic-hook)
@@ -120,7 +119,7 @@
 
 ;;;; enable ctags for some languages:
 ;;;;  Unix Shell, Perl, Pascal, Tcl, Fortran, Asm
-;;(when (cedet-ectag-version-check)
+;; (when (cedet-ectag-version-check)
 ;;  (semantic-load-enable-primary-exuberent-ctags-support))
 
 ;;;; use projects
@@ -149,17 +148,12 @@
 (defconst cedet-user-include-dirs
   (list ".." "../include" "../inc" "../common" "../public"
         "../.." "../../include" "../../inc" "../../common" "../../public"))
+
 (defconst cedet-win32-include-dirs
-  (list "C:/MinGW/include"
-        "C:/MinGW/include/c++/3.4.5"
-        "C:/MinGW/include/c++/3.4.5/mingw32"
-        "C:/MinGW/include/c++/3.4.5/backward"
-        "C:/MinGW/lib/gcc/mingw32/3.4.5/include"
-        "C:/Program Files (x86)/CodeBlocks/MinGW/include"
-        "C:/Program Files (x86)/CodeBlocks/MinGW/include/sys"
-        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include/c++"
-        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include"
-        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include/ssp"))
+  (list "C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+        "C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include"
+        "C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+        "C:/Program Files (x86)/opencv/include"))
 (defconst cedet-gnu/linux-include-dirs
   (list "/usr/include"
         "/usr/include/c++/4.8.1"
@@ -168,14 +162,45 @@
         "/usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include"))
 (require 'semantic-c nil 'noerror)
 (let ((include-dirs cedet-user-include-dirs))
-  (when (eq system-type 'windows-nt)
+  (if (eq system-type 'windows-nt)
     (setq include-dirs (append include-dirs cedet-win32-include-dirs)))
-  (when (eq system-type 'gnu/linux)
+  (if (eq system-type 'gnu/linux)
     (setq include-dirs (append include-dirs cedet-gnu/linux-include-dirs)))
   (mapc (lambda (dir)
           (semantic-add-system-include dir 'c++-mode)
           (semantic-add-system-include dir 'c-mode))
         include-dirs))
+
+;;------------------------------------------------------------------------------
+;; h/cpp切换
+;;------------------------------------------------------------------------------
+;;------------------------------------------------------------------------------
+;; 头文件/实现文件之间的切换
+;;------------------------------------------------------------------------------
+(require 'eassist nil 'noerror)
+(defun my-c-mode-common-hook ()
+   (define-key c-mode-base-map (kbd "M-o") 'eassist-switch-h-cpp)
+   (define-key c-mode-base-map (kbd "M-m") 'eassist-list-methods))
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+;;--别名扩展
+(setq eassist-header-switches
+      '(("h" . ("cpp" "cxx" "c++" "CC" "cc" "C" "c" "mm" "m"))
+        ("hh" . ("cc" "CC" "cpp" "cxx" "c++" "C"))
+        ("hpp" . ("cpp" "cxx" "c++" "cc" "CC" "C"))
+        ("hxx" . ("cxx" "cpp" "c++" "cc" "CC" "C"))
+        ("h++" . ("c++" "cpp" "cxx" "cc" "CC" "C"))
+        ("H" . ("C" "CC" "cc" "cpp" "cxx" "c++" "mm" "m"))
+        ("HH" . ("CC" "cc" "C" "cpp" "cxx" "c++"))
+        ("cpp" . ("hpp" "hxx" "h++" "HH" "hh" "H" "h"))
+        ("cxx" . ("hxx" "hpp" "h++" "HH" "hh" "H" "h"))
+        ("c++" . ("h++" "hpp" "hxx" "HH" "hh" "H" "h"))
+        ("CC" . ("HH" "hh" "hpp" "hxx" "h++" "H" "h"))
+        ("cc" . ("hh" "HH" "hpp" "hxx" "h++" "H" "h"))
+        ("C" . ("hpp" "hxx" "h++" "HH" "hh" "H" "h"))
+        ("c" . ("h"))
+        ("m" . ("h"))
+        ("mm" . ("h"))))
 ;;------------------------End cedet-----------------------
 
 ;;------------------------------------------------------------------------------

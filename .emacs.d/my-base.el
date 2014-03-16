@@ -300,3 +300,10 @@
     (setq exec-path (cons "C:/Program Files (x86)/Dev-Cpp/MinGW32/bin/" exec-path))
 )
 
+
+;; for os x with gcc 4.8.2
+(if (eq system-type 'darwin) ;; os x
+    (setenv "PATH" (concat (getenv "PATH") ":/usr/local/Cellar/gcc48/4.8.2/bin/"))
+    (setq exec-path (append exec-path '("/usr/local/Cellar/gcc48/4.8.2/bin/")))
+)
+

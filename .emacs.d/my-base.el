@@ -62,6 +62,8 @@
      ;; (set-clipboard-coding-system 'cn-gb-2312) 
      (set-terminal-coding-system 'euc-cn) 
      (set-buffer-file-coding-system 'euc-cn) 
+     (setq set-buffer-coding-system 'utf-8)
+     (setq coding-system-for-write 'utf-8)
      (set-selection-coding-system 'euc-cn) 
      ;; (set-selection-coding-system 'cn-gb-2312) 
      (set-default-coding-systems 'euc-cn) 
@@ -75,6 +77,8 @@
    (set-clipboard-coding-system 'utf-8)
    (set-terminal-coding-system 'utf-8)
    (set-buffer-file-coding-system 'utf-8)
+   (setq set-buffer-coding-system 'utf-8)
+   (setq coding-system-for-write 'utf-8)
    (set-default-coding-systems 'utf-8)
    (set-selection-coding-system 'utf-8)
    (modify-coding-system-alist 'process "*" 'utf-8)
@@ -83,6 +87,7 @@
    (set-file-name-coding-system 'utf-8)
    (setq ansi-color-for-comint-mode t)
 )
+
 ;;------------------------End 设定语言环境-----------------------
 
 (require 'info-look)
@@ -289,7 +294,9 @@
 (setq default-directory "~/")
 
 ;;;; 关闭烦人的出错时的提示声
-(setq visable-bell t)
+;; quiet, please! No dinging!
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
 
 ;;;; 设置Emacs窗口启动大小
 ;; (setq default-frame-alist  
@@ -300,10 +307,17 @@
     (setq exec-path (cons "C:/Program Files (x86)/Dev-Cpp/MinGW32/bin/" exec-path))
 )
 
-
 ;; for os x with gcc 4.8.2
 (if (eq system-type 'darwin) ;; os x
     (setenv "PATH" (concat (getenv "PATH") ":/usr/local/Cellar/gcc48/4.8.2/bin/"))
     (setq exec-path (append exec-path '("/usr/local/Cellar/gcc48/4.8.2/bin/")))
 )
+
+
+    
+
+
+
+
+
 

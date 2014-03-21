@@ -14,7 +14,7 @@
 ;;------------------------End theme-----------------------
 
 ;;------------------------------------------------------------------------------
-;; [f11]: toggle-fullscreen
+;; M-RET: toggle-fullscreen
 ;;------------------------------------------------------------------------------
 (defvar my-fullscreen-p t "Check if fullscreen is on or off")
 
@@ -39,7 +39,10 @@
   (if my-fullscreen-p
 	  (my-non-fullscreen)
 	(my-fullscreen)))
-(global-set-key [f11] 'my-toggle-fullscreen)
+;; (global-set-key [f11] 'my-toggle-fullscreen)
+;; (global-set-key [(meta return)] 'my-toggle-fullscreen)
+(global-set-key (kbd "<M-RET>") 'my-toggle-fullscreen)
+
 ;;------------------------End toggle-fullscreen-----------------------
 
 ;;------------------------------------------------------------------------------
@@ -525,3 +528,4 @@
 ;;------------------------------------------------------------------------------
 (load "my-base.el")
 ;;------------------------End my-base-----------------------
+(put 'upcase-region 'disabled nil)

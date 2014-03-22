@@ -284,6 +284,16 @@
 ;;------------------------End el-get-----------------------
 
 ;;------------------------------------------------------------------------------
+;; dash-at-point
+;;------------------------------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/plugins/dash-at-point/")
+(autoload 'dash-at-point "dash-at-point"
+  "Search the word at point with Dash." t nil)
+(global-set-key "\C-cd" 'dash-at-point)
+(global-set-key "\C-ce" 'dash-at-point-with-docset)
+;;------------------------End dash-at-point-----------------------
+
+;;------------------------------------------------------------------------------
 ;; yasnippet
 ;;------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")

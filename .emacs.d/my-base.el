@@ -299,8 +299,8 @@
 (setq ring-bell-function 'ignore)
 
 ;;;; 设置Emacs窗口启动大小
-(setq default-frame-alist  
-      '((height . 50) (width . 125) (menu-bar-lines . 25) (tool-bar-lines . 0)))
+;; (setq default-frame-alist  
+;;      '((height . 50) (width . 125) (menu-bar-lines . 25) (tool-bar-lines . 0)))
 
 ;; add support for mingw on Windows NT
 (if (eq system-type 'windows-nt) ;; Windows NT

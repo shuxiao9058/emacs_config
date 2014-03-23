@@ -10,4 +10,5 @@
 *~
 *.elc
 .#*
+.DS_Store
 TAGS

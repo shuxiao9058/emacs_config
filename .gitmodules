@@ -47,4 +47,7 @@
 [submodule ".emacs.d/themes/zenburn-emacs"]
       path = .emacs.d/themes/zenburn-emacs
       url = git://github.com/bbatsov/zenburn-emacs.git
+[submodule ".emacs.d/themes/emacs-color-themes"]
+      path = .emacs.d/themes/emacs-color-themes
+      url = git://github.com/owainlewis/emacs-color-themes.git
       

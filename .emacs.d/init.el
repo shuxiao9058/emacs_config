@@ -9,8 +9,11 @@
 ;;------------------------------------------------------------------------------
 ;; theme
 ;;------------------------------------------------------------------------------
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zenburn-emacs")
-(load-theme 'zenburn t)
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zenburn-emacs")
+;; (load-theme 'zenburn t)
+;; add the emacs-color-themes as the default themepack
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-themes/themes") 
+(load-theme 'dorsey t)
 ;;------------------------End theme-----------------------
 
 ;;------------------------------------------------------------------------------
@@ -388,6 +391,7 @@
  ;; If there is more than one, they won't work right.
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
+ '(ede-project-directories (quote ("/Users/jiya")))
  '(session-use-package t nil (session)))
  
 (custom-set-faces
@@ -539,3 +543,4 @@
 (load "my-base.el")
 ;;------------------------End my-base-----------------------
 (put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)

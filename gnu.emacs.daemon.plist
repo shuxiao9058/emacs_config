@@ -12,8 +12,7 @@
 	<key>RunAtLoad</key>
 	<true/>
 	<key>ServiceDescription</key>
-	<string>Gnu
-    Emacs Daemon</string>
+	<string>Gnu Emacs Daemon</string>
 	<key>UserName</key>
 	<string>jiya</string>
 </dict>

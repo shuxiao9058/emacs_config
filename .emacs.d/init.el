@@ -1,6 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/plugins/minors/") ;; other extensions
-(add-to-list 'load-path "~/.emacs.d/plugins/ecb/")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/ecb/")
 (add-to-list 'load-path "~/.emacs.d/plugins/session/lisp/")
 
 ;;------------------------------------------------------------------------------
@@ -323,9 +323,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ecb-layout-window-sizes nil)
- '(ecb-options-version "2.40")
- '(ede-project-directories (quote ("/Users/jiya")))
+ ;; '(ecb-layout-window-sizes nil)
+ ;; '(ecb-options-version "2.40")
+ ;; '(ede-project-directories (quote ("/Users/jiya")))
  '(session-use-package t nil (session)))
  
 (custom-set-faces
@@ -393,34 +393,34 @@
 ;; 部分内容摘自：
 ;; https://my-emacs-config.googlecode.com/svn-history/r54/trunk/_emacs.d/settings/auto-complete-settings.el
 ;;------------------------------------------------------------------------------
-(require 'ecb)
+;; (require 'ecb)
 
-(add-hook 'ecb-activate-hook
-          (lambda ()
-            (let ((compwin-buffer (ecb-get-compile-window-buffer)))
-              (if (not (and compwin-buffer
-                            (ecb-compilation-buffer-p compwin-buffer)))
-                  (ecb-toggle-compile-window -1)))))
+;; (add-hook 'ecb-activate-hook
+;;           (lambda ()
+;;             (let ((compwin-buffer (ecb-get-compile-window-buffer)))
+;;               (if (not (and compwin-buffer
+;;                             (ecb-compilation-buffer-p compwin-buffer)))
+;;                   (ecb-toggle-compile-window -1)))))
 
-;;;; 启动ECB，并且不显示每日提示
-(setq ecb-auto-activate t
-      ecb-tip-of-the-day nil)
+;; ;;;; 启动ECB，并且不显示每日提示
+;; (setq ecb-auto-activate t
+;;       ecb-tip-of-the-day nil)
 
-;;;; 隐藏和显示ECB窗口
-(define-key global-map (kbd "M-0") 'ecb-hide-ecb-windows)
-(define-key global-map (kbd "M-9") 'ecb-show-ecb-windows)
+;; ;;;; 隐藏和显示ECB窗口
+;; (define-key global-map (kbd "M-0") 'ecb-hide-ecb-windows)
+;; (define-key global-map (kbd "M-9") 'ecb-show-ecb-windows)
  
-;;;; 设定ECB窗口比例
-(setq ecb-windows-width 0.20)
-;;(add-hook 'window-size-change-functions 'ecb-restore-default-window-sizes)
+;; ;;;; 设定ECB窗口比例
+;; (setq ecb-windows-width 0.20)
+;; ;;(add-hook 'window-size-change-functions 'ecb-restore-default-window-sizes)
 
-;;;; 使某一ECB窗口最大化
-(define-key global-map (kbd "M-1") 'ecb-maximize-window-directories)
-(define-key global-map (kbd "M-2") 'ecb-maximize-window-sources)
-(define-key global-map (kbd "M-3") 'ecb-maximize-window-methods)
-(define-key global-map (kbd "M-4") 'ecb-maximize-window-history)
-;;;; 恢复原始窗口布局
-(define-key global-map (kbd "M-`") 'ecb-restore-default-window-sizes)
+;; ;;;; 使某一ECB窗口最大化
+;; (define-key global-map (kbd "M-1") 'ecb-maximize-window-directories)
+;; (define-key global-map (kbd "M-2") 'ecb-maximize-window-sources)
+;; (define-key global-map (kbd "M-3") 'ecb-maximize-window-methods)
+;; (define-key global-map (kbd "M-4") 'ecb-maximize-window-history)
+;; ;;;; 恢复原始窗口布局
+;; (define-key global-map (kbd "M-`") 'ecb-restore-default-window-sizes)
 ;;------------------------End Ecb-----------------------
 
 ;;------------------------------------------------------------------------------
@@ -433,9 +433,11 @@
 ;;  C-c s p 查找函数上次出现的位置
 ;;  C-c s n 查找函数下次出现的位置
 ;;------------------------------------------------------------------------------
-(load-file "~/.emacs.d/plugins/cscope-15.8a/contrib/xcscope/xcscope.el")
-(require 'xcscope)
 (setq cscope-do-not-update-database t)
+(load-file "~/.emacs.d/plugins/xcscope.el/xcscope.el")
+(require 'xcscope)
+(cscope-setup)
+
 (add-hook 'c-mode-common-hook
 	  '(lambda ()
 	    (require 'xcscope)))

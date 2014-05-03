@@ -2,8 +2,8 @@
 ;; 一些快捷键
 ;;------------------------------------------------------------------------------
 ;;;; 显示帮助命令
-(global-set-key [f1] 'manual-entry)
-(global-set-key [C-f1] 'info)
+;; (global-set-key [f1] 'manual-entry)
+;; (global-set-key [C-f1] 'info)
 
 ;;;; gdb调试
 (global-set-key [f6] 'gdb)
@@ -33,6 +33,16 @@
 ;;;; 启用ibuffer支持，增强*buffer*  
 (require 'ibuffer)  
 (global-set-key (kbd "C-x C-b") 'ibuffer)  
+
+;;;; 关闭其它buffer
+(defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer
+        (delq (current-buffer)
+              (remove-if-not 'buffer-file-name (buffer-list)))))
+(global-set-key (kbd "C-x C-k") kill-other-buffers)  
+
 
 ;;;; 默认进入text-mode，而不是没有什么功能的fundamental-mode  
 (setq-default major-mode 'text-mode)  

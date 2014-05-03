@@ -8,9 +8,12 @@
 [submodule ".emacs.d/plugins/autopair"]
       path = .emacs.d/plugins/autopair
       url = git://github.com/capitaomorte/autopair.git
-[submodule ".emacs.d/plugins/ecb"]
-      path = .emacs.d/plugins/ecb
-      url = git://github.com/emacsmirror/ecb.git
+[submodule ".emacs.d/plugins/xcscope.el"]
+      path = .emacs.d/plugins/xcscope.el
+      url = git://github.com/dkogan/xcscope.el.git
+# [submodule ".emacs.d/plugins/ecb"]
+#       path = .emacs.d/plugins/ecb
+#       url = git://github.com/emacsmirror/ecb.git
 [submodule ".emacs.d/plugins/el-get/el-get"]
       path = .emacs.d/plugins/el-get/el-get
       url = git://github.com/dimitri/el-get.git

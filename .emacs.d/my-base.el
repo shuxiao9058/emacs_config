@@ -44,8 +44,8 @@
 (global-linum-mode)  
 
 ;;;; For Linux
-(global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
-(global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
+;; (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
+;; (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
 
 
 ;;------------------------------------------------------------------------------
@@ -89,13 +89,6 @@
 )
 
 ;;------------------------End 设定语言环境-----------------------
-
-(require 'info-look)
-(info-lookup-add-help
- :mode 'python-mode
- :regexp "[[:alnum:]_]+"
- :doc-spec
- '(("(python)Index" nil "")))
 
 ;;------------------------------------------------------------------------------
 ;; 缓冲区
@@ -258,36 +251,6 @@
 (setq time-stamp-active t)
 (setq time-stamp-warn-inactive t)
 (setq time-stamp-format "%:y-%02m-%02d %3a %02H:%02M:%02S")
-
-;;;; 输入法：eim
-;;;; 常用按键 
-;;;; |------+----------|
-;;;; | 按键  | 功能      |
-;;;; |------+----------|
-;;;; | C-n  | 向下翻页   |
-;;;; | C-p  | 向上翻页   |
-;;;; | C-c  | 取消输入   |
-;;;; | SPC  | 确定输入   |
-;;;; | RET  | 字母上屏   |
-;;;; |------+----------|
-(add-to-list 'load-path "~/.emacs.d/plugins/eim/")
-(autoload 'eim-use-package "eim" "Another emacs input method")
-;; Tooltip 暂时不好用
-(setq eim-use-tooltip nil)
-
-(register-input-method  
- "eim-wb" "euc-cn" 'eim-use-package  
- "新世纪" "新世纪五笔输入法" "wb08.txt")  
-(register-input-method  
- "eim-py" "euc-cn" 'eim-use-package  
- "拼音" "汉字拼音输入法" "py.txt")  
-
-;; 用;暂时输入英文  
-(require 'eim-extra)  
-(global-set-key ";" 'eim-insert-ascii)  
-
-;; 五笔输入法设置为默认的输入法
-(setq default-input-method "eim-wb")  
 ;;------------------------End 编辑器的设定-----------------------
 
 ;;;; 设置默认工作目录

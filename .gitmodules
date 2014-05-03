@@ -1,7 +1,7 @@
 # plugins
-[submodule ".emacs.d/plugins/Pymacs"]
-      path = .emacs.d/plugins/Pymacs
-      url = git://github.com/pinard/Pymacs.git
+# [submodule ".emacs.d/plugins/Pymacs"]
+#       path = .emacs.d/plugins/Pymacs
+#       url = git://github.com/pinard/Pymacs.git
 [submodule ".emacs.d/plugins/auto-complete"]
       path = .emacs.d/plugins/auto-complete
       url = git://github.com/auto-complete/auto-complete.git
@@ -14,39 +14,39 @@
 [submodule ".emacs.d/plugins/el-get/el-get"]
       path = .emacs.d/plugins/el-get/el-get
       url = git://github.com/dimitri/el-get.git
-[submodule ".emacs.d/plugins/emacs-makefile-runner"]
-      path = .emacs.d/plugins/emacs-makefile-runner
-      url = git://github.com/danamlund/emacs-makefile-runner.git
-[submodule ".emacs.d/plugins/git-emacs"]
-      path = .emacs.d/plugins/git-emacs
-      url = git://github.com/tsgates/git-emacs.git
+# [submodule ".emacs.d/plugins/emacs-makefile-runner"]
+#       path = .emacs.d/plugins/emacs-makefile-runner
+#       url = git://github.com/danamlund/emacs-makefile-runner.git
+# [submodule ".emacs.d/plugins/git-emacs"]
+#       path = .emacs.d/plugins/git-emacs
+#       url = git://github.com/tsgates/git-emacs.git
 # not support for Emacs24
 # [submodule ".emacs.d/plugins/python.el"]
 #      path = .emacs.d/plugins/python.el
 #      url = git://github.com/fgallina/python.el.git
-[submodule ".emacs.d/plugins/php-mode"]
-	path = .emacs.d/plugins/php-mode
-	url = git://github.com/ejmr/php-mode.git
-[submodule ".emacs.d/plugins/markdown-mode"]
-	path = .emacs.d/plugins/markdown-mode
-	url = git://jblevins.org/git/markdown-mode.git
+# [submodule ".emacs.d/plugins/php-mode"]
+# 	path = .emacs.d/plugins/php-mode
+# 	url = git://github.com/ejmr/php-mode.git
+# [submodule ".emacs.d/plugins/markdown-mode"]
+# 	path = .emacs.d/plugins/markdown-mode
+# 	url = git://jblevins.org/git/markdown-mode.git
 [submodule ".emacs.d/plugins/sourcepair.el"]
       path = .emacs.d/plugins/sourcepair.el
       url = git://github.com/tangyi/sourcepair.el.git
 [submodule ".emacs.d/plugins/yasnippet"]
       path = .emacs.d/plugins/yasnippet
       url = git://github.com/capitaomorte/yasnippet.git
-[submodule ".emacs.d/plugins/dash-at-point"]
-      path = .emacs.d/plugins/dash-at-point
-      url = git://github.com/stanaka/dash-at-point.git
+# [submodule ".emacs.d/plugins/dash-at-point"]
+#       path = .emacs.d/plugins/dash-at-point
+#       url = git://github.com/stanaka/dash-at-point.git
 
 # theme packs
-[submodule ".emacs.d/themes/solarized-emacs"]
-      path = .emacs.d/themes/solarized-emacs
-      url = git://github.com/bbatsov/solarized-emacs.git
-[submodule ".emacs.d/themes/zenburn-emacs"]
-      path = .emacs.d/themes/zenburn-emacs
-      url = git://github.com/bbatsov/zenburn-emacs.git
+# [submodule ".emacs.d/themes/solarized-emacs"]
+#       path = .emacs.d/themes/solarized-emacs
+#       url = git://github.com/bbatsov/solarized-emacs.git
+# [submodule ".emacs.d/themes/zenburn-emacs"]
+#       path = .emacs.d/themes/zenburn-emacs
+#       url = git://github.com/bbatsov/zenburn-emacs.git
 [submodule ".emacs.d/themes/emacs-color-themes"]
       path = .emacs.d/themes/emacs-color-themes
       url = git://github.com/owainlewis/emacs-color-themes.git

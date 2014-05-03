@@ -1,10 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/plugins/minors/")
+(add-to-list 'load-path "~/.emacs.d/plugins/minors/") ;; other extensions
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb/")
 (add-to-list 'load-path "~/.emacs.d/plugins/session/lisp/")
-(add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
-(add-to-list 'load-path "~/.emacs.d/plugins/eim/")
-(add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode/")
 
 ;;------------------------------------------------------------------------------
 ;; theme
@@ -47,19 +44,6 @@
 (global-set-key (kbd "<M-RET>") 'my-toggle-fullscreen)
 
 ;;------------------------End toggle-fullscreen-----------------------
-
-;;------------------------------------------------------------------------------
-;; tabbar
-;;------------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/plugins/tabbar/")
-(require 'tabbar)
-(tabbar-mode)
-(define-prefix-command 'lwindow-map)
-(global-set-key (kbd "<M-up>") 'tabbar-backward-group)
-(global-set-key (kbd "<M-down>") 'tabbar-forward-group)
-(global-set-key (kbd "<M-left>") 'tabbar-backward)
-(global-set-key (kbd "<M-right>") 'tabbar-forward)
-;;------------------------End tabbar-----------------------
 
 ;;------------------------------------------------------------------------------
 ;; cedet
@@ -210,14 +194,6 @@
 ;;------------------------End cedet-----------------------
 
 ;;------------------------------------------------------------------------------
-;; makefilerunner
-;; An easy method of running Makefiles.
-;;------------------------------------------------------------------------------
-(load-file "~/.emacs.d/plugins/emacs-makefile-runner/makefile-runner.el")
-(require 'makefile-runner)  
-;;------------------------End autopair-----------------------
-
-;;------------------------------------------------------------------------------
 ;; sourcepair
 ;;------------------------------------------------------------------------------
 (load-file "~/.emacs.d/plugins/sourcepair.el/sourcepair.el")
@@ -244,29 +220,7 @@
  python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
-;;;; Pymacs
-(add-to-list 'load-path "~/.emacs.d/plugins/Pymacs")
-;; (require 'python "python.el")
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-(autoload 'pymacs-autoload "pymacs")
 ;;------------------------End Python-----------------------
-
-;;------------------------------------------------------------------------------
-;; php-mode
-;;------------------------------------------------------------------------------
-;;;; 加载php-mode
-(load-file "~/.emacs.d/plugins/php-mode/php-mode.el")
-(require 'php-mode)
-;;;; 根据文件扩展名自动php-mode
-(add-to-list 'auto-mode-alist '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
-;;;; 开发项目时，php源文件使用其他扩展名
-(add-to-list 'auto-mode-alist '("\\.module\\'" . php-mode))
-(add-to-list 'auto-mode-alist '("\\.inc\\'" . php-mode))
-;;------------------------End php-mode-----------------------
 
 ;;------------------------------------------------------------------------------
 ;; el-get
@@ -285,16 +239,6 @@
 (el-get 'sync)
 (setq el-get-user-package-directory "~/.emacs.d/plugins/el-get/el-get-init-files/")
 ;;------------------------End el-get-----------------------
-
-;;------------------------------------------------------------------------------
-;; dash-at-point
-;;------------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/plugins/dash-at-point/")
-(autoload 'dash-at-point "dash-at-point"
-  "Search the word at point with Dash." t nil)
-(global-set-key "\C-cd" 'dash-at-point)
-(global-set-key "\C-ce" 'dash-at-point-with-docset)
-;;------------------------End dash-at-point-----------------------
 
 ;;------------------------------------------------------------------------------
 ;; yasnippet
@@ -352,16 +296,6 @@
 ;;------------------------End auto-complete-----------------------
 
 ;;------------------------------------------------------------------------------
-;; json formator
-;;------------------------------------------------------------------------------
-(defun json-format ()
-  (interactive)
-  (save-excursion
-	(shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)
-	))
-;;------------------------End jason formator-----------------------
-
-;;------------------------------------------------------------------------------
 ;; 实现搜索选中文字
 ;;------------------------------------------------------------------------------
 (defun wcy-define-key-in-transient-mode (global-p key cmd-mark-active  cmd-mark-no-active)
@@ -401,28 +335,6 @@
  ;; If there is more than one, they won't work right.
  )
 ;;------------------------End 实现搜索选中文字-----------------------
-
-;;------------------------------------------------------------------------------
-;; git-emacs
-;;------------------------------------------------------------------------------
-(require 'git-emacs)
-;;------------------------git-emacs-----------------------
-
-;;------------------------------------------------------------------------------
-;; markdown-mode
-;;------------------------------------------------------------------------------
-(require 'markdown-mode)
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-(defun markdown-custom ()
-  "markdown-mode-hook"
-  (setq markdown-command "pandoc"))
-(add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
-;;------------------------markdown-mode-----------------------
 
 ;;------------------------------------------------------------------------------
 ;; google-c-style

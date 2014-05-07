@@ -14,5 +14,5 @@ Windows Registry Editor Version 5.00
 # The ,0 selects the main icon.
 
 [HKEY_CLASSES_ROOT\*\shell\openwemacs\command]
-@="D:\\Program Files\\emacs\\bin\\runemacs.exe \"%1\""
+@="D:\\Program Files\\emacs\\bin\\emacsclientw.exe --no-wait --alternate-editor=D:\\Program Files\\emacs\\bin\\runemacs.exe \"%1\""
 # The above has to point to where you install Emacs

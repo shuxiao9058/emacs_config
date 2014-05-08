@@ -5,6 +5,9 @@
 ;; (global-set-key [f1] 'manual-entry)
 ;; (global-set-key [C-f1] 'info)
 
+;;;; 改用Shift+Space设置标记
+(global-set-key [?\S- ] 'set-mark-command)
+
 ;;;; gdb调试
 (global-set-key [f6] 'gdb)
 

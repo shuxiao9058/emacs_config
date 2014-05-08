@@ -276,8 +276,17 @@
 
 ;; add support for mingw on Windows NT
 (if (eq system-type 'windows-nt) ;; Windows NT
-    (setq exec-path (cons "C:/Program Files (x86)/Dev-Cpp/MinGW32/bin/" exec-path))
+    (setq exec-path (cons "C:/Program Files (x86)/Dev-Cpp/MinGW32/bin/;~/UnxUtils/bin" exec-path))
 )
+
+;; add support for windows servert-start
+(require 'server)
+(when (and (>= emacs-major-version 23)
+           (equal window-system 'w32))
+  (defun server-ensure-safe-dir (dir) "Noop" t)) ; Suppress error "directory
+                                                 ; ~/.emacs.d/server is unsafe"
+                                                 ; on windows.
+(server-start)
 
 ;; for os x with gcc 4.8.2
 ;; (if (eq system-type 'darwin) ;; os x

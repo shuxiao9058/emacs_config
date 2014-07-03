@@ -140,10 +140,13 @@
         "../.." "../../include" "../../inc" "../../common" "../../public"))
 
 (defconst cedet-win32-include-dirs
-  (list "C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
-        "C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include"
-        "C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
-        "C:/Program Files (x86)/opencv/include"))
+  (list "C:/Program Files (x86)/CodeBlocks/MinGW/include"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/include/sys"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include"
+	"C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include/ssp"
+	"C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include/c++"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include/c++/tr1"
+	"C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include/c++/tr2"))
 (defconst cedet-gnu/linux-include-dirs
   (list "/usr/include"
         "/usr/include/c++/4.8.1"

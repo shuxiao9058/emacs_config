@@ -279,7 +279,8 @@
 
 ;; add support for mingw on Windows NT
 (if (eq system-type 'windows-nt) ;; Windows NT
-    (setq exec-path (cons "C:/Program Files (x86)/Dev-Cpp/MinGW32/bin/;~/UnxUtils/bin" exec-path))
+    ;; (setq exec-path (cons "C:/Program Files (x86)/CodeBlocks/MinGW/bin;~/UnxUtils/bin" exec-path))
+    (setenv "PATH" (concat (getenv "PATH") ";C:/Program Files (x86)/CodeBlocks/MinGW/bin/;~/UnxUtils/bin/"))
 )
 
 ;; add support for windows servert-start

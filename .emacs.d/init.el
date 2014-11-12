@@ -140,19 +140,20 @@
         "../.." "../../include" "../../inc" "../../common" "../../public"))
 
 (defconst cedet-win32-include-dirs
-  (list "C:/Program Files (x86)/CodeBlocks/MinGW/include"
-        "C:/Program Files (x86)/CodeBlocks/MinGW/include/sys"
-        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include"
-	"C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include/ssp"
-	"C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include/c++"
-        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include/c++/tr1"
-	"C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.8.1/include/c++/tr2"))
+  (list "C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+        "C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include"
+        "C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+        "C:/Program Files (x86)/opencv/include"))
 (defconst cedet-gnu/linux-include-dirs
   (list "/usr/include"
         "/usr/include/c++/4.8.1"
         "/usr/include/c++/4.8.1/tr1"
         "/usr/include/c++/4.8.1/tr2"
-        "/usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include"))
+        "/usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include"
+        "/Library/Frameworks/QtCore.framework/Headers"
+        "/Library/Frameworks/QtGui.framework/Headers"
+        "/Library/Frameworks/QtNetwork.framework/Headers"
+        "/Library/Frameworks/QtMultimedia.framework/Headers"))
 (require 'semantic-c nil 'noerror)
 (let ((include-dirs cedet-user-include-dirs))
   (if (eq system-type 'windows-nt)
@@ -209,21 +210,54 @@
 ;; Python
 ;;------------------------------------------------------------------------------
 ;;;; python mode: from fgallina/python.el
-(require 'python "~/.emacs.d/plugins/minors/python.el")
-;;;; ipython
-(setq
- python-shell-interpreter "ipython"
- python-shell-interpreter-args ""
- python-shell-prompt-regexp "In \\[[0-9]+\\]: "
- python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
- python-shell-completion-setup-code
-   "from IPython.core.completerlib import module_completion"
- python-shell-completion-module-string-code
-   "';'.join(module_completion('''%s'''))\n"
- python-shell-completion-string-code
-   "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+;; (require;;  'python "~/.emacs.d/plugins/minors/python.el")
+;; ;;;; ipython
+;; (setq
+;;  python-shell-interpreter "ipython"
+;;  python-shell-interpreter-args ""
+;;  python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+;;  python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+;;  python-shell-completion-setup-code
+;;    "from IPython.core.completerlib import module_completion"
+;;  python-shell-completion-module-string-code
+;;    "';'.join(module_completion('''%s'''))\n"
+;;  python-shell-completion-string-code
+;;    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+;; (load-file "~/.emacs.d/plugins/epy-init.el/epy-init.el")
 
 ;;------------------------End Python-----------------------
+
+;;------------------------------------------------------------------------------
+;; php-mode
+;;------------------------------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/plugins/php-mode/")
+(require 'php-mode)
+
+(add-to-list 'auto-mode-alist '("\\.module$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.install$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.engine$" . php-mode))
+
+(defun wicked/php-mode-init ()
+  "Set some buffer-local variables."
+  (setq case-fold-search t)
+  (setq indent-tabs-mode nil)
+  (setq fill-column 78)
+  (setq c-basic-offset 2)
+  (c-set-offset 'arglist-cont 0)
+  (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'case-label 2)
+  (c-set-offset 'arglist-close 0))
+(add-hook 'php-mode-hook 'wicked/php-mode-init)
+;;------------------------End php-mode-----------------------
+
+
+;;------------------------------------------------------------------------------
+;; go-mode
+;;------------------------------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/plugins/go-mode.el/")
+(require 'go-mode-autoloads)
+;;------------------------End go-mode-----------------------
 
 ;;------------------------------------------------------------------------------
 ;; el-get
@@ -453,6 +487,15 @@
 (load-library "~/.emacs.d/plugins/gdb-ui/gud.el")
 (setq gdb-many-windows t)
 ;;------------------------End gdb-UI-----------------------
+
+;;------------------------------------------------------------------------------
+;; org-mode设置
+;;------------------------------------------------------------------------------
+;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode)) ; not needed since Emacs 22.2
+(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+      (global-set-key "\C-cb" 'org-iswitchb)
 
 ;;------------------------------------------------------------------------------
 ;; my-base.el

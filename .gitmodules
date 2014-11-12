@@ -33,6 +33,9 @@
 # [submodule ".emacs.d/plugins/markdown-mode"]
 # 	path = .emacs.d/plugins/markdown-mode
 # 	url = git://jblevins.org/git/markdown-mode.git
+[submodule ".emacs.d/plugins/go-mode.el"]
+      path = .emacs.d/plugins/go-mode.el
+      url = git://github.com/dominikh/go-mode.el.git
 [submodule ".emacs.d/plugins/sourcepair.el"]
       path = .emacs.d/plugins/sourcepair.el
       url = git://github.com/tangyi/sourcepair.el.git

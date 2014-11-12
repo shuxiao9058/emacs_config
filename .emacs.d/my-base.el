@@ -190,7 +190,7 @@
 ;;;; 禁用工具栏
 (tool-bar-mode 0)
 ;;;; 禁用菜单栏
-;;(menu-bar-mode 0)
+ (menu-bar-mode 0)
 
 ;;;; 透明
 ;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
@@ -277,24 +277,24 @@
 ;; (setq default-frame-alist  
 ;;      '((height . 50) (width . 125) (menu-bar-lines . 25) (tool-bar-lines . 0)))
 
+;;------------------------------------------------------------------------------
+;; path env
+;;------------------------------------------------------------------------------
 ;; add support for mingw on Windows NT
 (if (eq system-type 'windows-nt) ;; Windows NT
-    ;; (setq exec-path (cons "C:/Program Files (x86)/CodeBlocks/MinGW/bin;~/UnxUtils/bin" exec-path))
-    (setenv "PATH" (concat (getenv "PATH") ";C:/Program Files (x86)/CodeBlocks/MinGW/bin/;~/UnxUtils/bin/"))
+    (setq exec-path (cons "C:/Program Files (x86)/Dev-Cpp/MinGW32/bin/;~/UnxUtils/bin" exec-path))
 )
+;; for os x with gcc 4.8.2
+(if (eq system-type 'darwin) ;; os x
+     (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin/"))
+     (setq exec-path (append exec-path '("/usr/local/bin/")))
+)
+;;------------------------End path env-----------------------
 
 ;; add support for windows servert-start
 (require 'server)
 (when (and (>= emacs-major-version 23)
            (equal window-system 'w32))
   (defun server-ensure-safe-dir (dir) "Noop" t)) ; Suppress error "directory
-                                                 ; ~/.emacs.d/server is unsafe"
                                                  ; on windows.
 (server-start)
-
-;; for os x with gcc 4.8.2
-;; (if (eq system-type 'darwin) ;; os x
-;;     (setenv "PATH" (concat (getenv "PATH") ":/usr/local/Cellar/gcc48/4.8.2/bin/"))
-;;     (setq exec-path (append exec-path '("/usr/local/Cellar/gcc48/4.8.2/bin/")))
-;; )
-

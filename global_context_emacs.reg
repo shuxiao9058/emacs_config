@@ -1,6 +1,6 @@
-# Note: http://www.emacswiki.org/emacs/MsWindowsGlobalContextMenu
-        
 Windows Registry Editor Version 5.00
+# Note: http://www.emacswiki.org/emacs/MsWindowsGlobalContextMenu
+
 [HKEY_CLASSES_ROOT\*\shell]
 
 [HKEY_CLASSES_ROOT\*\shell\openwemacs]

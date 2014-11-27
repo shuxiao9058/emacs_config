@@ -1,4 +1,4 @@
-# plugins
+﻿# plugins
 # [submodule ".emacs.d/plugins/Pymacs"]
 #       path = .emacs.d/plugins/Pymacs
 #       url = git://github.com/pinard/Pymacs.git
@@ -27,9 +27,9 @@
 # [submodule ".emacs.d/plugins/python.el"]
 #      path = .emacs.d/plugins/python.el
 #      url = git://github.com/fgallina/python.el.git
-# [submodule ".emacs.d/plugins/php-mode"]
-# 	path = .emacs.d/plugins/php-mode
-# 	url = git://github.com/ejmr/php-mode.git
+[submodule ".emacs.d/plugins/php-mode"]
+	path = .emacs.d/plugins/php-mode
+	url = git://github.com/ejmr/php-mode.git
 # [submodule ".emacs.d/plugins/markdown-mode"]
 # 	path = .emacs.d/plugins/markdown-mode
 # 	url = git://jblevins.org/git/markdown-mode.git
@@ -56,4 +56,3 @@
 [submodule ".emacs.d/themes/emacs-color-themes"]
       path = .emacs.d/themes/emacs-color-themes
       url = git://github.com/owainlewis/emacs-color-themes.git
-      

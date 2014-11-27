@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/")
+;; (add-to-list 'load-path ".emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/plugins/minors/") ;; other extensions
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/ecb/")
 (add-to-list 'load-path "~/.emacs.d/plugins/session/lisp/")
@@ -48,9 +48,10 @@
 ;;------------------------------------------------------------------------------
 ;; cedet
 ;; 参考：http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
+;; cedet is a part of Emacs24
 ;;------------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/plugins/cedet-bzr/")
-(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/cedet-bzr/")
+;; (load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
 
 (require 'popup)
 ;;;; add some shotcuts in popup menu mode
@@ -93,6 +94,7 @@
                                   global-semantic-show-unmatched-syntax-mode
                                   global-semantic-show-parser-state-mode
 								  ))
+
 (semantic-mode 1)
 (global-semantic-highlight-edits-mode (if window-system 1 -1))
 (require 'semantic/ia)
@@ -103,14 +105,14 @@
 (add-hook 'semantic-init-hooks 'my-semantic-hook)
 
 ;;;; if you want to enable support for gnu global
-(when (cedet-gnu-global-version-check t)
-  (semanticdb-enable-gnu-global-databases 'c-mode)
-  (semanticdb-enable-gnu-global-databases 'c++-mode))
+;; (when (cedet-gnu-global-version-check t)
+;;    (semanticdb-enable-gnu-global-databases 'c-mode)
+;;    (semanticdb-enable-gnu-global-databases 'c++-mode))
 
 ;;;; enable ctags for some languages:
 ;;;;  Unix Shell, Perl, Pascal, Tcl, Fortran, Asm
 ;; (when (cedet-ectag-version-check)
-;;  (semantic-load-enable-primary-exuberent-ctags-support))
+;;   (semantic-load-enable-primary-exuberent-ctags-support))
 
 ;;;; use projects
 (global-ede-mode t)
@@ -140,7 +142,17 @@
         "../.." "../../include" "../../inc" "../../common" "../../public"))
 
 (defconst cedet-win32-include-dirs
-  (list "C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+  (list "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"
+        "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include/cliext"
+        "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include/cvt"
+        "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include/sys"
+        "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include/thr"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/include"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/include/sys"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include/c++"
+        "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/mingw32/4.7.1/include/ssp"
+        "C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
         "C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include"
         "C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
         "C:/Program Files (x86)/opencv/include"))
@@ -223,8 +235,7 @@
 ;;    "';'.join(module_completion('''%s'''))\n"
 ;;  python-shell-completion-string-code
 ;;    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
-;; (load-file "~/.emacs.d/plugins/epy-init.el/epy-init.el")
-
+;; (load-file "~/.emacs.d/plugins/emacs-for-python/epy-init.el")
 ;;------------------------End Python-----------------------
 
 ;;------------------------------------------------------------------------------
@@ -359,9 +370,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(ecb-layout-window-sizes nil)
- ;; '(ecb-options-version "2.40")
- ;; '(ede-project-directories (quote ("/Users/jiya")))
  '(session-use-package t nil (session)))
  
 (custom-set-faces
@@ -462,6 +470,7 @@
 ;;------------------------------------------------------------------------------
 ;; xscope
 ;; 说明：使用前需要进入xscope目录编译安装。
+;;  C-c s I 生成index(cscope.out)文件
 ;;  C-c s s 查找函数或变量
 ;;  C-c s g 查找函数或变量的定义
 ;;  C-c s c 查找函数被调用的地方
@@ -473,6 +482,7 @@
 (load-file "~/.emacs.d/plugins/xcscope.el/xcscope.el")
 (require 'xcscope)
 (cscope-setup)
+;; (add-hook 'asm-mode-hook (function cscope:hook))
 
 (add-hook 'c-mode-common-hook
 	  '(lambda ()
@@ -494,12 +504,12 @@
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
-      (global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-cb" 'org-iswitchb)
 
 ;;------------------------------------------------------------------------------
 ;; my-base.el
 ;;------------------------------------------------------------------------------
-(load "my-base.el")
+(load-file "~/.emacs.d/my-base.el")
 ;;------------------------End my-base-----------------------
 
 (put 'upcase-region 'disabled nil)

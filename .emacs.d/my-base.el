@@ -30,7 +30,7 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 (setq ido-use-filename-at-point 'guess)
-(setq ido-file-extensions-order '(".txt" ".py" ".h" ".el" ".cpp" ".h" ".cc" ".html"))
+(setq ido-file-extensions-order '(".txt" ".py" ".h" ".c" ".el" ".cpp" ".h" ".cc" ".html"))
 ;;------------------------End ido-----------------------
 
 ;;;; 启用ibuffer支持，增强*buffer*  
@@ -83,6 +83,7 @@
      (modify-coding-system-alist 'process "*" 'euc-cn) 
      (setq default-process-coding-system '(euc-cn . euc-cn)) 
      (setq-default pathname-coding-system 'euc-cn)
+;;     (setq ansi-color-for-comint-mode t)
  (ding)
    (set-language-environment 'Chinese-GB)
    (set-keyboard-coding-system 'utf-8)
@@ -188,14 +189,14 @@
 (setq set-scroll-bar-mode 'right)
 
 ;;;; 禁用工具栏
-(tool-bar-mode 0)
+;; (tool-bar-mode 0)
 ;;;; 禁用菜单栏
- (menu-bar-mode 0)
+;; (menu-bar-mode 0)
 
 ;;;; 透明
-;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
-(set-frame-parameter (selected-frame) 'alpha '(90 75))
-(add-to-list 'default-frame-alist '(alpha 90 75))
+;; (set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
+(set-frame-parameter (selected-frame) 'alpha '(90 75)) ;; 90 75
+(add-to-list 'default-frame-alist '(alpha 100 100)) ;; 90 75
 
 ;;;; 绑定透明切换到C-c t
 (eval-when-compile (require 'cl))
@@ -280,10 +281,37 @@
 ;;------------------------------------------------------------------------------
 ;; path env
 ;;------------------------------------------------------------------------------
-;; add support for mingw on Windows NT
-(if (eq system-type 'windows-nt) ;; Windows NT
-    (setq exec-path (cons "C:/Program Files (x86)/Dev-Cpp/MinGW32/bin/;~/UnxUtils/bin" exec-path))
+;; for windows
+;; (if (eq system-type 'windows-nt) ;; Windows NT
+;;     (setenv "PATH" (concat (getenv "PATH") ";~/UnxUtils/bin/"))
+;;  (setenv "PATH"
+;;     (concat
+;;       "~/UnxUtils/bin" ";"
+;;        "C:/cygwin/usr/bin" ";"
+;;        "C:/cygwin/bin" ";"
+;;        (getenv "PATH")
+;;      )
+;;  )  
+;;  (setq exec-path (cons "~/UnxUtils/bin/" exec-path))
+;; )
+
+(when (string-equal system-type "windows-nt")
+  (let  (
+    (mypaths
+      '(
+        ;; "C:/Python27"
+        ;; "C:/Python32"
+        ;; "C:/emacs/libexec/UnxUtils/bin"
+        ;; "C:/emacs/libexec/UnxUtils/usr/local/wbin"
+        "~/libexec/bash/bin"
+         ) )
+        )
+
+    (setenv "PATH" (mapconcat 'identity mypaths ";") )
+    (setq exec-path (append mypaths (list "." exec-directory)) )
+    ) 
 )
+
 ;; for os x with gcc 4.8.2
 (if (eq system-type 'darwin) ;; os x
      (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin/"))
@@ -295,6 +323,6 @@
 (require 'server)
 (when (and (>= emacs-major-version 23)
            (equal window-system 'w32))
-  (defun server-ensure-safe-dir (dir) "Noop" t)) ; Suppress error "directory
-                                                 ; on windows.
+  (defun server-ensure-safe-dir (dir) "Noop" t)) ;; Suppress error "directory
+                                                 ;; on windows.
 (server-start)

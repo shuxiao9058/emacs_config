@@ -1,6 +1,6 @@
 ;;; smart-compile.el --- an interface to `compile'
 
-;; Copyright (C) 1998-2012  by Seiji Zenitani
+;; Copyright (C) 1998-2012, 2014  by Seiji Zenitani
 
 ;; Author: Seiji Zenitani <zenitani@mac.com>
 ;; $Id: smart-compile.el 764 2012-07-10 15:58:08Z zenitani $
@@ -53,7 +53,7 @@
   (octave-mode        . (run-octave))
   ("\\.c\\'"          . "gcc -O2 %f -lm -o %n")
 ;;  ("\\.c\\'"          . "gcc -O2 %f -lm -o %n && ./%n")
-  ("\\.[Cc]+[Pp]*\\'" . "g++ -O2 %f -lm -o %n")
+  ("\\.[Cc]+[Pp]*\\'" . "g++ -O2 -std=c++11 %f -lm -o %n")
   ("\\.m\\'"          . "gcc -O2 %f -lobjc -lpthread -o %n")
   ("\\.java\\'"       . "javac %f")
   ("\\.php\\'"        . "php -l %f")

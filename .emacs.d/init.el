@@ -270,6 +270,20 @@
 ;;------------------------End go-mode-----------------------
 
 ;;------------------------------------------------------------------------------
+;; autoit-mode
+;;------------------------------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/plugins/autoit-mode/")
+
+(autoload 'autoit-mode "autoit-mode" "Autoit editing mode." t)
+(setq auto-mode-alist
+      (cons '(".au3$" . autoit-mode)
+            auto-mode-alist))
+(setq interpreter-mode-alist
+     (cons '("autoit" . autoit-mode)
+           interpreter-mode-alist)) 
+;;------------------------End autoit-mode-----------------------
+
+;;------------------------------------------------------------------------------
 ;; el-get
 ;;------------------------------------------------------------------------------
 (setq el-get-dir "~/.emacs.d/plugins/el-get/")

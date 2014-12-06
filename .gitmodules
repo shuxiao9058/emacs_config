@@ -62,3 +62,6 @@
 [submodule ".emacs.d/plugins/autoit-mode"]
 	path = .emacs.d/plugins/autoit-mode
 	url = git://github.com/pcrama/autoit-mode.git
+[submodule ".emacs.d/plugins/lua-mode"]
+	path = .emacs.d/plugins/lua-mode
+	url = git://github.com/immerrr/lua-mode.git

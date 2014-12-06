@@ -1,4 +1,4 @@
-﻿# plugins
+# plugins
 # [submodule ".emacs.d/plugins/Pymacs"]
 #       path = .emacs.d/plugins/Pymacs
 #       url = git://github.com/pinard/Pymacs.git
@@ -39,6 +39,12 @@
 [submodule ".emacs.d/plugins/go-mode.el"]
 	path = .emacs.d/plugins/go-mode.el
 	url = git://github.com/dominikh/go-mode.el.git
+[submodule ".emacs.d/plugins/autoit-mode"]
+	path = .emacs.d/plugins/autoit-mode
+	url = git://github.com/pcrama/autoit-mode.git
+[submodule ".emacs.d/plugins/lua-mode"]
+	path = .emacs.d/plugins/lua-mode
+	url = git://github.com/immerrr/lua-mode.git
 [submodule ".emacs.d/plugins/sourcepair.el"]
       path = .emacs.d/plugins/sourcepair.el
       url = git://github.com/tangyi/sourcepair.el.git
@@ -59,9 +65,3 @@
 [submodule ".emacs.d/themes/emacs-color-themes"]
       path = .emacs.d/themes/emacs-color-themes
       url = git://github.com/owainlewis/emacs-color-themes.git
-[submodule ".emacs.d/plugins/autoit-mode"]
-	path = .emacs.d/plugins/autoit-mode
-	url = git://github.com/pcrama/autoit-mode.git
-[submodule ".emacs.d/plugins/lua-mode"]
-	path = .emacs.d/plugins/lua-mode
-	url = git://github.com/immerrr/lua-mode.git
